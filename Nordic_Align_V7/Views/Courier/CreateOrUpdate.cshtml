@@ -1,0 +1,85 @@
+﻿@model Nordic_Align_V7.Models.CourierModel
+
+
+
+
+@{
+    // Ställ in titeln beroende på om modellen är tom eller inte
+    ViewData["Title"] = Model != null && Model.Id != 0 ? "Change courier" : "Lägg till courier";
+}
+<h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+<div class="container">
+    <form asp-action="@(Model != null && Model.Id != 0 ? "Edit" : "Create")" method="post" class="needs-validation" novalidate>
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row mb-3">
+            <label asp-for="FullName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="Personnummer" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Personnummer" class="form-control" />
+                <span asp-validation-for="Personnummer" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="EmploymentDate" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="EmploymentDate" type="date" class="form-control" formnovalidate />
+                <span asp-validation-for="EmploymentDate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="StartWorkTime" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="StartWorkTime" type="time" class="form-control" />
+                <span asp-validation-for="StartWorkTime" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="EndWorkTime" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="EndWorkTime" type="time" class="form-control" />
+                <span asp-validation-for="EndWorkTime" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="LivingPlace" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="LivingPlace" class="form-control" />
+                <span asp-validation-for="LivingPlace" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="Phone" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Spara</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">Avboka</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script defer src="~/js/courier_validation.js"></script>
+
+

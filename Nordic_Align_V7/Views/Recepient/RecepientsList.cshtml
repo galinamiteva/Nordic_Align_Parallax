@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Nordic_Align_V7.Models.RecepientModel>
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
+    var role = roles.FirstOrDefault();
+}
+
+@{
+    ViewData["Title"] = "Mottagare";
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                <a style="color:black" href="/Order/OrdersByRecipientId?recipientId=@item.Id">@Html.DisplayFor(modelItem => item.FullName)</a>
+            </th>
+
+
+
+
+            <th>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.DeliveryAddress)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </th>
+
+            @if (role == "Admin")
+            {
+                <th>
+                    <a href="/Recepient/Edit?id=@item.Id">&#9998;</a>
+                </th>
+                <th>
+                    <a href="/Recepient/Delete?id=@item.Id">&#128465;</a>
+                </th>
+            }
+        </tr>
+
+    }
+</table>
+<a href="/Recepient/Create" class="btn btn-success">Lägg till mottagare</a>

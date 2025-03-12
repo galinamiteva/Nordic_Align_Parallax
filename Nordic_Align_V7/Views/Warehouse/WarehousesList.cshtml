@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Nordic_Align_V7.Models.WarehouseModel>
+
+
+@{
+    ViewData["Title"] = "Lager";
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.Name)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Address)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </th>
+            <th>
+                <a href="/Warehouse/Edit?id=@item.Id">&#9998;</a>
+            </th>
+            <th>
+                <a href="/Warehouse/Delete?id=@item.Id">&#128465;</a>
+            </th>
+        </tr>
+    }
+</table>
+<a href="/Warehouse/Create" class="btn btn-success">Lägg till lager</a>

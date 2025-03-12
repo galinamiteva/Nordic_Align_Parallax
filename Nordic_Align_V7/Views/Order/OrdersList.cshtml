@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Nordic_Align_V7.Models.OrderModel>
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
+    var role = roles.FirstOrDefault();
+}
+
+@{
+    ViewData["Title"] = "Order";
+}
+<form method="get" asp-controller="Order" asp-action="OrdersByDate">
+
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Beställningsdatum från:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label for="endDate" class="form-label">Beställningsdatum till:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrera</button>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sender)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </th>
+
+
+        <th>
+            Mottagare
+        </th>
+
+
+        @if (role == "Admin")
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                Kurir
+            </th>
+            <th>
+                Transport
+            </th>
+            <th>
+                Lager
+            </th>
+        }
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @if (string.IsNullOrEmpty(item.Sender))
+                {
+                    @ViewBag.UserFullName
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Sender)
+                }
+            </th>
+
+            <th>
+                @item.OrderDate.ToShortDateString()
+            </th>
+
+            <th>
+                @item.DeliveryDate.ToShortDateString()
+            </th>
+
+
+            <th>
+                @(item.Recepient != null ? item.Recepient.FullName : "Mottagare okänd")
+            </th>
+
+
+            @if (role == "Admin")
+            {
+
+                <th>
+                    @(item.Price != 100 ? item.Price.ToString() : "Add Price ")
+                </th>
+
+                <th>
+                    @(item.Courier != null ? item.Courier.FullName : "Kurir ej tilldelad")
+                </th>
+                <th>
+                    @(item.Transport != null ? item.Transport.TransportNumber : "Transport ej tilldelad")
+                </th>
+                <th>
+                    @(item.Warehouses.Count() != 0 ? string.Join(", ", item.Warehouses.Select(x => x.Name)) : "Lager ej tilldelad")
+                </th>
+
+
+            }
+        
+
+            <th>
+                <a href="/Order/Edit?id=@item.Id">&#9998;</a>
+            </th>
+
+            <th>
+                <a href="/Order/Delete?id=@item.Id">&#128465;</a>
+            </th>
+
+        </tr>
+    }
+</table>
+<a href="/Order/Create" class="btn btn-success">Lägg till order</a>
