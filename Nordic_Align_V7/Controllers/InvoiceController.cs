@@ -243,7 +243,7 @@ public class InvoiceController : Controller
                 table.Cell().PaddingBottom(7).AlignRight().Text($"{prices[i]:C}");
                 table.Cell().PaddingBottom(7).AlignRight().Text(quantities[i].ToString());
                 table.Cell().PaddingBottom(7).AlignRight().Text($"{total:C}").ParagraphSpacing(5);
-               
+
             }
         });
     }
