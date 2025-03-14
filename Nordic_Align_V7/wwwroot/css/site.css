@@ -358,6 +358,7 @@
   border-radius: 4px;
   font-size: 0.85em;
   color: #fff;
+  z-index: 10000;
 }
 .contact-form-login form .inputBox input::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -475,6 +476,7 @@
   border-radius: 4px;
   font-size: 0.85em;
   color: #fff;
+  z-index: 10000;
 }
 .contact-form form .inputBox input::placeholder {
   color: rgba(255, 255, 255, 0.5);

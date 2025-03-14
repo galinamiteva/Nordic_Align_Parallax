@@ -92,6 +92,7 @@ $register-background: '/images/Register.jpg';
         border-radius: 4px;
         font-size: 0.85em;
         color: #fff;
+        z-index: 10000;
     }
 
     form .inputBox input::placeholder {
