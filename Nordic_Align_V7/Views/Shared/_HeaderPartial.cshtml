@@ -1,0 +1,80 @@
+﻿@{
+   
+
+
+    var user = await UserManager.GetUserAsync(User);
+    var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
+    var role = roles.FirstOrDefault();
+}
+
+
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <button class="burger">
+                <span class="lines"></span>
+                <span class="lines"></span>
+                <span class="lines"></span>
+            </button>
+
+            <nav class="menu">
+                <ul class="menu__list">
+                    @if (role == "Admin")
+                    {
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" asp-area="" asp-controller="Order" asp-action="Index">Order</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" asp-area="" asp-controller="Recepient" asp-action="Index">Mottagare</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" asp-area="" asp-controller="Courier" asp-action="Index">Kurirer</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" asp-area="" asp-controller="Transport" asp-action="Index">Fordonsflotta</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" asp-area="" asp-controller="Warehouse" asp-action="Index">Lager</a>
+                        </li>
+
+
+                        <li class="menu__list-item dropdown">
+                            <a class="menu__list-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Invoice
+                            </a>
+                            <ul class="dropdown-menu  custom-dropdown" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="menu__list-link dropdown-item" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Skapa Invoice</a>
+                                </li>
+                                <li>
+                                    <a class="menu__list-link dropdown-item" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">Skapa NoTax Invoice</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+                    }
+                </ul>
+
+            </nav>
+            <ul class="menu__list">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                }
+                else
+                {
+                    <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">Register</a></li>
+                    <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Login">Login</a></li>
+                }
+            </ul>
+
+
+        </div>
+    </div>
+
+
+</header>
