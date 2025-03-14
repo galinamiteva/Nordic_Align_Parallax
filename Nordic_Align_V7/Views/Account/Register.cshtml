@@ -2,8 +2,10 @@
 
 
 <section class="contact-form">
-    <div class="container">
-        <div class="title">Register new account</div>
+    <div class="container register">
+        <span> </span>
+        <span> </span>
+        <span> </span>
 
         @if (!ViewData.ModelState.IsValid)
         {
@@ -17,61 +19,46 @@
             </div>
         }
 
-        <form method="post" id="registerForm" novalidate asp-controller="Account" asp-action="Register" onsubmit="return validateForm(event);">
-            <table>
+        <form method="post" class="signup" id="signupForm" novalidate asp-controller="Account" asp-action="Register" onsubmit="return validateForm(event);">
+            <h2>Registration</h2>
+            
+            <div class="inputBox">
+                <input asp-for="FirstName" id="FirstName" data-val="true" class="form-control" placeholder="First name">
+                <span style="color:red;"  asp-validation-for="FirstName" data-valmsg-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="inputBox">
+                <input asp-for="FirstName" id="LastName" data-val="true" class="form-control" placeholder="Last name">
+                <span style="color:red;"  asp-validation-for="LastName" data-valmsg-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="inputBox">
+                <input asp-for="Email" id="Email" data-val="true" class="form-control"  placeholder="Email">
+                <span style="color:red;"  asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="inputBox">
+                <input asp-for="Password" type="password" data-val="true" id="Password" class="form-control" placeholder="Create Password">
+                <span style="color:red;"  asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
+            </div>
+            <div class="inputBox">
+                <input asp-for="ConfirmPassword" type="password" data-val="true" id="ConfirmPassword" class="form-control"  placeholder="Confirm Password">
+                <span style="color:red;"  asp-validation-for="ConfirmPassword" data-valmsg-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="inputBox group">
+                <p>Already have an Account?</p>
                 
-                <tr>
-                    <td><label asp-for="FirstName"></label></td>
-                </tr>
-                <tr>
-                    <td><input asp-for="FirstName" id="FirstName" data-val="true"  class="form-control" /></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="FirstName" data-valmsg-for="FirstName" class="text-danger"></span>
-                    </td>
-                </tr>
+                <a asp-controller="Account" asp-action="Login" id="login">Login</a>
 
+            </div>
 
-                <tr>
-                    <td><label asp-for="LastName"></label></td>
-                </tr>
-                <tr>
-                    <td><input asp-for="LastName" id="LastName" data-val="true"  class="form-control" /></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="LastName" data-valmsg-for="LastName"  class="text-danger"></span>
-                    </td>
-                </tr>
+            <div class="inputBox">
+                <input type="submit" value="Register ">
 
-                <tr>
-                    <td><label asp-for="Email"></label></td>
-                </tr>
-                <tr>
-                    <td><input asp-for="Email" id="Email" data-val="true" class="form-control" /></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="Email" data-valmsg-for="Email"  class="text-danger"></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><label asp-for="Password"></label></td>
-                </tr>
-                <tr>
-                    <td><input asp-for="Password" type="password" data-val="true" id="Password" class="form-control" /></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><label asp-for="ConfirmPassword"></label></td>
-                </tr>
-                <tr>
-                    <td><input asp-for="ConfirmPassword" type="password" data-val="true"  id="ConfirmPassword" class="form-control" /></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="ConfirmPassword" data-valmsg-for="ConfirmPassword"  class="text-danger"></span>
-                    </td>
-                </tr>
-            </table>
-            <button class="btn-theme" type="submit">Register</button>
+                
+            </div>         
+            
         </form>
 
         @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
@@ -80,7 +67,35 @@
         }
     </div>
 </section>
+<style>
 
+    @@keyframes animate {
+        0% {
+            --a: 0deg; 
+        }
+
+        100% {
+            --a: 360deg;
+        }
+    }
+
+    @@property --a {
+        syntax: '<angle>';
+        inherits: false;
+        initial-value: 0deg;
+    }
+
+    .contact-form .register::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-conic-gradient(from var(--a), #45f3ff 0%, #45f3ff 10%, transparent 10%, transparent 80%, #45f3ff 100%);
+        border-radius: 20px;
+        animation: animate 2.5s linear infinite;
+        filter: hue-rotate(140deg);
+    }
+</style>
 
 <script defer src="~/js/validation.js"></script>
 

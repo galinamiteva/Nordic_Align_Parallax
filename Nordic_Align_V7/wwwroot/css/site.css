@@ -285,3 +285,228 @@
 .layers > .layers__container > .layers__item.layer-4, .layers > .layers__container > .layers__item.layer-5, .layers > .layers__container > .layers__item.layer-6 {
   pointer-events: none;
 }
+
+.contact-form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+.contact-form-login::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/images/Login.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.contact-form-login .container {
+  position: relative;
+  width: 350px;
+  height: 340px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.contact-form-login form {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  transition: 0.5s;
+}
+.contact-form-login form h2 {
+  position: relative;
+  color: #fff;
+  font-size: 1.5em;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.contact-form-login form .inputBox {
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-form-login form .inputBox a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.contact-form-login form .inputBox a:nth-child(2) {
+  text-decoration: underline;
+}
+.contact-form-login form .inputBox input {
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.15);
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: #fff;
+}
+.contact-form-login form .inputBox input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact-form-login form .submitBtn input[type=submit] {
+  background: #21c9f3;
+  font-weight: 500;
+  cursor: pointer;
+}
+.contact-form-login .container span {
+  position: absolute;
+  inset: 5px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.contact-form-login .container span::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: url(/images/Login.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+}
+.contact-form-login .container span::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: url(/images/Login.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px);
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/images/Register.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.contact-form .register {
+  position: relative;
+  width: 350px;
+  height: 440px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.contact-form form {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  transition: 0.5s;
+}
+.contact-form form::after {
+  opacity: 1;
+}
+.contact-form form::before {
+  opacity: 1;
+}
+.contact-form form h2 {
+  position: relative;
+  color: #fff;
+  font-size: 1.5em;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.contact-form form .inputBox {
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-form form .inputBox a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.contact-form form .inputBox p {
+  color: #fff;
+  font-size: 0.85rem;
+}
+.contact-form form .inputBox a#login {
+  text-decoration: underline;
+}
+.contact-form form .inputBox input {
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.15);
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: #fff;
+}
+.contact-form form .inputBox input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact-form form .inputBox input[type=submit] {
+  background: #f49a24;
+  font-weight: 500;
+  cursor: pointer;
+}
+.contact-form .container span {
+  position: absolute;
+  inset: 5px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.contact-form .container span::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: url(/images/Register.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+}
+.contact-form .container span::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: url(/images/Register.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px);
+}

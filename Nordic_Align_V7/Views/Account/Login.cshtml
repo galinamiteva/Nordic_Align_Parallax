@@ -1,44 +1,74 @@
 ﻿@model Nordic_Align_V7.ViewModels.LoginViewModel
 
-<section class="contact-form">
+<section class="contact-form-login">
     <div class="container">
-        <div class="title">Login Page</div>
+        <span></span>
+        <span></span>
+        <span></span>
 
-        <form method="post" id="loginForm" asp-controller="Account" asp-action="Login" onclick="return validateForm(event);"  novalidate>
-            <table>
-                
-                <tr>
-                    <td><label for="email">Email</label></td>                    
-                </tr>
-                <tr>
-                    <td><input asp-for="Email" id="Email" data-val="true" class="invalid"></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
-                    </td>
-                </tr>
-                
-                
-                <tr>
-                    <td><label asp-for="Password"></label></td>
-                </tr>
-                <tr>
-                    <td><input asp-for="Password" type="password" data-val="true" id="Password" class="form-control" /></td>
-                    <td style="color:red;">
-                        <span asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><button class="btn-theme" type="submit">Login</button></td>
-                </tr>
-            </table>
+        <form method="post" class="signin" id="signinForm" asp-controller="Account" asp-action="Login" onclick="return validateForm(event);" novalidate>
+            <h2>Login</h2>
+
+            <div class="inputBox">
+                <input asp-for="Email" id="Email" data-val="true" class="invalid" placeholder="Email">
+                <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="inputBox">
+                <input asp-for="Password" type="password" data-val="true" id="Password" class="form-control" placeholder="Password" />
+                <span style="color:red;" asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="inputBox group">
+                <a href="#">Forgot Password</a>
+                <a asp-controller="Account" asp-action="Register">SignUp</a>
+            </div>
+
+            <div class="inputBox submitBtn">
+                <input type="submit" value="Sign In">
+            </div>
         </form>
+
         @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
         {
             <div style="color:red;">@ViewBag.RegisterFail</div>
         }
+
     </div>
 </section>
 
+
+<style>
+   
+    @@keyframes animate {
+        0%
+
+    {
+        --a: 0deg;
+    }
+
+    100% {
+        --a: 360deg;
+    }
+
+    }
+
+    @@property --a {
+        syntax: '<angle>';
+        inherits: false;
+        initial-value: 0deg;
+    }
+
+    .contact-form-login .container::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-conic-gradient(from var(--a), #f9d3c7f7 0%, #f9d3c7f7 10%, transparent 10%, transparent 80%, #f9d3c7f7 100%);
+        border-radius: 20px;
+        animation: animate 2.5s linear infinite;
+        filter: hue-rotate(140deg);
+    }
+</style>
+
 <script defer src="~/js/validation.js"></script>
-
-

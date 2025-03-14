@@ -1,5 +1,15 @@
-﻿<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2025 - Nordic Align Supply Chain Consulting AB - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
+@if (currentController != "Account")
+{
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Nordic Align Supply Chain Consulting AB - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+}
+
+
+
