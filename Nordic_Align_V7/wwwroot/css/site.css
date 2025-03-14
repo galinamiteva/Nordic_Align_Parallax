@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   width: 95%;
-  z-index: 1000;
+  z-index: 10000;
 }
 .header__inner {
   display: flex;
@@ -186,24 +186,6 @@
     min-width: 100%;
   }
 }
-/*.layers {
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 70px;
-
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(to bottom, #031611 30%, transparent);
-        z-index: 10;
-        pointer-events: none;
-    }
-*/
 .layers {
   overflow: hidden;
   position: relative;
@@ -220,11 +202,11 @@
 }
 .layers::before {
   top: 0;
-  background: linear-gradient(to bottom, #031611 30%, transparent);
+  background: linear-gradient(to bottom, #031611 40%, transparent);
 }
 .layers::after {
   bottom: 0;
-  background: linear-gradient(to top, #031611 30%, transparent);
+  background: linear-gradient(to top, #031611 10%, transparent);
 }
 .layers > .layers__container {
   height: 100vh;

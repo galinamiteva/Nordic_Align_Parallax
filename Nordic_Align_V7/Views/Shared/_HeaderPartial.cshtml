@@ -1,7 +1,4 @@
 ﻿@{
-   
-
-
     var user = await UserManager.GetUserAsync(User);
     var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
     var role = roles.FirstOrDefault();
@@ -23,7 +20,7 @@
                     @if (role == "Admin")
                     {
                         <li class="menu__list-item">
-                            <a class="menu__list-link" asp-area="" asp-controller="Order" asp-action="Index">Order</a>
+                            <a class="menu__list-link" asp-area="" asp-controller="Order" target="_self" asp-action="Index">Order</a>
                         </li>
                         <li class="menu__list-item">
                             <a class="menu__list-link" asp-area="" asp-controller="Recepient" asp-action="Index">Mottagare</a>

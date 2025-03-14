@@ -1,10 +1,6 @@
-﻿
-
-
-document.addEventListener("DOMContentLoaded", function () {
+﻿document.addEventListener("DOMContentLoaded", function () {
     console.log("main.js are here");
 
-    // Бургер меню
     const BurgerBtn = document.querySelector(".burger");
     const BurgerMenu = document.querySelector(".menu");
 
@@ -17,27 +13,43 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Burger button or menu not found!");
     }
 
-
     document.addEventListener("scroll", function () {
         document.body.style.setProperty("--scrollTop", `${window.scrollY}px`);
     });
 
+    setTimeout(() => {
+        const menuLinks = document.querySelectorAll(".menu__list-link");
 
-    const menuLinks = document.querySelectorAll(".menu__list-link");
+        menuLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+                let targetHref = this.getAttribute("href"); // Използваме getAttribute
 
-    menuLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
+                console.log("Clicked link:", targetHref);
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 50,
-                    behavior: "smooth",
-                });
-            }
+                if (!targetHref || targetHref === "#") {
+                    console.log("Invalid href, allowing navigation.");
+                    return; 
+                }
+
+                if (targetHref.startsWith("http") || targetHref.startsWith("/") || this.hasAttribute("asp-controller")) {
+                    console.log("External or ASP.NET link - allowing navigation.");
+                    return;
+                }
+
+                e.preventDefault();
+                console.log("Prevented default navigation for:", targetHref);
+
+                const targetId = targetHref.split("#")[1];
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    console.log("Scrolling to:", targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 50,
+                        behavior: "smooth",
+                    });
+                }
+            });
         });
-    });
+    }, 100); 
 });
-
