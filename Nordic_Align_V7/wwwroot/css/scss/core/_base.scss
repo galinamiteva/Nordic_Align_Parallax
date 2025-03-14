@@ -13,6 +13,7 @@
 .wrapper {
     height: 100vh;
     display: grid;
+    position: relative;
     grid-template-rows: auto 1fr auto;
 }
 
