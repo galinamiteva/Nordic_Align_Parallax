@@ -19,7 +19,7 @@ $register-background: '/images/Register.jpg';
     .register {
         position: relative;
         width: 350px;
-        height: 440px;
+        height: 480px;
         border-radius: 15px;
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
         display: flex;
@@ -38,7 +38,7 @@ $register-background: '/images/Register.jpg';
         align-items: center;
         flex-direction: column;
         width: 100%;
-        gap: 15px;
+        gap: 21px;
         transition: 0.5s;
 
         &::after {
@@ -52,7 +52,7 @@ $register-background: '/images/Register.jpg';
 
     form h2 {
         position: relative;
-        color: #fff;
+        color: #000;
         font-size: 1.5em;
         letter-spacing: 0.5em;
         text-transform: uppercase;
@@ -105,6 +105,17 @@ $register-background: '/images/Register.jpg';
         cursor: pointer;
     }
 
+    form .inputBox span {
+        color: red;
+        font-size: 0.75em;
+        margin-top: 30px;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
     .container span {
         position: absolute;
         inset: 5px;
@@ -120,7 +131,7 @@ $register-background: '/images/Register.jpg';
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
-        filter: blur(10px);
+        filter: blur(100px);
     }
 
     .container span::after {

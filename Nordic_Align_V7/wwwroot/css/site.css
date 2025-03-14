@@ -323,12 +323,12 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  gap: 15px;
+  gap: 23px;
   transition: 0.5s;
 }
 .contact-form-login form h2 {
   position: relative;
-  color: #fff;
+  color: #000;
   font-size: 1.5em;
   letter-spacing: 0.5em;
   text-transform: uppercase;
@@ -368,6 +368,16 @@
   font-weight: 500;
   cursor: pointer;
 }
+.contact-form-login form .inputBox span {
+  color: red;
+  font-size: 0.75em;
+  margin-top: 30px;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .contact-form-login .container span {
   position: absolute;
   inset: 5px;
@@ -382,7 +392,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  filter: blur(10px);
+  filter: blur(100px);
 }
 .contact-form-login .container span::after {
   content: "";
@@ -413,7 +423,7 @@
 .contact-form .register {
   position: relative;
   width: 350px;
-  height: 440px;
+  height: 480px;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -431,7 +441,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  gap: 15px;
+  gap: 21px;
   transition: 0.5s;
 }
 .contact-form form::after {
@@ -442,7 +452,7 @@
 }
 .contact-form form h2 {
   position: relative;
-  color: #fff;
+  color: #000;
   font-size: 1.5em;
   letter-spacing: 0.5em;
   text-transform: uppercase;
@@ -486,6 +496,16 @@
   font-weight: 500;
   cursor: pointer;
 }
+.contact-form form .inputBox span {
+  color: red;
+  font-size: 0.75em;
+  margin-top: 30px;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .contact-form .container span {
   position: absolute;
   inset: 5px;
@@ -500,7 +520,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  filter: blur(10px);
+  filter: blur(100px);
 }
 .contact-form .container span::after {
   content: "";

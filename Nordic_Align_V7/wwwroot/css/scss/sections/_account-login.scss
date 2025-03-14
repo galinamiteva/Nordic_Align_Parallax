@@ -39,13 +39,13 @@ $login-background: '/images/Login.jpg';
         align-items: center;
         flex-direction: column;
         width: 100%;
-        gap: 15px;
+        gap: 23px;
         transition: 0.5s;
     }
 
     form h2 {
         position: relative;
-        color: #fff;
+        color: #000;
         font-size: 1.5em;
         letter-spacing: 0.5em;
         text-transform: uppercase;
@@ -92,6 +92,18 @@ $login-background: '/images/Login.jpg';
         cursor: pointer;
     }
 
+    form .inputBox span {
+        color: red;
+        font-size: 0.75em;
+        margin-top: 30px;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+
     .container span {
         position: absolute;
         inset: 5px;
@@ -107,7 +119,7 @@ $login-background: '/images/Login.jpg';
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
-        filter: blur(10px);
+        filter: blur(100px);
     }
 
     .container span::after {
