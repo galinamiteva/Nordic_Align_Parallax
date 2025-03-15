@@ -138,6 +138,8 @@ const validateRegisterForm = () => {
     inputs.forEach(input => {
         switch (input.name) {
             case 'FirstName':
+                textValidator(input, 2);
+                break;
             case 'LastName':
                 textValidator(input, 2);
                 break;
@@ -171,7 +173,7 @@ const validateLoginForm = () => {
 
 // Adding listeners for the forms
 document.addEventListener("DOMContentLoaded", function () {
-    const registerForm = document.querySelector('form#registerForm');
+    const registerForm = document.querySelector('form#signupForm');
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             if (!validateRegisterForm()) {
@@ -180,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const loginForm = document.querySelector('form#loginForm');
+    const loginForm = document.querySelector('form#signinForm');
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             if (!validateLoginForm()) {

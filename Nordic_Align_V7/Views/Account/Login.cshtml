@@ -10,8 +10,10 @@
             <h2>Login</h2>
 
             <div class="inputBox">
-                <input asp-for="Email" id="Email" data-val="true" placeholder="Email">
-                <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+                <input asp-for="Email" type="email"  id="Email" data-val="true" class="form-control" placeholder="Email">
+                <span style="color:red;"  asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+
+             
             </div>
 
             <div class="inputBox">
@@ -31,7 +33,7 @@
 
         @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
         {
-            <div style="color:red;">@ViewBag.RegisterFail</div>
+            <div style="color:red;">@ViewBag.LoginFail</div>
         }
 
     </div>

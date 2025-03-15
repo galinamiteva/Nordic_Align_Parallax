@@ -7,33 +7,23 @@
         <span> </span>
         <span> </span>
 
-        @if (!ViewData.ModelState.IsValid)
-        {
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                    {
-                        <li>@error.ErrorMessage</li>
-                    }
-                </ul>
-            </div>
-        }
+       
 
-        <form method="post" class="signup" id="signupForm" novalidate asp-controller="Account" asp-action="Register" onsubmit="return validateForm(event);">
+        <form method="post" class="signup" id="signupForm" asp-controller="Account" asp-action="Register" onsubmit="return validateForm(event);" novalidate>
             <h2>Registration</h2>
             
             <div class="inputBox">
-                <input asp-for="FirstName" id="FirstName" data-val="true" class="form-control" placeholder="First name">
+                <input asp-for="FirstName" type="text" id="FirstName" data-val="true" class="form-control" placeholder="First name">
                 <span style="color:red;"  asp-validation-for="FirstName" data-valmsg-for="FirstName" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="FirstName" id="LastName" data-val="true" class="form-control" placeholder="Last name">
+                <input asp-for="LastName" type="text" id="LastName" data-val="true" class="form-control" placeholder="Last name">
                 <span style="color:red;"  asp-validation-for="LastName" data-valmsg-for="LastName" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="Email" id="Email" data-val="true" class="form-control"  placeholder="Email">
+                <input asp-for="Email" type="email"  id="Email" data-val="true" class="form-control" placeholder="Email">
                 <span style="color:red;"  asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
             </div>
 

@@ -29,7 +29,6 @@ public class AccountController(UserManager<UserModel> userManager, SignInManager
         }
 
         bool isFirstUser = !_userManager.Users.Any();
-
         var user = new UserModel
         {
             UserName = model.Email,
@@ -39,14 +38,10 @@ public class AccountController(UserManager<UserModel> userManager, SignInManager
             EmailConfirmed = true
 
         };
-
         var result = await _userManager.CreateAsync(user, model.Password);
-
         if (result.Succeeded)
         {
-            Console.WriteLine($"User {user.Email} created successfully."); // Debug
-
-
+            Console.WriteLine($"User {user.Email} created successfully."); 
             if (isFirstUser)
             {
                 await _userManager.AddToRoleAsync(user, "Admin");
@@ -55,25 +50,32 @@ public class AccountController(UserManager<UserModel> userManager, SignInManager
             {
                 await _userManager.AddToRoleAsync(user, "User");
             }
-
             await _signInManager.SignInAsync(user, isPersistent: false);
             return RedirectToAction("Index", "Home");
         }
-
         foreach (var error in result.Errors)
         {
-            Console.WriteLine($"Error: {error.Description}"); // Debug
+            Console.WriteLine($"Error: {error.Description}"); 
             ModelState.AddModelError("", error.Description);
         }
-
         return View(model);
     }
 
     public IActionResult Login() => View();
 
     [HttpPost]
-    public async Task<IActionResult> Login(string email, string password)
+    public async Task<IActionResult> Login(LoginViewModel model, string email, string password)
     {
+
+        Console.WriteLine("Register method called."); // Debug
+
+        if (!ModelState.IsValid)
+        {
+            ViewBag.LoginFail = "Login failed. Please check your inputs.";
+            Console.WriteLine("Model state is invalid."); // Debug
+            return View(model);
+        } 
+
         var result = await _signInManager.PasswordSignInAsync(email, password, false, false);
         if (result.Succeeded)
         {
