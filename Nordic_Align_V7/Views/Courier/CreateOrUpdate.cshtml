@@ -28,7 +28,7 @@
                             <input type="hidden" asp-for="Id" />
 
                             <div class="inputBox">
-                                <label asp-for="FullName" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="FullName" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="FullName" class="form-control" />
                                     <span asp-validation-for="FullName" class="text-danger"></span>
@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="inputBox">
-                                <label asp-for="Personnummer" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="Personnummer" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="Personnummer" class="form-control" />
                                     <span asp-validation-for="Personnummer" class="text-danger"></span>
@@ -45,7 +45,7 @@
 
 
                             <div class="inputBox">
-                                <label asp-for="EmploymentDate" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="EmploymentDate" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="EmploymentDate" type="date" class="form-control" formnovalidate />
                                     <span asp-validation-for="EmploymentDate" class="text-danger"></span>
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="inputBox">
-                                <label asp-for="StartWorkTime" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="StartWorkTime" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="StartWorkTime" type="time" class="form-control" />
                                     <span asp-validation-for="StartWorkTime" class="text-danger"></span>
@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="inputBox">
-                                <label asp-for="EndWorkTime" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="EndWorkTime" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="EndWorkTime" type="time" class="form-control" />
                                     <span asp-validation-for="EndWorkTime" class="text-danger"></span>
@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="inputBox">
-                                <label asp-for="LivingPlace" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="LivingPlace" class="label"></label>
                                 <div class="col-sm-10">
                                     <input asp-for="LivingPlace" class="form-control" />
                                     <span asp-validation-for="LivingPlace" class="text-danger"></span>
@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="inputBox">
-                                <label asp-for="Phone" class="col-sm-2 col-form-label"></label>
+                                <label asp-for="Phone" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="Phone" class="form-control" />
                                     <span asp-validation-for="Phone" class="text-danger"></span>
@@ -87,7 +87,7 @@
                             <div class="inputBox">
                                 <div class="inputBox-btn">
                                     <button type="submit" class="btn-first btn-submit">Spara</button>
-                                    <a asp-action="Index" class="btn btn-submit">Avboka</a>
+                                    <a asp-action="Index" class="btn-two btn-submit">Avboka</a>
                                 </div>
                             </div>
                         </form>

@@ -2,7 +2,9 @@
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
 }
 
-@if (currentController != "Account")
+@if (currentController != "Account" && currentController != "Courier")
+   
+
 {
     <footer class="border-top footer text-muted">
         <div class="container">
