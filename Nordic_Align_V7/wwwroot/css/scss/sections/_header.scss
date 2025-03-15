@@ -5,6 +5,9 @@
     width: 95%;
     z-index: 10000;
 
+    & .black {
+        color: $black;
+    }
 
     &__inner {
         display: flex;
@@ -30,6 +33,12 @@
             text-decoration: none;
         }
 
+        &-black {
+            color: $black;
+            padding-bottom: 2px;
+            text-decoration: none;
+        }
+
         &-item {
             list-style: none;
         }
@@ -49,6 +58,8 @@
             transition: background 0.3s ease;
         }
 
+
+
         .custom-dropdown .dropdown-item:hover {
             //background-color: #f1f1f1 !important;
             background-color: rgb(102, 101, 101, .5);
@@ -57,7 +68,12 @@
             border-right: 2px solid rgb(255, 255, 255, 0.3);
             border-bottom: 2px solid rgb(255, 255, 255, 0.3);
         }
+
+        .custom-dropdown .menu__list-black {
+            color: $black !important;
+        }
     }
+
 
 
 
@@ -85,130 +101,126 @@
     }
 }
 
-.burger {
-    display: none;
-}
-
-////////////////////////////////////////////////////////////////////////////
-@media(max-width: 600px) {
-    
-
-    .header .logo {
-        font-size: 20px;
-    }
-}
-
-@media(max-width: 500px) {
     .burger {
-        display: block;
-        width: 30px;
-        height: 20px;
-        position: relative;
-        transition: all .3s;
-        z-index: 5;
-        background: transparent;
-        outline: none;
-        border: none;
+        display: none;
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    @media(max-width: 600px) {
 
-        &--active {
-            .lines {
-                transition: all .3s;
 
-                &:nth-child(2) {
-                    left: auto;
-                    right: -100%;
-                    opacity: 0;
-                }
+        .header .logo {
+            font-size: 20px;
+        }
+    }
 
-                &:nth-child(1) {
-                    transform: translateY(-50%) rotate(45deg);
-                    top: 50%;
-                }
+    @media(max-width: 500px) {
+        .burger {
+            display: block;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            transition: all .3s;
+            z-index: 5;
+            background: transparent;
+            outline: none;
+            border: none;
 
-                &:nth-child(3) {
-                    transform: translateY(-50%) rotate(-45deg);
-                    top: 50%;
+            &--active {
+                .lines {
+                    transition: all .3s;
+
+                    &:nth-child(2) {
+                        left: auto;
+                        right: -100%;
+                        opacity: 0;
+                    }
+
+                    &:nth-child(1) {
+                        transform: translateY(-50%) rotate(45deg);
+                        top: 50%;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translateY(-50%) rotate(-45deg);
+                        top: 50%;
+                    }
                 }
             }
         }
-    }
 
-    .lines {
-        height: 2px;
-        width: 100%;
-        background-color: $white;
-        border-radius: 1px;
-        position: absolute;
-        transition: all .3s;
-        left: 0;
+        .lines {
+            height: 2px;
+            width: 100%;
+            background-color: $white;
+            border-radius: 1px;
+            position: absolute;
+            transition: all .3s;
+            left: 0;
 
-        &:nth-child(1) {
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                right: 0;
+                left: 0;
+                top: 50%;
+                transform: translateY(-40%);
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+            }
+        }
+
+        .menu {
+            position: absolute;
+            left: -100%;
             top: 0;
+            color: #000000;
+            padding-top: 60px;
+            padding-bottom: 20px;
+            transition: all .5s;
+            background-color: rgb(102, 101, 101, .5);
+            width: 200px;
+            height: 420px;
+            border-radius: 0 20px 20px 20px;
+            backdrop-filter: blur(10px);
+            border-right: 2px solid rgb(255, 255, 255, 0.3);
+            border-bottom: 2px solid rgb(255, 255, 255, 0.3);
+
+
+            &__list {
+                flex-direction: column;
+                padding-left: 15px;
+            }
+
+            &--active {
+                left: 0;
+            }
         }
 
-        &:nth-child(2) {
-            right: 0;
-            left: 0;
-            top: 50%;
-            transform: translateY(-40%);
+        .header .menu__list-link {
+            color: $white;
         }
 
-        &:nth-child(3) {
-            bottom: 0;
-        }
-    }
-
-    .menu {
-        position: absolute;
-        left: -100%;
-        top: 0;
-        color: #000000;
-        padding-top: 60px;
-        padding-bottom: 20px;
-        transition: all .5s;
-        background-color: rgb(102, 101, 101, .5);
-        width: 200px;
-        height:420px;
-        border-radius: 0 20px 20px 20px;
-        backdrop-filter: blur(10px);
-        border-right: 2px solid rgb(255, 255, 255, 0.3);
-        border-bottom: 2px solid rgb(255, 255, 255, 0.3);
-        
-
-        &__list {
-            flex-direction: column;
-            padding-left: 15px;
+        .header {
+            &__inner {
+                padding: 10px 0;
+            }
         }
 
-        &--active {
-            left: 0;
+
+        .header__btn {
+            padding: 5px 13px;
+            font-size: 14px;
+        }
+
+
+
+
+
+        .container {
+            min-width: 100%;
         }
     }
-
-    .header .menu__list-link {
-        color: $white;
-    }
-
-    .header {
-        &__inner {
-            padding: 10px 0;
-        }
-    }
-
-
-    .header__btn {
-        padding: 5px 13px;
-        font-size: 14px;
-    }
-
-   
-
-    
-
-    .container {
-        min-width: 100%;
-    }
-
-    
-}
-
