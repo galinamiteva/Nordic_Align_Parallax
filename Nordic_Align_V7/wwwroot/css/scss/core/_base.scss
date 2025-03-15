@@ -20,3 +20,34 @@
 .hide {
     display: none !important;
 }
+
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+input:-moz-autofill {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+input:-ms-input-placeholder {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+input:focus:-webkit-autofill {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+input:focus:-moz-autofill {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+input:focus:-ms-input-placeholder {
+    background-color: transparent !important;
+    color: #fff !important;
+}

@@ -87,7 +87,7 @@ $login-background: '/images/Login.jpg';
     }
 
     form .submitBtn input[type="submit"] {
-        background: #21c9f3;
+        background: #196679;
         font-weight: 500;
         cursor: pointer;
     }
@@ -131,5 +131,14 @@ $login-background: '/images/Login.jpg';
         background-size: cover;
         background-position: center;
         filter: blur(15px);
+    }
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: #fff !important;
     }
 }
