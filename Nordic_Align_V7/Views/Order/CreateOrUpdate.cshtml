@@ -53,7 +53,7 @@
 
                         <div class="inputBox">
                             <label class="label">Mottagare</label>
-                            <div class="inputBox-content">
+                            <div class="inputBox-content select-content">
                                 <select name="recepientId" class="form-select">
                                     <option value="null">Nej</option>
                                     @foreach (var recepient in ViewBag.Recepients)
@@ -84,7 +84,7 @@
 
                             <div class="inputBox">
                                 <label class="label">Kurir</label>
-                                <div class="inputBox-content">
+                            <div class="inputBox-content select-content">
                                     <select name="courierId" class="form-select">
                                         <option value="null">Nej</option>
                                         @foreach (var courier in ViewBag.Couriers)
@@ -104,7 +104,7 @@
 
                             <div class="inputBox">
                                 <label class="label">Transport</label>
-                                <div class="inputBox-content">
+                            <div class="inputBox-content select-content">
                                     <select name="transportId" class="form-select">
                                         <option value="null">Nej</option>
                                         @foreach (var transport in ViewBag.Transports)
@@ -124,7 +124,7 @@
 
                             <div class="inputBox">
                                 <label class="col-sm-2 col-form-label">Lager</label>
-                                <div class="inputBox-content">
+                            <div class="inputBox-content">
                                     <select name="warehouses" class="form-select" multiple>
                                         @foreach (var warehouse in ViewBag.Warehouses)
                                         {

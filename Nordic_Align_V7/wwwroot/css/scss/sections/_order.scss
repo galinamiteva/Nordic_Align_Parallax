@@ -1,4 +1,4 @@
-.order {
+﻿.order {
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -219,6 +219,44 @@
                         font-weight: 600;
                     }
                 }
+
+
+                .inputBox-content select {
+                    width: 100%;
+                    min-width: 434px;
+                    background: rgba(255, 255, 255, 0.2);
+                    border: none;
+                    outline: none;
+                    padding: 10px 20px;
+                    border-radius: 35px;
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    border-right: 1px solid rgba(255, 255, 255, 0.2);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    color: black;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    cursor: pointer;
+                }
+
+
+                .inputBox-content {
+                    position: relative;
+                }
+
+                .select-content::after {
+                    content: '▼';
+                    font-size: 14px;
+                    color: black;
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                }
             }
         }
     }
@@ -233,7 +271,7 @@
 }
 
 
-.courier-table {
+.order-table {
     overflow: hidden;
     display: flex;
     justify-content: center;

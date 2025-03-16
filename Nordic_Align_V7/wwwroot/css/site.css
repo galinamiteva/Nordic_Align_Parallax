@@ -1,4 +1,5 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+﻿@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -1160,6 +1161,39 @@ input:-webkit-autofill:active {
   margin-bottom: 20px;
   font-weight: 600;
 }
+.order .container .form form .inputBox-content select {
+  width: 100%;
+  min-width: 434px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+.order .container .form form .inputBox-content {
+  position: relative;
+}
+.order .container .form form .select-content::after {
+  content: "▼";
+  font-size: 14px;
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 .order input:-webkit-autofill,
 .order input:-webkit-autofill:hover,
 .order input:-webkit-autofill:focus,
@@ -1168,7 +1202,7 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #000 !important;
 }
 
-.courier-table {
+.order-table {
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1176,35 +1210,35 @@ input:-webkit-autofill:active {
   min-height: 100vh;
   background: linear-gradient(to bottom, #f6edd7, #e3c559);
 }
-.courier-table .color {
+.order-table .color {
   position: absolute;
   filter: blur(150px);
 }
-.courier-table .color:nth-child(1) {
+.order-table .color:nth-child(1) {
   top: -350px;
   width: 800px;
   height: 800px;
   background: #c4f0ef;
 }
-.courier-table .color:nth-child(2) {
+.order-table .color:nth-child(2) {
   bottom: -150px;
   left: 10px;
   width: 500px;
   height: 500px;
   background: #2ec0bd;
 }
-.courier-table .color:nth-child(3) {
+.order-table .color:nth-child(3) {
   bottom: 30px;
   right: 20px;
   width: 500px;
   height: 300px;
   background: #398868;
 }
-.courier-table .box {
+.order-table .box {
   position: relative;
   margin-top: 90px;
 }
-.courier-table .box .square {
+.order-table .box .square {
   position: absolute;
   backdrop-filter: blur(5px);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
@@ -1216,33 +1250,33 @@ input:-webkit-autofill:active {
   animation: animate 10s linear infinite;
   animation-delay: calc(-1s * var(--i));
 }
-.courier-table .box .square:nth-child(1) {
+.order-table .box .square:nth-child(1) {
   top: -50px;
   right: -60px;
   width: 100px;
   height: 100px;
 }
-.courier-table .box .square:nth-child(2) {
+.order-table .box .square:nth-child(2) {
   top: 350px;
   left: -112px;
   width: 120px;
   height: 120px;
   z-index: 2;
 }
-.courier-table .box .square:nth-child(3) {
+.order-table .box .square:nth-child(3) {
   bottom: 50px;
   right: -60px;
   width: 80px;
   height: 80px;
   z-index: 2;
 }
-.courier-table .box .square:nth-child(4) {
+.order-table .box .square:nth-child(4) {
   bottom: -80px;
   left: 100px;
   width: 50px;
   height: 50px;
 }
-.courier-table .box .square:nth-child(5) {
+.order-table .box .square:nth-child(5) {
   top: -80px;
   left: 140px;
   width: 60px;
@@ -1256,7 +1290,7 @@ input:-webkit-autofill:active {
     transform: translateY(40px);
   }
 }
-.courier-table .container {
+.order-table .container {
   position: relative;
   min-width: 800px;
   min-height: 700px;
@@ -1273,7 +1307,7 @@ input:-webkit-autofill:active {
   margin-bottom: 400px;
   padding-bottom: 3rem;
 }
-.courier-table .container .form h2 {
+.order-table .container .form h2 {
   position: relative;
   color: #000;
   font-size: 25px;
@@ -1281,7 +1315,7 @@ input:-webkit-autofill:active {
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
-.courier-table .container .form h2:before {
+.order-table .container .form h2:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1290,7 +1324,7 @@ input:-webkit-autofill:active {
   height: 4px;
   background: #fff;
 }
-.courier-table .container .form form .inputBox input {
+.order-table .container .form form .inputBox input {
   width: 100%;
   min-width: 434px;
   background: rgba(255, 255, 255, 0.2);
@@ -1306,23 +1340,23 @@ input:-webkit-autofill:active {
   color: #000;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
-.courier-table .container .form form .inputBox input::placeholder {
+.order-table .container .form form .inputBox input::placeholder {
   background: transparent;
 }
-.courier-table .container .form .table {
+.order-table .container .form .table {
   margin-bottom: 2rem;
 }
-.courier-table .container .form .table .icon {
+.order-table .container .form .table .icon {
   font-size: 20px;
   color: rgb(102, 101, 101);
 }
-.courier-table .container .form .button-secondary {
+.order-table .container .form .button-secondary {
   margin-bottom: 3rem;
 }
-.courier-table input:-webkit-autofill,
-.courier-table input:-webkit-autofill:hover,
-.courier-table input:-webkit-autofill:focus,
-.courier-table input:-webkit-autofill:active {
+.order-table input:-webkit-autofill,
+.order-table input:-webkit-autofill:hover,
+.order-table input:-webkit-autofill:focus,
+.order-table input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #000 !important;
 }
