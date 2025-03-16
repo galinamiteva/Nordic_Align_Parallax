@@ -21,6 +21,10 @@
   display: none !important;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -61,6 +65,11 @@ input:-webkit-autofill:active {
   backdrop-filter: blur(10px);
   border-right: 2px solid rgba(255, 255, 255, 0.3);
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+body .select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: rgba(102, 101, 101, 0.5) !important;
+  color: white !important;
 }
 
 .header {
@@ -1161,6 +1170,55 @@ input:-webkit-autofill:active {
   margin-bottom: 20px;
   font-weight: 600;
 }
+.order .container .form form .select2-container--default .select2-selection--single:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.order .container .form form .select2-container--default .select2-results__option {
+  background: rgba(102, 101, 101, 0.4);
+  color: white;
+  padding: 10px;
+}
+.order .container .form form .select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background: rgba(102, 101, 101, 0.5) !important;
+  color: white !important;
+}
+.order .container .form form .select2-container--default .select2-selection--single {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 35px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  height: auto;
+  min-width: 434px;
+  font-size: 16px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order .container .form form .select2-container--default .select2-selection__arrow {
+  display: none;
+}
+.order .container .form form .select2-container--default .select2-results__option--highlighted[aria-selected],
+.order .container .form form .select2-container--default .select2-results__option--highlighted {
+  background-color: rgba(102, 101, 101, 0.5) !important;
+  color: white !important;
+}
+.order .container .form form .select2-container--default .select2-results__option {
+  background-color: rgba(102, 101, 101, 0.4) !important;
+  color: white !important;
+}
+.order .container .form form .select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: rgb(102, 101, 101) !important;
+  color: white !important;
+}
+.order .container .form form .custom-select-dropdown:focus,
+.order .container .form form .custom-select-dropdown:hover,
+.order .container .form form .select2-container--default .select2-selection--single:focus {
+  outline: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: none !important;
+}
 .order .container .form form .inputBox-content select {
   width: 100%;
   min-width: 434px;
@@ -1184,10 +1242,18 @@ input:-webkit-autofill:active {
 .order .container .form form .inputBox-content {
   position: relative;
 }
+.order .container .form form .inputBox-content select option {
+  background: rgba(102, 101, 101, 0.4);
+  color: white;
+}
+.order .container .form form .inputBox-content select option:hover {
+  background: rgb(102, 101, 101) !important;
+  color: white;
+}
 .order .container .form form .select-content::after {
   content: "▼";
   font-size: 14px;
-  color: black;
+  color: #000;
   position: absolute;
   top: 50%;
   right: 15px;
@@ -1200,6 +1266,11 @@ input:-webkit-autofill:active {
 .order input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #000 !important;
+}
+
+.order .select2-container--default .select2-selection--single .select2-results__option--highlighted[aria-selected=true] {
+  background-color: rgba(102, 101, 101, 0.9) !important;
+  color: white !important;
 }
 
 .order-table {

@@ -20,6 +20,11 @@
 .hide {
     display: none !important;
 }
+
+a {
+    text-decoration: none;
+}
+
 // autofill transparent
 
 /*input:-webkit-autofill,
@@ -65,3 +70,10 @@ input:-webkit-autofill:active {
         border-bottom: 2px solid rgba(255, 255, 255, .3);
     }
 }
+
+body .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: rgba(102, 101, 101, 0.5) !important;
+    color: white !important;
+}
+
+

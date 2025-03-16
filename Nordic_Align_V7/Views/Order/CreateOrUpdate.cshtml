@@ -54,7 +54,7 @@
                         <div class="inputBox">
                             <label class="label">Mottagare</label>
                             <div class="inputBox-content select-content">
-                                <select name="recepientId" class="form-select">
+                            <select name="recepientId" class="custom-select-dropdown">
                                     <option value="null">Nej</option>
                                     @foreach (var recepient in ViewBag.Recepients)
                                     {
@@ -70,6 +70,7 @@
                                 </select>
                             </div>
                         </div>
+
                         @if (role == "Admin")
                         {
                             <div class="inputBox">
@@ -82,10 +83,12 @@
 
 
 
+                        
+
                             <div class="inputBox">
                                 <label class="label">Kurir</label>
-                            <div class="inputBox-content select-content">
-                                    <select name="courierId" class="form-select">
+                                <div class="inputBox-content select-content">
+                                <select name="courierId" class="custom-select-dropdown">
                                         <option value="null">Nej</option>
                                         @foreach (var courier in ViewBag.Couriers)
                                         {
@@ -100,12 +103,13 @@
                                         }
                                     </select>
                                 </div>
-                            </div>
+                            </div>                      
+
 
                             <div class="inputBox">
                                 <label class="label">Transport</label>
                             <div class="inputBox-content select-content">
-                                    <select name="transportId" class="form-select">
+                                <select name="transportId" class="custom-select-dropdown">
                                         <option value="null">Nej</option>
                                         @foreach (var transport in ViewBag.Transports)
                                         {
@@ -122,10 +126,11 @@
                                 </div>
                             </div>
 
+
                             <div class="inputBox">
                                 <label class="col-sm-2 col-form-label">Lager</label>
                             <div class="inputBox-content">
-                                    <select name="warehouses" class="form-select" multiple>
+                                <select name="warehouses" class="custom-select" id="customSelect" multiple>
                                         @foreach (var warehouse in ViewBag.Warehouses)
                                         {
                                             if (Model != null && Model.Id != 0 && Model.Warehouses.Contains(warehouse))
@@ -161,3 +166,20 @@
 
 <script defer src="~/js/order_validation.js"></script>
 <script defer src="~/js/main.js"></script>
+<script>
+
+
+          $(document).ready(function() {
+        $('.custom-select-dropdown').select2({
+            minimumResultsForSearch: -1
+        }).on('select2:open', function() {
+            $('.select2-container--default .select2-results__option--highlighted[aria-selected="true"]')
+                .css('background-color', 'rgba(102, 101, 101, 0.9)')
+                .css('color', 'white');
+        });
+    });
+
+
+
+
+</script>
