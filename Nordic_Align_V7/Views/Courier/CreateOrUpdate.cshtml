@@ -2,12 +2,11 @@
 
 @{
     // Ställ in titeln beroende på om modellen är tom eller inte
-    ViewData["Title"] = Model != null && Model.Id != 0 ? "Change courier" : "Lägg till courier";
+    ViewData["Title"] = Model != null && Model.Id != 0 ? "Förändra kurir" : "Lägg till kurir";
 }
 
 
-@* <h2 class="text-center mb-4">@ViewData["Title"]</h2>
- *@
+
 
 
 <section class="courier">
@@ -23,7 +22,8 @@
 
                <div class="container">
                     <div class="form">
-                        <h2>Kurirer</h2>
+                    <h2>@ViewData["Title"]</h2>
+
                         <form asp-action="@(Model != null && Model.Id != 0 ? "Edit" : "Create")" method="post" class="needs-validation" novalidate>
                             <input type="hidden" asp-for="Id" />
 
@@ -84,10 +84,10 @@
                                 </div>
                             </div>
 
-                            <div class="inputBox">
+                            <div class="inputBox inputButton-group">
                                 <div class="inputBox-btn">
-                                    <button type="submit" class="btn-first btn-submit">Spara</button>
-                                    <a asp-action="Index" class="btn-two btn-submit">Avboka</a>
+                                    <button type="submit" class="button-primary btn-submit">Spara</button>
+                                    <a asp-action="Index" class="button-secondary btn-submit">Avboka</a>
                                 </div>
                             </div>
                         </form>
@@ -99,5 +99,6 @@
 
 
 <script defer src="~/js/courier_validation.js"></script>
+<script defer src="~/js/main.js"></script>
 
 

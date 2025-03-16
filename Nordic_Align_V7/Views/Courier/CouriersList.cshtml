@@ -3,40 +3,68 @@
 @{
     ViewData["Title"] = "Kurirer";
 }
-<form asp-action="Search">
-    <div class="input-group">
-        <input type="text" name="searchString" class="form-control" placeholder="Sök på kurirnamn..." />
-        <button type="submit" class="btn btn-primary">Sök efter</button>
-    </div>
-</form>
-<table class="table">
-    <tr>
-        <th>@Html.DisplayNameFor(model => model.FullName)</th>
-        <th>@Html.DisplayNameFor(model => model.Personnummer)</th>
-        <th>@Html.DisplayNameFor(model => model.EmploymentDate)</th>
-        <th>@Html.DisplayNameFor(model => model.StartWorkTime)</th>
-        <th>@Html.DisplayNameFor(model => model.EndWorkTime)</th>
-        <th>@Html.DisplayNameFor(model => model.LivingPlace)</th>
-        <th>@Html.DisplayNameFor(model => model.Phone)</th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <th>
-                <a style="color:black" href="/Order/OrdersByCourierId?courierId=@item.Id">@Html.DisplayFor(modelItem => item.FullName)</a>
-            </th>
-            <th>@Html.DisplayFor(modelItem => item.Personnummer)</th>
-            <th>@item.EmploymentDate.ToShortDateString()</th>
-            <th>@item.StartWorkTime.ToString(@"hh\:mm")</th>
-            <th>@item.EndWorkTime.ToString(@"hh\:mm")</th>
-            <th>@Html.DisplayFor(modelItem => item.LivingPlace)</th>
-            <th>@Html.DisplayFor(modelItem => item.Phone)</th>
-            <th><a href="/Courier/Edit?id=@item.Id">&#9998;</a></th>
-            <th>
-                <a href="/Courier/Delete?id=@item.Id">&#128465;</a>
-            </th>
-        </tr>
-    }
-</table>
-<a href="/Courier/Create" class="btn btn-success">Lägg till kurir</a>
+<section class="courier-table">
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+
+    <div class="box">
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+        <div class="square" style="--i:2;"></div>
+        <div class="square" style="--i:3;"></div>
+        <div class="square" style="--i:4;"></div>
+
+        <div class="container">
+
+            <div class="form">
+                <h2>Kurir tabell</h2>
+                <form asp-action="Search">
+                    <div class="inputBox">
+                        <input type="text" name="searchString" class="form-control" placeholder="Sök på kurirnamn..." />
+                        <button type="submit" class="button-primary">Sök efter</button>
+                    </div>
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                        <th>@Html.DisplayNameFor(model => model.Personnummer)</th>
+                        <th>@Html.DisplayNameFor(model => model.EmploymentDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.StartWorkTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.EndWorkTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.LivingPlace)</th>
+                        <th>@Html.DisplayNameFor(model => model.Phone)</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>
+                                <a style="color:black" href="/Order/OrdersByCourierId?courierId=@item.Id">@Html.DisplayFor(modelItem => item.FullName)</a>
+                            </th>
+                            <th>@Html.DisplayFor(modelItem => item.Personnummer)</th>
+
+                            <th>@item.EmploymentDate.ToShortDateString()</th>
+                            <th>@item.StartWorkTime.ToString(@"hh\:mm")</th>
+                            <th>@item.EndWorkTime.ToString(@"hh\:mm")</th>
+
+                         
+
+                            <th>@Html.DisplayFor(modelItem => item.LivingPlace)</th>
+                            <th>@Html.DisplayFor(modelItem => item.Phone)</th>
+                            <th><a class="icon" href="/Courier/Edit?id=@item.Id">&#9998;</a></th>
+                            <th>
+                                <a class="icon"  href="/Courier/Delete?id=@item.Id">&#128465;</a>
+                            </th>
+                        </tr>
+                    }
+                </table>
+                <a  asp-controller="Courier" target="_self" asp-action="Create"  class="button-secondary">Lägg till kurir</a>
+
+
+            </div>         
+        </div>       
+    </div>    
+</section>
+
+<script defer src="~/js/main.js"></script>

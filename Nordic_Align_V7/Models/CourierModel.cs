@@ -8,7 +8,7 @@ public class CourierModel
     public int Id { get; set; }
 
 
-    [DisplayName("Förnamn och efternamn")]
+    [DisplayName("Namn")]
     [MaxLength(30)]
     [Required]
     public string FullName { get; set; } = null!;
@@ -20,15 +20,15 @@ public class CourierModel
 
 
 
-    [DisplayName("Anställningsdatum")]
+    [DisplayName("Anställnings datum")]
     [Required]
 
     public DateTime EmploymentDate { get; set; }
 
-    [DisplayName("Start av arbetsdagen")]
+    [DisplayName("Arbetsdag start")]
     [Required]
     public TimeSpan StartWorkTime { get; set; }
-    [DisplayName("Slut på arbetsdagen")]
+    [DisplayName("Arbetsdag slut")]
     [Required]
     public TimeSpan EndWorkTime { get; set; }
     [DisplayName("Ort")]
