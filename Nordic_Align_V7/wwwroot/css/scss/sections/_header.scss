@@ -60,7 +60,7 @@
 
         @media(min-width: 768px) {
             .custom-dropdown .menu__list-black {
-                    color: $black !important;
+                color: $black !important;
             }
         }
 
@@ -99,6 +99,10 @@
             background-color: $white;
             color: #000000;
         }
+    }
+
+    &__btn__login {
+        padding: 7px 29px;
     }
 }
 
@@ -231,7 +235,9 @@
             font-size: 14px;
         }
 
-
+        .header__btn__login {
+            padding: 5px 19px;
+        }
 
 
 

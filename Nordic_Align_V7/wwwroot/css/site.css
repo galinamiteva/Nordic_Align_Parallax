@@ -160,6 +160,9 @@ body .select2-results__option[aria-selected] {
   background-color: #FFF;
   color: #000000;
 }
+.header__btn__login {
+  padding: 7px 29px;
+}
 
 .burger {
   display: none;
@@ -258,6 +261,9 @@ body .select2-results__option[aria-selected] {
   .header__btn {
     padding: 5px 13px;
     font-size: 14px;
+  }
+  .header__btn__login {
+    padding: 5px 19px;
   }
   .container {
     min-width: 100%;
