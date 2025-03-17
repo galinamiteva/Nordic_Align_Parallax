@@ -1,11 +1,11 @@
-.mottagare {
+.lager {
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(to bottom, #f6edd7, #e3c559);
-    
+
 
 
     .color {
@@ -234,7 +234,7 @@
 }
 
 
-.mottagare-table {
+.lager-table {
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -273,7 +273,7 @@
 
     .box {
         position: relative;
-        margin-top: 90px;
+        margin-top: 220px;
     }
 
     .box .square {
@@ -339,8 +339,8 @@
 
     .container {
         position: relative;
-        min-width: 800px;
-        min-height: 600px;
+        min-width: 700px;
+        min-height: 550px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         display: flex;
