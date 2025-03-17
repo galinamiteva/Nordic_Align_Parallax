@@ -5,57 +5,81 @@
     // Ställ in titeln beroende på om modellen är tom eller inte
     ViewData["Title"] = Model != null && Model.Id != 0 ? "Ändra mottagare" : "Lägg till mottagare";
 }
-<h2 class="text-center mb-4">@ViewData["Title"]</h2>
 
-<div class="container">
-    <form asp-action="@(Model != null && Model.Id != 0 ? "Edit" : "Create")" method="post" class="needs-validation" novalidate>
-        <input type="hidden" asp-for="Id" />
 
-        <div class="row mb-3">
-            <label asp-for="FullName" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
-            </div>
+
+
+
+<section class="mottagare">
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    
+    <div class="box">
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+        <div class="square" style="--i:2;"></div>
+        <div class="square" style="--i:3;"></div>
+        <div class="square" style="--i:4;"></div>
+
+        <div class="container">
+            <div class="form">
+                <h2 >@ViewData["Title"]</h2>
+
+                <form asp-action="@(Model != null && Model.Id != 0 ? "Edit" : "Create")" method="post" class="needs-validation" novalidate>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="inputBox">
+                        <label asp-for="FullName" class="label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="inputBox">
+                        <label asp-for="PostalCode" class="label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="PostalCode" class="form-control" />
+                            <span asp-validation-for="PostalCode" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label asp-for="DeliveryAddress" class="label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="DeliveryAddress" class="form-control" />
+                            <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label asp-for="Phone" class="label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="inputBox inputButton-group">
+                        <div class="inputBox-btn">
+                            <button type="submit" class="button-primary btn-submit">Spara</button>
+                            <a asp-action="Index" class="button-secondary btn-submit">Avboka</a>
+                        </div>
+                    </div>
+                </form>
+            </div>            
         </div>
+    </div>   
+
+</section>
 
 
-        <div class="row mb-3">
-            <label asp-for="PostalCode" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
-                <input asp-for="PostalCode" class="form-control" />
-                <span asp-validation-for="PostalCode" class="text-danger"></span>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label asp-for="DeliveryAddress" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
-                <input asp-for="DeliveryAddress" class="form-control" />
-                <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label asp-for="Phone" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-10 offset-sm-2">
-                <button type="submit" class="btn btn-primary">Spara</button>
-                <a asp-action="Index" class="btn btn-secondary ms-2">Avboka</a>
-            </div>
-        </div>
-    </form>
-</div>
 
 
 <script defer src="~/js/recepient_validation.js"></script>
-
+<script defer src="~/js/main.js"></script>
 
 
 

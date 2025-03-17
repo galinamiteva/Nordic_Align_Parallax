@@ -6,7 +6,7 @@ namespace Nordic_Align_V7.Models;
 public class RecepientModel
 {
     public int Id { get; set; }
-    [DisplayName("Fullständigt namn")]
+    [DisplayName("Namn")]
     [MaxLength(30)]
     [Required]
     public string FullName { get; set; } = null!;
@@ -15,7 +15,7 @@ public class RecepientModel
     [DisplayName("Postnummer")]
     [Required]
     public int PostalCode { get; set; }
-    [DisplayName("Leveransadress")]
+    [DisplayName("Leverans adress")]
     [MaxLength(50)]
     [Required]
     public string DeliveryAddress { get; set; } = null!;

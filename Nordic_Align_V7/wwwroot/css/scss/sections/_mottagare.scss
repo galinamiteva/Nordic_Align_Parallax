@@ -1,4 +1,4 @@
-.courier {
+.mottagare {
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
 
     .box {
         position: relative;
-        margin-top: 90px;
+        margin-top: 220px;
     }
 
     .box .square {
@@ -90,8 +90,6 @@
             width: 60px;
             height: 60px;
         }
-
-       
     }
 
     @keyframes animate {
@@ -236,7 +234,7 @@
 }
 
 
-.courier-table {
+.mottagare-table {
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -341,8 +339,8 @@
 
     .container {
         position: relative;
-        min-width: 800px;
-        min-height: 700px;
+        min-width: 700px;
+        min-height: 600px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         display: flex;
@@ -401,7 +399,7 @@
             }
 
             .table {
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
 
 
                 .icon {

@@ -8,54 +8,84 @@
 @{
     ViewData["Title"] = "Mottagare";
 }
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.PostalCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeliveryAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <th>
-                <a style="color:black" href="/Order/OrdersByRecipientId?recipientId=@item.Id">@Html.DisplayFor(modelItem => item.FullName)</a>
-            </th>
+<section class="mottagare-table">
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+
+    <div class="box">
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+        <div class="square" style="--i:2;"></div>
+        <div class="square" style="--i:3;"></div>
+        <div class="square" style="--i:4;"></div>
+
+        <div class="container">
+            <div class="form">
+                <h2>Mottagare tabell</h2>
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.PostalCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DeliveryAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>
+                                <a style="color:black" href="/Order/OrdersByRecipientId?recipientId=@item.Id">@Html.DisplayFor(modelItem => item.FullName)</a>
+                            </th>
 
 
 
 
-            <th>
-                @Html.DisplayFor(modelItem => item.PostalCode)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.DeliveryAddress)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => item.PostalCode)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => item.DeliveryAddress)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </th>
 
-            @if (role == "Admin")
-            {
-                <th>
-                    <a href="/Recepient/Edit?id=@item.Id">&#9998;</a>
-                </th>
-                <th>
-                    <a href="/Recepient/Delete?id=@item.Id">&#128465;</a>
-                </th>
-            }
-        </tr>
+                            @if (role == "Admin")
+                            {
+                                <th>
+                                    <a class="icon"  href="/Recepient/Edit?id=@item.Id">&#9998;</a>
+                                </th>
+                                <th>
+                                    <a class="icon"  href="/Recepient/Delete?id=@item.Id">&#128465;</a>
+                                </th>
+                            }
+                        </tr>
 
-    }
-</table>
-<a href="/Recepient/Create" class="btn btn-success">Lägg till mottagare</a>
+                    }
+                </table>
+                <a asp-controller="Recepient" target="_self" asp-action="Create" class="button-secondary">Lägg till mottagare</a>
+
+            </div>
+            
+        </div>
+
+        
+
+    </div>
+    
+
+</section>
+
+<script defer src="~/js/main.js"></script>
