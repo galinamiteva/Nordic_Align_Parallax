@@ -7,14 +7,14 @@ namespace Nordic_Align_V7.Models;
 public class OrderModel
 {
     public int Id { get; set; }
-    [DisplayName("Avsändare Fullständigt Namn")]
+    [DisplayName("Namn")]
     [MaxLength(50)]
     [Required]
     public string Sender { get; set; } = null!;
-    [DisplayName("Beställningsdatum")]
+    [DisplayName("Beställnings datum")]
     [Required]
     public DateTime OrderDate { get; set; }
-    [DisplayName("Leveransdatum")]
+    [DisplayName("Leverans datum")]
     [Required]
     public DateTime DeliveryDate { get; set; }
     [DisplayName("Pris")]

@@ -1386,6 +1386,9 @@ body .select2-results__option[aria-selected] {
   height: 4px;
   background: #fff;
 }
+.order-table .container .form form {
+  margin-bottom: 20px;
+}
 .order-table .container .form form .inputBox input {
   width: 100%;
   min-width: 434px;
@@ -1401,6 +1404,7 @@ body .select2-results__option[aria-selected] {
   letter-spacing: 1px;
   color: #000;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 17px;
 }
 .order-table .container .form form .inputBox input::placeholder {
   background: transparent;
