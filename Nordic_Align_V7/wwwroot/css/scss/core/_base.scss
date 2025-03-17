@@ -76,4 +76,8 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
     color: white !important;
 }
 
+body .select2-results__option[aria-selected] {
+    background: #a5d3c0 !important;
+    backdrop-filter: blur(5px) !important;
+}
 

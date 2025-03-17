@@ -128,9 +128,10 @@
 
 
                             <div class="inputBox">
-                                <label class="col-sm-2 col-form-label">Lager</label>
-                            <div class="inputBox-content">
-                                <select name="warehouses" class="custom-select" id="customSelect" multiple>
+                            <label class="label">Lager</label>
+                            <div class="inputBox-content select-content">
+                                <select name="warehouses" class="custom-select-dropdown" >
+                                    <option value="null">Nej</option>
                                         @foreach (var warehouse in ViewBag.Warehouses)
                                         {
                                             if (Model != null && Model.Id != 0 && Model.Warehouses.Contains(warehouse))
