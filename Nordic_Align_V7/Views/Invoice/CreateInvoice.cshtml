@@ -2,85 +2,151 @@
 @model InvoiceViewModel
 
 
-
-<h1>Skapa faktura</h1>
-
-<form method="post" action="/Invoice/CreateInvoice">
-    <h2>Fakturadetaljer</h2>
-    <label for="InvoiceNumber">Fakturanummer:</label>
-    <input type="text" id="InvoiceNumber" name="InvoiceNumber" required>
-    <br>
-
-    <label for="IssueDate">Utfärdandedatum</label>
-    <input type="date" id="IssueDate" name="IssueDate" required onchange="calculateDueDate()">
-    <br>
-
-    <label for="DueDate">Förfallodatum:</label>
-    <input type="date" id="DueDate" name="DueDate" readonly>
-    <br>
-
-    <h2>Kunduppgifter</h2>
-    <label for="CompanyName">Företag:</label>
-    <input type="text" id="CompanyName" name="CompanyName" required>
-    <br>
-
-    <label for="Street">Adress:</label>
-    <input type="text" id="Street" name="Street" required>
-    <br>
-
-    <label for="City">Stad:</label>
-    <input type="text" id="City" name="City" required>
-    <br>
-
-    <label for="PostalCode">Postnummer:</label>
-    <input type="text" id="PostalCode" name="PostalCode" required>
-    <br>
-
-    <label for="Country">Land:</label>
-    <input type="text" id="Country" name="Country" required>
-    <br>
-
-    <label for="Email">E-post:</label>
-    <input type="email" id="Email" name="Email" required>
-    <br>
-
-    <label for="Phone">Telefon:</label>
-    <input type="text" id="Phone" name="Phone">
-    <br>
-
-    <h2>Produkter</h2>
-    <div id="items-container">
-        @for (int i = 0; i < 1; i++)
-        {
-            <div class="item-row">
-                <label for="Items[@i].Item">Produkt:</label>
-                <input type="text" name="itemNames[]" required>
-
-                <label for="Items[@i].Quantity">Antal:</label>
-                <input type="number" name="quantities[]" required>
-
-                <label for="Items[@i].Price">Pris:</label>
-                <input type="number" step="0.01" name="prices[]" required>
+<section class="invoice" style="background: url('/images/Truck7.png') no-repeat center center; background-size: cover; height: 100vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="cloud1"><img src="/images/Cloud4.png"></div>
+        <div class="cloud2"><img src="/images/Cloud2.png"></div>
+        <div class="cloud3"><img src="/images/Cloud3.png"></div>
+        <div class="cloud5"><img src="/images/Cloud4.png"></div>
+        <div class="cloud4"><img src="/images/Cloud5.png"></div>
 
 
+    <div class="content">
+        <div class="container">
+            <div class="form">
+
+                <h2>Skapa faktura</h2>
+
+                <form method="post" asp-controller="Invoice" asp-action="CreateInvoice">
+
+
+
+                    <div class="box">
+
+                        <div class="inputBox">
+                            <label for="InvoiceNumber">Fakturanummer:</label>
+                            <div class="inputBox-content">
+                                <input type="text" id="InvoiceNumber" name="InvoiceNumber" required>
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="IssueDate">Utfärdandedatum</label>
+                            <div class="inputBox-content">
+                                <input type="date" id="IssueDate" name="IssueDate" required onchange="calculateDueDate()">
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="DueDate">Förfallodatum:</label>
+                            <div class="inputBox-content">
+                                <input type="date" id="DueDate" name="DueDate" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="inputBox">
+                            <label for="CompanyName">Företag:</label>
+                            <div class="inputBox-content">
+                                <input type="text" id="CompanyName" name="CompanyName" required>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="Street">Adress:</label>
+                            <div class="inputBox-content">
+                                <input type="text" id="Street" name="Street" required>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="City">Stad:</label>
+                            <div class="inputBox-content">
+                                <input type="text" id="City" name="City" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="inputBox">
+                            <label for="PostalCode">Postnummer:</label>
+                            <div class="inputBox-content">
+                                <input type="text" id="PostalCode" name="PostalCode" required>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="Country">Land:</label>
+                            <div class="inputBox-content">
+                                <input type="text" id="Country" name="Country" required>
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="Email">E-post:</label>
+                            <div class="inputBox-content">
+                                <input type="email" id="Email" name="Email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+
+
+                    <div class="box-product">
+                        <div id="items-container">
+                            @for (int i = 0; i < 1; i++)
+                            {
+                                <div class="box">
+
+                                    <div class="inputBox">
+                                        <label for="Items[@i].Item">Produkt:</label>
+                                        <div class="inputBox-content">
+                                            <input type="text" name="itemNames[]" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="inputBox">
+                                        <label for="Items[@i].Quantity">Antal:</label>
+                                        <div class="inputBox-content">
+                                            <input type="number" name="quantities[]" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="inputBox">
+                                        <label for="Items[@i].Price">Pris:</label>
+                                        <div class="inputBox-content">
+                                            <input type="number" step="0.01" name="prices[]" required>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                    <button class="button-primary" type="button" onclick="addItem()">Lägg till produkt</button>
+
+
+                    @*     Add komment om vi vill*@   
+
+                  
+                    <div class="inputBox">
+                        <label for="Comment">Terms (valfritt)</label>
+                        <div class="inputBox-content">
+                            <textarea id="Comment" name="Comment" rows="2" cols="50"></textarea>
+                        </div>
+                    </div>
+
+                    <button class="button-secondary" type="submit">Generera och skicka</button>
+                </form>
 
             </div>
-        }
+
+        </div>
     </div>
+    
 
+</section>
 
-
-    <button type="button" onclick="addItem()">Lägg till produkt</button>
-    <br><br>
-    @*     Add komment om vi vill*@   
-
-    <h2>Kommentar (valfritt)</h2>
-    <label for="Comment">Kommentar:</label>
-    <textarea id="Comment" name="Comment" rows="4" cols="50"></textarea>
-    <br>
-
-    <button type="submit">Generera och skicka</button>
-</form>
+<script defer src="~/js/main.js"></script>
 
 <script>
     let itemIndex = 1; 
@@ -89,14 +155,28 @@
         const div = document.createElement("div");
         div.classList.add("item-row");
         div.innerHTML = `
-            <label>Produkt:</label>
-            <input type="text" name="itemNames[]" required>
+        <div class="box">
+            <div class="inputBox">
+                <label>Produkt:</label>
+                <div class="inputBox-content">
+                    <input type="text" name="itemNames[]" required>
+                </div>
+            </div>
 
-            <label>Antal:</label>
-            <input type="number" name="quantities[]" required>
+            <div class="inputBox">
+                <label>Antal:</label>
+                <div class="inputBox-content">
+                    <input type="number" name="quantities[]" required>
+                </div>
+            </div>
 
-            <label>Pris:</label>
-            <input type="number" step="0.01" name="prices[]" required>
+            <div class="inputBox">
+                <label>Pris:</label>
+                <div class="inputBox-content">
+                    <input type="number" step="0.01" name="prices[]" required>
+                </div>
+            </div>
+        </div>
         `;
         container.appendChild(div);
     }

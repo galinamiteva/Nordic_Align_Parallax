@@ -1467,7 +1467,7 @@ body .select2-results__option[aria-selected] {
 }
 .mottagare .box {
   position: relative;
-  margin-top: 220px;
+  margin-top: 90px;
 }
 .mottagare .box .square {
   position: absolute;
@@ -1826,7 +1826,7 @@ body .select2-results__option[aria-selected] {
 }
 .transport .box {
   position: relative;
-  margin-top: 220px;
+  margin-top: 90px;
 }
 .transport .box .square {
   position: absolute;
@@ -2026,7 +2026,7 @@ body .select2-results__option[aria-selected] {
 }
 .transport-table .box {
   position: relative;
-  margin-top: 190px;
+  margin-top: 90px;
 }
 .transport-table .box .square {
   position: absolute;
@@ -2185,7 +2185,7 @@ body .select2-results__option[aria-selected] {
 }
 .lager .box {
   position: relative;
-  margin-top: 220px;
+  margin-top: 90px;
 }
 .lager .box .square {
   position: absolute;
@@ -2385,7 +2385,7 @@ body .select2-results__option[aria-selected] {
 }
 .lager-table .box {
   position: relative;
-  margin-top: 220px;
+  margin-top: 90px;
 }
 .lager-table .box .square {
   position: absolute;
@@ -2506,6 +2506,219 @@ body .select2-results__option[aria-selected] {
 .lager-table input:-webkit-autofill:hover,
 .lager-table input:-webkit-autofill:focus,
 .lager-table input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #000 !important;
+}
+
+.invoice {
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.invoice::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+}
+.invoice::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgb(255, 255, 251) 50%, transparent);
+}
+.invoice img {
+  width: 30%;
+}
+.invoice .cloud1 {
+  position: absolute;
+  top: 60px;
+  animation: cloudOne infinite 30s linear;
+}
+.invoice .cloud2 {
+  position: absolute;
+  top: 60px;
+  animation: cloudTwo infinite 45s linear;
+}
+.invoice .cloud3 {
+  position: absolute;
+  top: -50px;
+  animation: cloudThree infinite 15s linear;
+}
+.invoice .cloud4 {
+  position: absolute;
+  top: 0px;
+  animation: cloudFour infinite 20s linear;
+}
+.invoice .cloud5 {
+  position: absolute;
+  top: 0px;
+  animation: cloudFive infinite 60s linear;
+}
+@keyframes cloudOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes cloudTwo {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes cloudThree {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes cloudFour {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes cloudFive {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.invoice .content {
+  position: relative;
+  margin-top: 90px;
+}
+.invoice .content .container {
+  width: 800px;
+  min-height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.invoice .content .container .form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.invoice .content .container .form h2 {
+  position: relative;
+  color: #000;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.invoice .content .container .form h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: #fff;
+}
+.invoice .content .container .form label {
+  text-align: left;
+  display: block;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.invoice .content .container .form form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.invoice .content .container .form form .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.invoice .content .container .form form .box .inputBox {
+  flex: 1;
+  min-width: 32%;
+  text-align: center;
+}
+.invoice .content .container .form form .box .inputBox .inputBox-content input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.invoice .content .container .form form .box .inputBox .inputBox-content input::placeholder {
+  background: transparent;
+}
+.invoice .content .container .form form .box .inputBox .inputBox-content input[type=submit] {
+  background: #fff;
+  color: #667;
+  max-width: 100px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.invoice #Comment {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.invoice #Comment::placeholder {
+  background: transparent;
+}
+.invoice #Comment[type=submit] {
+  background: #fff;
+  color: #667;
+  max-width: 100px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.invoice input:-webkit-autofill,
+.invoice input:-webkit-autofill:hover,
+.invoice input:-webkit-autofill:focus,
+.invoice input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #000 !important;
 }
