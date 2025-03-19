@@ -2627,7 +2627,7 @@ body .select2-results__option[aria-selected] {
   font-size: 25px;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: left;
 }
 .invoice .content .container .form h2::before {
