@@ -1,7 +1,9 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     const senderInput = document.querySelector("input[name='Sender']");
     const deliveryDateInput = document.querySelector("input[name='DeliveryDate']");
-    const recepientSelect = document.querySelector("select[name='recepientId']");
+    const form = document.querySelector("form");
+    const recepientSelect = document.querySelector("select[name='RecepientId']");
+
 
     form.addEventListener("submit", function (event) {
         let isValid = true;
@@ -9,7 +11,7 @@
         // Kontrollera att "Mottagare" består av två ord
         const senderValue = senderInput.value.trim();
         const words = senderValue.split(/\s+/);
-        if (words.length == "" && words.length < 2) {
+        if ( words.length < 2) {
             alert("Mottagaren måste innehålla minst två ord.");
             isValid = false;
         }
@@ -24,11 +26,18 @@
             isValid = false;
         }
 
-        // Kontrollera om mottagaren är vald
+              
+        if (senderInput) {
+            senderInput.removeAttribute("disabled");
+        }
+
+        //  Kontrollera om mottagaren är vald
         if (!recepientSelect.value || recepientSelect.value === "null") {
             alert("Du måste välja en mottagare.");
             isValid = false;
         }
+
+       
 
         // Om någon kontroll misslyckas, avbryt formulärinlämningen
         if (!isValid) {

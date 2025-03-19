@@ -26,7 +26,7 @@
 
 
         <div class="container">
-
+          
 
                 <div class="form">
 
@@ -38,7 +38,9 @@
                         <div class="inputBox">
                             <label asp-for="Sender" class="label">Avsändare</label>
                             <div class="inputBox-content">
-                                <input asp-for="Sender" class="form-control" disabled />
+                            <input asp-for="Sender" class="form-control" disabled />
+                            <input type="hidden" asp-for="Sender" />
+
                                 <span asp-validation-for="Sender" class="text-danger"></span>
                             </div>
                         </div>
@@ -51,25 +53,21 @@
                             </div>
                         </div>
 
-                        <div class="inputBox">
-                            <label class="label">Mottagare</label>
-                            <div class="inputBox-content select-content">
-                            <select name="recepientId" class="custom-select-dropdown">
-                                    <option value="null">Nej</option>
-                                    @foreach (var recepient in ViewBag.Recepients)
-                                    {
-                                        if (Model != null && Model.Id != 0 && recepient.Id == Model.RecepientId)
-                                        {
-                                            <option selected value="@recepient.Id">@recepient.FullName</option>
-                                        }
-                                        else
-                                        {
-                                            <option value="@recepient.Id">@recepient.FullName</option>
-                                        }
-                                    }
-                                </select>
-                            </div>
+                     
+
+                    <div class="inputBox">
+                        <label class="label">Mottagare</label>
+                        <div class="inputBox-content select-content">
+                            <select asp-for="RecepientId" class="custom-select-dropdown">
+                                <option value="">Välj mottagare (krävs)</option>
+                                @foreach (var recepient in ViewBag.Recepients)
+                                {
+                                    <option value="@recepient.Id">@recepient.FullName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="RecepientId" class="text-danger"></span>
                         </div>
+                    </div>
 
                         @if (role == "Admin")
                         {
@@ -88,7 +86,7 @@
                             <div class="inputBox">
                                 <label class="label">Kurir</label>
                                 <div class="inputBox-content select-content">
-                                <select name="courierId" class="custom-select-dropdown">
+                                <select name="CourierId" class="custom-select-dropdown">
                                         <option value="null">Nej</option>
                                         @foreach (var courier in ViewBag.Couriers)
                                         {
@@ -109,7 +107,7 @@
                             <div class="inputBox">
                                 <label class="label">Transport</label>
                             <div class="inputBox-content select-content">
-                                <select name="transportId" class="custom-select-dropdown">
+                                <select name="TransportId" class="custom-select-dropdown">
                                         <option value="null">Nej</option>
                                         @foreach (var transport in ViewBag.Transports)
                                         {
@@ -130,7 +128,7 @@
                             <div class="inputBox">
                             <label class="label">Lager</label>
                             <div class="inputBox-content select-content">
-                                <select name="warehouses" class="custom-select-dropdown" >
+                                <select name="warehouses[]" class="custom-select-dropdown">
                                     <option value="null">Nej</option>
                                         @foreach (var warehouse in ViewBag.Warehouses)
                                         {

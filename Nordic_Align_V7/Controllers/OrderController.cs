@@ -72,21 +72,14 @@ public class OrderController : Controller
 
         order.Sender = user.FirstName + " " + user.LastName;
 
-        // Проверка дали е избран получател
+        //måste ha recepient
         if (order.RecepientId == null || order.RecepientId == 0)
         {
             ModelState.AddModelError("RecepientId", "Du måste välja en mottagare.");
         }
 
-        if (!ModelState.IsValid)
-        {
-            ViewBag.Recepients = _db.Recepients.ToList();
-            
-            return View("CreateOrUpdate", order);
-        }
+      
 
-
-       
         order.OrderDate = DateTime.Now;
         if (warehouses != null && warehouses.Any())
         {
