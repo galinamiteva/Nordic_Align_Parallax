@@ -8,13 +8,10 @@
         const fullName = document.querySelector("input[name='FullName']").value.trim();
         const words = fullName.split(/\s+/);
         if (words.length < 2) {
-            alert("Faltet Fullstandigt namn maste innehalla minst tva ord..");
+            alert("Faltet Namn maste innehalla minst tva ord..");
         }
 
 
-       
-
-        
 
         // Kontrollera postnummer (måste vara 5 siffror)
         const postalCode = document.querySelector("input[name='PostalCode']").value.trim();
