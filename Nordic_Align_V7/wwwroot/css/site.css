@@ -73,7 +73,7 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
 }
 
 body .select2-results__option[aria-selected] {
-  background: #a5d3c0 !important;
+  background: #e3f2fd !important;
   backdrop-filter: blur(5px) !important;
 }
 
@@ -158,7 +158,7 @@ body .select2-results__option[aria-selected] {
 }
 .header__btn:hover {
   background-color: #FFF;
-  color: #000000;
+  color: #000;
 }
 .header__btn__login {
   padding: 7px 29px;
@@ -233,7 +233,7 @@ body .select2-results__option[aria-selected] {
     position: absolute;
     left: -100%;
     top: 0;
-    color: #000000;
+    color: #000;
     padding-top: 60px;
     padding-bottom: 20px;
     transition: all 0.5s;
@@ -556,12 +556,12 @@ body .select2-results__option[aria-selected] {
   justify-content: space-between;
 }
 .contact-form form .inputBox a {
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
   font-size: 0.85rem;
 }
 .contact-form form .inputBox p {
-  color: #fff;
+  color: #FFF;
   font-size: 0.85rem;
 }
 .contact-form form .inputBox a#login {
@@ -575,7 +575,7 @@ body .select2-results__option[aria-selected] {
   padding: 6px 15px;
   border-radius: 4px;
   font-size: 0.85em;
-  color: #fff;
+  color: #FFF;
   z-index: 10000;
 }
 .contact-form form .inputBox input::placeholder {
@@ -627,7 +627,7 @@ body .select2-results__option[aria-selected] {
 .contact-form input:-webkit-autofill:focus,
 .contact-form input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #fff !important;
+  -webkit-text-fill-color: #FFF !important;
 }
 
 .courier {
@@ -776,7 +776,7 @@ body .select2-results__option[aria-selected] {
 }
 .courier .container .form form .inputBox .inputBox-btn .btn-submit:hover {
   background-color: #FFF;
-  color: #000000;
+  color: #000;
 }
 .courier .container .form form .inputBox .inputBox-btn .button-secondary {
   color: #000;
@@ -1135,7 +1135,7 @@ body .select2-results__option[aria-selected] {
 }
 .order .container .form form .inputBox .inputBox-btn .btn-submit:hover {
   background-color: #FFF;
-  color: #000000;
+  color: #000;
 }
 .order .container .form form .inputBox .inputBox-btn .button-secondary {
   color: #000;
@@ -1579,7 +1579,7 @@ body .select2-results__option[aria-selected] {
 }
 .mottagare .container .form form .inputBox .inputBox-btn .btn-submit:hover {
   background-color: #FFF;
-  color: #000000;
+  color: #000;
 }
 .mottagare .container .form form .inputBox .inputBox-btn .button-secondary {
   color: #000;
@@ -1917,7 +1917,7 @@ body .select2-results__option[aria-selected] {
   bottom: -10px;
   width: 80px;
   height: 4px;
-  background: #fff;
+  background: #FFF;
 }
 .transport .container .form form {
   display: flex;
@@ -1926,9 +1926,9 @@ body .select2-results__option[aria-selected] {
 }
 .transport .container .form form .inputBox .inputBox-btn .btn-submit {
   padding: 7px 20px;
-  color: #fff;
+  color: #FFF;
   border-radius: 20px;
-  border: 1px solid #fff;
+  border: 1px solid #FFF;
   transition: all 0.5s;
   background-color: rgba(102, 101, 101, 0.5);
   backdrop-filter: blur(10px);
@@ -1938,7 +1938,7 @@ body .select2-results__option[aria-selected] {
 }
 .transport .container .form form .inputBox .inputBox-btn .btn-submit:hover {
   background-color: #FFF;
-  color: #000000;
+  color: #000;
 }
 .transport .container .form form .inputBox .inputBox-btn .button-secondary {
   color: #000;
@@ -1947,9 +1947,9 @@ body .select2-results__option[aria-selected] {
 }
 .transport .container .form form .inputBox .inputBox-btn .button-secondary:hover {
   padding: 7px 20px;
-  color: #fff;
+  color: #FFF;
   border-radius: 20px;
-  border: 1px solid #fff;
+  border: 1px solid #FFF;
   transition: all 0.5s;
   background-color: rgba(102, 101, 101, 0.5);
   backdrop-filter: blur(10px);
@@ -1977,7 +1977,7 @@ body .select2-results__option[aria-selected] {
   background: transparent;
 }
 .transport .container .form form .inputBox input[type=submit] {
-  background: #fff;
+  background: #FFF;
   color: #667;
   max-width: 100px;
   cursor: pointer;
@@ -2112,7 +2112,7 @@ body .select2-results__option[aria-selected] {
   bottom: -10px;
   width: 80px;
   height: 4px;
-  background-color: #fff;
+  background-color: #FFF;
 }
 .transport-table .container .form form .inputBox input {
   width: 100%;
@@ -2297,7 +2297,7 @@ body .select2-results__option[aria-selected] {
 }
 .lager .container .form form .inputBox .inputBox-btn .btn-submit:hover {
   background-color: #FFF;
-  color: #000000;
+  color: #000;
 }
 .lager .container .form form .inputBox .inputBox-btn .button-secondary {
   color: #000;

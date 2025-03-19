@@ -52,7 +52,7 @@ $register-background: '/images/Register.jpg';
 
     form h2 {
         position: relative;
-        color: #000;
+        color: $black;
         font-size: 1.5em;
         letter-spacing: 0.5em;
         text-transform: uppercase;
@@ -68,13 +68,13 @@ $register-background: '/images/Register.jpg';
     }
 
     form .inputBox a {
-        color: #fff;
+        color: $white;
         text-decoration: none;
         font-size: 0.85rem;
     }
 
     form .inputBox p {
-        color: #fff;
+        color: $white;
         font-size: 0.85rem;
     }
 
@@ -91,7 +91,7 @@ $register-background: '/images/Register.jpg';
         padding: 6px 15px;
         border-radius: 4px;
         font-size: 0.85em;
-        color: #fff;
+        color: $white;
         z-index: 10000;
     }
 
@@ -150,6 +150,6 @@ $register-background: '/images/Register.jpg';
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
         transition: background-color 5000s ease-in-out 0s;
-        -webkit-text-fill-color: #fff !important;
+        -webkit-text-fill-color: $white !important;
     }
 }

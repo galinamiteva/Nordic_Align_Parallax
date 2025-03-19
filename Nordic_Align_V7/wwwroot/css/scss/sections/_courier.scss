@@ -125,7 +125,7 @@
 
             h2 {
                 position: relative;
-                color: #000;
+                color: $black;
                 font-size: 25px;
                 font-weight: 600;
                 letter-spacing: 1px;
@@ -163,7 +163,7 @@
 
                         &:hover {
                             background-color: $white;
-                            color: #000000;
+                            color: $black;
                         }
                     }
 
@@ -357,7 +357,7 @@
         .form {
             h2 {
                 position: relative;
-                color: #000;
+                color: $black;
                 font-size: 25px;
                 font-weight: 600;
                 letter-spacing: 1px;
@@ -419,6 +419,6 @@
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
         transition: background-color 5000s ease-in-out 0s;
-        -webkit-text-fill-color: #000 !important;
+        -webkit-text-fill-color: $black !important;
     }
 }
