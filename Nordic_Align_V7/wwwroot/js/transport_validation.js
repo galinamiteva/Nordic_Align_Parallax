@@ -22,7 +22,7 @@
         const capacity = parseFloat(document.querySelector("input[name='Capacity']").value.trim());
         if (isNaN(capacity) || capacity <= 0) {
             isValid = false;
-            alert("Kapaciteten maste vara starre an 0.");
+            alert("Kapaciteten maste vara storre an 0.");
         }
 
         if (!isValid) {

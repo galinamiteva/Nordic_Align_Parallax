@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const fullName = document.querySelector("input[name='FullName']").value.trim();
         const words = fullName.split(/\s+/);
         if (words.length < 2) {
-            alert("Faltet Fornamn och efternamn maste innehalla minst tva ord.");
+            alert("Faltet Namn maste innehalla minst tva ord.");
         }
         
 

@@ -8,7 +8,7 @@
         const fullName = document.querySelector("input[name='FullName']").value.trim();
         const words = fullName.split(/\s+/);
         if (words.length < 2) {
-            alert("Faltet Namn maste innehalla minst tva ord..");
+            alert("Faltet Namn maste innehalla minst tva ord.");
         }
 
 
@@ -17,7 +17,7 @@
         const postalCode = document.querySelector("input[name='PostalCode']").value.trim();
         if (!/^\d{5}$/.test(postalCode)) {
             isValid = false;
-            alert("Postnummer maste vara 5 siffror langt.");
+            alert("Faltet Postnummer maste vara 5 siffror langt.");
         }
 
         // Telefonkontroll (måste vara 12 tecken)
