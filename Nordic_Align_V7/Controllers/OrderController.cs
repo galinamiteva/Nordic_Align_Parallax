@@ -33,8 +33,8 @@ public class OrderController : Controller
 
         if (role != "Admin" && user != null)
         {
-            var userFullName = user.FirstName + " " + user.LastName; // Пълното име на потребителя
-            model = model.Where(o => o.Sender == userFullName);  // Филтрирайте по пълното име на потребителя
+            var userFullName = user.FirstName + " " + user.LastName; 
+            model = model.Where(o => o.Sender == userFullName); 
         }
 
         return View("OrdersList", await model.ToListAsync());
@@ -51,8 +51,9 @@ public class OrderController : Controller
 
         var model = new OrderModel
         {
-            Sender = user.FirstName + " " + user.LastName // Попълване на полето "Sender" с името на потребителя
+            Sender = user.FirstName + " " + user.LastName 
         };
+
 
         ViewBag.Recepients = _db.Recepients.ToList();
         ViewBag.Couriers = _db.Couriers.ToList();
@@ -71,7 +72,22 @@ public class OrderController : Controller
 
         order.Sender = user.FirstName + " " + user.LastName;
 
+        // Проверка дали е избран получател
+        if (order.RecepientId == null || order.RecepientId == 0)
+        {
+            ModelState.AddModelError("RecepientId", "Du måste välja en mottagare.");
+        }
 
+        if (!ModelState.IsValid)
+        {
+            ViewBag.Recepients = _db.Recepients.ToList();
+            
+            return View("CreateOrUpdate", order);
+        }
+
+
+       
+        order.OrderDate = DateTime.Now;
         if (warehouses != null && warehouses.Any())
         {
             order.Warehouses = _db.Warehouses.Where(x => warehouses.Contains(x.Id)).ToList();
@@ -80,7 +96,6 @@ public class OrderController : Controller
         {
             order.Warehouses = new List<WarehouseModel>();
         }
-        order.OrderDate = DateTime.Now;
         _db.Orders.Add(order);
         _db.SaveChanges();
 

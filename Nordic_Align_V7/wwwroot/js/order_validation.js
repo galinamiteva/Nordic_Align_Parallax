@@ -9,7 +9,7 @@
         // Kontrollera att "Mottagare" består av två ord
         const senderValue = senderInput.value.trim();
         const words = senderValue.split(/\s+/);
-        if (words.length < 2) {
+        if (words.length == "" && words.length < 2) {
             alert("Mottagaren måste innehålla minst två ord.");
             isValid = false;
         }
