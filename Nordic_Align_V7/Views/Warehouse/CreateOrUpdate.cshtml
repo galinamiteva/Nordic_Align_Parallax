@@ -31,7 +31,8 @@
                         <label asp-for="Name" class="label"></label>
                         <div class="inputBox-content">
                             <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Name" data-valmsg-for="Name" class="text-danger"></span>
+
                         </div>
                     </div>
 
@@ -39,7 +40,8 @@
                         <label asp-for="Address" class="label"></label>
                         <div class="inputBox-content">
                             <input asp-for="Address" class="form-control" />
-                            <span asp-validation-for="Address" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Address" data-valmsg-for="Address" class="text-danger"></span>
+
                         </div>
                     </div>
 
@@ -47,7 +49,8 @@
                         <label asp-for="Phone" class="label"></label>
                         <div class="inputBox-content">
                             <input asp-for="Phone" type="text" class="form-control" />
-                            <span asp-validation-for="Phone" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Phone" data-valmsg-for="Phone" class="text-danger"></span>
+
                         </div>
                     </div>
 
@@ -55,7 +58,8 @@
                         <label asp-for="Capacity" class="label"></label>
                         <div class="inputBox-content">
                             <input asp-for="Capacity" class="form-control" />
-                            <span asp-validation-for="Capacity" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Capacity" data-valmsg-for="Capacity" class="text-danger"></span>
+
                         </div>
                     </div>
 
