@@ -31,16 +31,20 @@
                             <div class="inputBox">
                                 <label asp-for="FullName" class="label"></label>
                                 <div class="inputBox-content">
-                                    <input asp-for="FullName" class="form-control" />
-                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                    <input type="text" asp-for="FullName" class="form-control" />
+                                    @* <span asp-validation-for="FullName" class="text-danger"></span> *@
+                                    <span style="color:red;" asp-validation-for="FullName" data-valmsg-for="FullName" class="text-danger"></span>
+
                                 </div>
                             </div>
 
                             <div class="inputBox">
                                 <label asp-for="Personnummer" class="label"></label>
                                 <div class="inputBox-content">
-                                    <input asp-for="Personnummer" class="form-control" />
-                                    <span asp-validation-for="Personnummer" class="text-danger"></span>
+                                    <input type="text" asp-for="Personnummer" class="form-control" />
+                                    @* <span asp-validation-for="Personnummer" class="text-danger"></span> *@
+                                    <span style="color:red;" asp-validation-for="Personnummer" data-valmsg-for="Personnummer" class="text-danger"></span>
+
                                 </div>
                             </div>
 
@@ -49,7 +53,7 @@
                                 <label asp-for="EmploymentDate" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="EmploymentDate" type="date" class="form-control" formnovalidate />
-                                    <span asp-validation-for="EmploymentDate" class="text-danger"></span>
+                                    <span style="color:red;" asp-validation-for="EmploymentDate" data-valmsg-for="EmploymentDate" class="text-danger"></span>
                                 </div>
                             </div>
 
@@ -57,7 +61,7 @@
                                 <label asp-for="StartWorkTime" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="StartWorkTime" type="time" class="form-control" />
-                                    <span asp-validation-for="StartWorkTime" class="text-danger"></span>
+                                    <span style="color:red;" asp-validation-for="StartWorkTime" data-valmsg-for="StartWorkTime" class="text-danger"></span>
                                 </div>
                             </div>
 
@@ -65,23 +69,23 @@
                                 <label asp-for="EndWorkTime" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="EndWorkTime" type="time" class="form-control" />
-                                    <span asp-validation-for="EndWorkTime" class="text-danger"></span>
+                                    <span style="color:red;" asp-validation-for="EndWorkTime" data-valmsg-for="EndWorkTime" class="text-danger"></span>
                                 </div>
                             </div>
 
                             <div class="inputBox">
                                 <label asp-for="LivingPlace" class="label"></label>
-                        <div class="inputBox-content">
-                                    <input asp-for="LivingPlace" class="form-control" />
-                                    <span asp-validation-for="LivingPlace" class="text-danger"></span>
+                                <div class="inputBox-content">
+                                    <input asp-for="LivingPlace" type="text" class="form-control" />
+                                    <span style="color:red;" asp-validation-for="LivingPlace" data-valmsg-for="LivingPlace" class="text-danger"></span>
                                 </div>
                             </div>
 
                             <div class="inputBox">
                                 <label asp-for="Phone" class="label"></label>
                                 <div class="inputBox-content">
-                                    <input asp-for="Phone" class="form-control" />
-                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                    <input asp-for="Phone" type="text"  class="form-control" />
+                                    <span style="color:red;" asp-validation-for="Phone" data-valmsg-for="Phone" class="text-danger"></span>
                                 </div>
                             </div>
 
@@ -92,6 +96,10 @@
                                 </div>
                             </div>
                         </form>
+                            @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
+                            {
+                                <div style="color:red;">@ViewBag.RegisterFail</div>
+                            }
                     </div>
                </div>
         </div>  
