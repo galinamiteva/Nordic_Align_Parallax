@@ -16,9 +16,7 @@
 
                 <h2>Skapa faktura</h2>
 
-                <form method="post" asp-controller="Invoice" asp-action="CreateInvoice">
-
-
+                <form method="post" asp-controller="Invoice" asp-action="CreateInvoice" novalidate>
 
                     <div class="box">
 
@@ -26,6 +24,8 @@
                             <label for="InvoiceNumber">Fakturanummer:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="InvoiceNumber" name="InvoiceNumber" required>
+                                <span style="color:red;" asp-validation-for="InvoiceNumber" data-valmsg-for="InvoiceNumber" class="text-danger"></span>
+
                             </div>
                         </div>
 
@@ -33,6 +33,8 @@
                             <label for="IssueDate">Utfärdandedatum</label>
                             <div class="inputBox-content">
                                 <input type="date" id="IssueDate" name="IssueDate" required onchange="calculateDueDate()">
+                                <span style="color:red;" asp-validation-for="IssueDate" data-valmsg-for="IssueDate" class="text-danger"></span>
+
                             </div>
                         </div>
 
@@ -40,6 +42,7 @@
                             <label for="DueDate">Förfallodatum:</label>
                             <div class="inputBox-content">
                                 <input type="date" id="DueDate" name="DueDate" readonly>
+
                             </div>
                         </div>
                     </div>
@@ -49,18 +52,24 @@
                             <label for="CompanyName">Företag:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="CompanyName" name="CompanyName" required>
+                                <span style="color:red;" asp-validation-for="CompanyName" data-valmsg-for="CompanyName" class="text-danger"></span>
+
                             </div>
                         </div>
                         <div class="inputBox">
                             <label for="Street">Adress:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="Street" name="Street" required>
+                                <span style="color:red;" asp-validation-for="Street" data-valmsg-for="Street" class="text-danger"></span>
+
                             </div>
                         </div>
                         <div class="inputBox">
                             <label for="City">Stad:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="City" name="City" required>
+                                <span style="color:red;" asp-validation-for="City" data-valmsg-for="City" class="text-danger"></span>
+
                             </div>
                         </div>
                     </div>
@@ -70,12 +79,16 @@
                             <label for="PostalCode">Postnummer:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="PostalCode" name="PostalCode" required>
+                                <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger"></span>
+
                             </div>
                         </div>
                         <div class="inputBox">
                             <label for="Country">Land:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="Country" name="Country" required>
+                                <span style="color:red;" asp-validation-for="Country" data-valmsg-for="Country" class="text-danger"></span>
+
                             </div>
                         </div>
 
@@ -83,6 +96,8 @@
                             <label for="Email">E-post:</label>
                             <div class="inputBox-content">
                                 <input type="email" id="Email" name="Email" required>
+                                <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+
                             </div>
                         </div>
                     </div>
@@ -99,23 +114,35 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Item">Produkt:</label>
                                         <div class="inputBox-content">
-                                            <input type="text" name="itemNames[]" required>
+                                            <input type="text" id="Items[i].Item" name="itemNames[]" required>
+                                            <span style="color:red;" asp-validation-for="Items[i].Item" data-valmsg-for="Items[i].Item" class="text-danger"></span>
+
                                         </div>
                                     </div>
 
                                     <div class="inputBox">
                                         <label for="Items[@i].Quantity">Antal:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" name="quantities[]" required>
+                                            <input type="number" id="Items[i].Quantity" name="quantities[]" min="1" required oninput="validity.valid||(value='');">
+                                            @*<span style="color:red;" asp-validation-for="Items[@i].Quantity" data-valmsg-for="Items[@i].Quantity" class="text-danger"></span>*@
+                                            @* <span style="color:red;" asp-validation-for="Items[i].Quantity" class="text-danger"></span> *@
+                                            <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
+
+
                                         </div>
                                     </div>
+
 
                                     <div class="inputBox">
                                         <label for="Items[@i].Price">Pris:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" step="0.01" name="prices[]" required>
+                                            <input type="number" id="Items[i].Price" name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
+                                            @*<span style="color:red;" asp-validation-for="Items[@i].Price" data-valmsg-for="Items[@i].Price" class="text-danger"></span> *@                                            
+                                            @* <span style="color:red;" asp-validation-for="Items[i].Price" class="text-danger"></span> *@
+                                            <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>
                                         </div>
                                     </div>
+
 
                                 </div>
                             }
@@ -138,6 +165,11 @@
                     <button class="button-secondary" type="submit">Generera och skicka</button>
                 </form>
 
+                @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
+                {
+                    <div style="color:red;">@ViewBag.RegisterFail</div>
+                }
+
             </div>
 
         </div>
@@ -155,30 +187,38 @@
         const div = document.createElement("div");
         div.classList.add("item-row");
         div.innerHTML = `
-        <div class="box">
-            <div class="inputBox">
-                <label>Produkt:</label>
-                <div class="inputBox-content">
-                    <input type="text" name="itemNames[]" required>
+            <div class="box">
+                <div class="inputBox">
+                    <label>Produkt:</label>
+                    <div class="inputBox-content">
+                        <input type="text" name="itemNames[]" required>
+                        <span style="color:red;" data-valmsg-for="itemNames[]" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="inputBox">
-                <label>Antal:</label>
-                <div class="inputBox-content">
-                    <input type="number" name="quantities[]" required>
+                <div class="inputBox">
+                    <label>Antal:</label>
+                    <div class="inputBox-content">
+                            <input type="number" name="quantities[]" min="1" required oninput="validity.valid||(value='');">
+                        <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="inputBox">
-                <label>Pris:</label>
-                <div class="inputBox-content">
-                    <input type="number" step="0.01" name="prices[]" required>
+                <div class="inputBox">
+                    <label>Pris:</label>
+                    <div class="inputBox-content">
+                            <input type="number" step="0.01"  name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
+                        <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
-        </div>
+    </div>
         `;
         container.appendChild(div);
+           let newInputs = div.querySelectorAll('input');
+    newInputs.forEach(input => {
+        input.addEventListener('keyup', validateInput);
+        input.addEventListener('blur', validateInput);
+    });
     }
 
     function calculateDueDate() {
@@ -193,5 +233,24 @@
             dueDateInput.value = dueDateStr;
         }
     }
+
+    function validateInput(e) {
+    switch (e.target.type) {
+        case 'text':
+            textValidator(e.target);
+            break;
+        case 'number':
+            numberValidator(e.target);
+            break;
+        case 'email':
+            emailValidator(e.target);
+            break;
+        case 'date':
+            dateValidator(e.target);
+            break;
+    }
+}
+
 </script>
 
+<script defer src="~/js/invoice_validation.js"></script>

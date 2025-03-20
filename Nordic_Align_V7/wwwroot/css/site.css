@@ -57,6 +57,7 @@ input:-webkit-autofill:active {
   border-radius: 20px;
   transition: all 0.5s;
   margin-top: 20px;
+  border: none;
 }
 .button-secondary:hover {
   color: #fff;
