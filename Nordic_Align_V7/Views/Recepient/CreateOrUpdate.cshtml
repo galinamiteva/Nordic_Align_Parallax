@@ -34,6 +34,8 @@
                         <div class="col-sm-10">
                             <input asp-for="FullName" class="form-control" />
                             <span asp-validation-for="FullName" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="FullName" data-valmsg-for="FullName" class="text-danger"></span>
+
                         </div>
                     </div>
 
@@ -42,7 +44,7 @@
                         <label asp-for="PostalCode" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="PostalCode" class="form-control" />
-                            <span asp-validation-for="PostalCode" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -50,7 +52,7 @@
                         <label asp-for="DeliveryAddress" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="DeliveryAddress" class="form-control" />
-                            <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="DeliveryAddress" data-valmsg-for="DeliveryAddress" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -58,7 +60,7 @@
                         <label asp-for="Phone" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Phone" class="form-control" />
-                            <span asp-validation-for="Phone" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Phone" data-valmsg-for="Phone" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -69,6 +71,10 @@
                         </div>
                     </div>
                 </form>
+                @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
+                {
+                    <div style="color:red;">@ViewBag.RegisterFail</div>
+                }
             </div>            
         </div>
     </div>   

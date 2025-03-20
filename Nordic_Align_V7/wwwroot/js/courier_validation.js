@@ -24,7 +24,7 @@
         const words = fullName.split(/\s+/);
         if (words.length < 2) {
             isValid = false;
-            setError("FullName", "Faltet Namn maste innehalla minst tva ord.");
+            setError("FullName", "Faltet maste innehalla minst tva ord.");
         } else {
             clearError("FullName");
         }
@@ -33,7 +33,7 @@
         const persnr = document.querySelector("input[name='Personnummer']").value.trim();
         if (!/^\d{12}$/.test(persnr)) {
             isValid = false;
-            setError("Personnummer", "Personnummer maste innehalla 12 siffror.");
+            setError("Personnummer", "Fältet maste innehalla 12 siffror.");
         } else {
             clearError("Personnummer");
         }
@@ -42,7 +42,7 @@
         const employmentDate = document.querySelector("input[name='EmploymentDate']").value;
         if (employmentDate === "0001-01-01") {
             isValid = false;
-            setError("EmploymentDate", "Faltet Anstallningsdatum kan inte vara 01.01.0001.");
+            setError("EmploymentDate", "Faltet  kan inte vara 01.01.0001.");
         } else {
             clearError("EmploymentDate");
         }
@@ -51,7 +51,7 @@
         const phone = document.querySelector("input[name='Phone']").value.trim();
         if (phone.length < 7 || phone.length > 13) {
             isValid = false;
-            setError("Phone", "Telefonfaltet maste innehalla minst 7 och max 13 tecken.");
+            setError("Phone", "Fältet maste innehalla minst 7 och max 13 tecken.");
         } else {
             clearError("Phone");
         }
