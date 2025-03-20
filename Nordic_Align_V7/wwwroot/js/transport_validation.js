@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll("span.text-danger").forEach(span => span.textContent = "");
         }
 
-        clearErrors(); 
+        clearErrors();
 
         // Kontrollera transportnummer (minst 6 tecken)
         const transportNumberInput = document.querySelector("input[name='TransportNumber']");

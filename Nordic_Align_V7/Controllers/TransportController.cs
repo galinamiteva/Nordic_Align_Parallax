@@ -25,10 +25,21 @@ public class TransportController : Controller
     [HttpPost]
     public IActionResult Create(TranportModel tranport, string registrationDate)
     {
+        try
+        {
+            
         tranport.RegistrationDate = DateTime.Parse(registrationDate);
         _db.Transports.Add(tranport);
         _db.SaveChanges();
         return RedirectToAction("Index");
+           
+
+        }
+        catch (Exception ex)
+        {
+            ViewBag.RegisterFail = ex.InnerException?.Message ?? ex.Message;
+            return View("CreateOrUpdate", tranport);
+        }
     }
 
     //EDIT
