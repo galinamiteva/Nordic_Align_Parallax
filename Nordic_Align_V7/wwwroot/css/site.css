@@ -167,6 +167,7 @@ body .select2-results__option[aria-selected] {
 
 .burger {
   display: none;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {
@@ -240,11 +241,19 @@ body .select2-results__option[aria-selected] {
     transition: all 0.5s;
     background-color: rgba(102, 101, 101, 0.5);
     width: 200px;
-    height: 420px;
     border-radius: 0 20px 20px 20px;
     backdrop-filter: blur(10px);
     border-right: 2px solid rgba(255, 255, 255, 0.3);
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  .menu[data-role=Admin] {
+    height: 550px !important;
+  }
+  .menu[data-role=User] {
+    height: 300px;
+  }
+  .menu[data-role=None] {
+    height: 250px;
   }
   .menu__list {
     flex-direction: column;

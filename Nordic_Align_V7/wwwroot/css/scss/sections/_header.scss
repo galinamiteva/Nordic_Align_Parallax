@@ -108,6 +108,7 @@
 
     .burger {
         display: none;
+        margin-bottom:20px;
     }
     ////////////////////////////////////////////////////////////////////////////
     @media(max-width: 600px) {
@@ -198,12 +199,23 @@
             transition: all .5s;
             background-color: rgb(102, 101, 101, .5);
             width: 200px;
-            height: 420px;
             border-radius: 0 20px 20px 20px;
             backdrop-filter: blur(10px);
             border-right: 2px solid rgb(255, 255, 255, 0.3);
             border-bottom: 2px solid rgb(255, 255, 255, 0.3);
+            
 
+           &[data-role="Admin"] {
+                height:550px !important;
+            }
+
+            &[data-role="User"] {
+                height: 300px;
+            }
+
+            &[data-role="None"] {
+                height: 250px;
+            }
 
             &__list {
                 flex-direction: column;
