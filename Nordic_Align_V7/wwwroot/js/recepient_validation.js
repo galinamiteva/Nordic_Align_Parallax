@@ -18,44 +18,102 @@
             }
         }
 
-        // Fullständig namnkontroll (måste bestå av 2 ord)
-        const fullName = document.querySelector("input[name='FullName']").value.trim();
-        const words = fullName.split(/\s+/);
-        if (words.length < 2) {
-            isValid = false;
-            setError("FullName", "Fältet  måste innehålla minst två ord.");
-        } else {
-            clearError("FullName");
+        // Функция за валидация на полетата при въвеждане
+        function validateField(inputName) {
+            const input = document.querySelector(`input[name='${inputName}']`);
+            const value = input.value.trim();
+
+            switch (inputName) {
+                case "FullName":
+                    const words = value.split(/\s+/);
+                    if (words.length < 2) {
+                        setError(inputName, "Fältet  måste innehålla minst två ord.");
+                    } else {
+                        clearError(inputName);
+                    }
+                    break;
+
+                case "PostalCode":
+                    if (!/^\d{5}$/.test(value)) {
+                        setError(inputName, "Fältet  måste vara 5 siffror långt.");
+                    } else {
+                        clearError(inputName);
+                    }
+                    break;
+
+                case "DeliveryAddress":
+                    const addressWords = value.split(/\s+/);
+                    if (addressWords.length < 2) {
+                        setError(inputName, "Fältet  måste innehålla minst två ord.");
+                    } else {
+                        clearError(inputName);
+                    }
+                    break;
+
+                case "Phone":
+                    if (value.length < 7 || value.length > 13) {
+                        setError(inputName, "Fältet måste innehålla minst 7 och max 13 tecken.");
+                    } else {
+                        clearError(inputName);
+                    }
+                    break;
+            }
         }
 
-        // Kontrollera postnummer (måste vara 5 siffror)
-        const postalCode = document.querySelector("input[name='PostalCode']").value.trim();
-        if (!/^\d{5}$/.test(postalCode)) {
-            isValid = false;
-            setError("PostalCode", "Fältet  måste vara 5 siffror långt.");
-        } else {
-            clearError("PostalCode");
-        }
+        // Добави проверка при въвеждане на данни в полетата
+        const inputFields = ['FullName', 'PostalCode', 'DeliveryAddress', 'Phone'];
+        inputFields.forEach(function (field) {
+            const inputElement = document.querySelector(`input[name='${field}']`);
+            inputElement.addEventListener('input', function () {
+                validateField(field); // Валидирай веднага при промяна
+            });
+        });
 
-        // Kontrollera leveransadress (måste bestå av minst 2 ord)
-        const deliveryAddress = document.querySelector("input[name='DeliveryAddress']").value.trim();
-        const addressWords = deliveryAddress.split(/\s+/);
-        if (addressWords.length < 2) {
-            isValid = false;
-            setError("DeliveryAddress", "Fältet  måste innehålla minst två ord.");
-        } else {
-            clearError("DeliveryAddress");
-        }
+        // Извърши проверка при изпращане на формата
+        inputFields.forEach(function (field) {
+            const value = document.querySelector(`input[name='${field}']`).value.trim();
+            switch (field) {
+                case "FullName":
+                    const words = value.split(/\s+/);
+                    if (words.length < 2) {
+                        isValid = false;
+                        setError(field, "Fältet  måste innehålla minst två ord.");
+                    } else {
+                        clearError(field);
+                    }
+                    break;
 
-        // Telefonkontroll (måste vara mellan 7 och 13 tecken)
-        const phone = document.querySelector("input[name='Phone']").value.trim();
-        if (phone.length < 7 || phone.length > 13) {
-            isValid = false;
-            setError("Phone", "Fältet måste innehålla minst 7 och max 13 tecken.");
-        } else {
-            clearError("Phone");
-        }
+                case "PostalCode":
+                    if (!/^\d{5}$/.test(value)) {
+                        isValid = false;
+                        setError(field, "Fältet  måste vara 5 siffror långt.");
+                    } else {
+                        clearError(field);
+                    }
+                    break;
 
+                case "DeliveryAddress":
+                    const addressWords = value.split(/\s+/);
+                    if (addressWords.length < 2) {
+                        isValid = false;
+                        setError(field, "Fältet  måste innehålla minst två ord.");
+                    } else {
+                        clearError(field);
+                    }
+                    break;
+
+                case "Phone":
+                    if (value.length < 7 || value.length > 13) {
+                        isValid = false;
+                        setError(field, "Fältet måste innehålla minst 7 och max 13 tecken.");
+                    } else {
+                        clearError(field);
+                    }
+                    break;
+            }
+        });
+
+        // Ако формата не е валидна, предотврати нейното изпращане
         if (!isValid) {
             event.preventDefault();
         }
