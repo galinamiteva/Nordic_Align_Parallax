@@ -1,0 +1,56 @@
+
+/*===== SECTION =====*/
+.about {
+    background-color: #031611;
+    position:relative;
+    top:-70px;
+}
+
+.section {
+    height: 100vh;
+    max-width: 950px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 2rem 0;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__data {
+        margin-bottom: 3rem;
+    }
+
+    &__title {
+        font-size: var(--h2-font-size);
+        color: var(--first-color);
+        margin-bottom: 1rem;
+    }
+
+    &__img {
+        width: 285px;
+        border-radius: .5rem;
+    }
+}
+
+/*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 760px) {
+   
+
+    
+
+    .section {
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+
+        &__text {
+            padding-right: 4rem;
+        }
+
+        &__img {
+            width: 470px;
+        }
+    }
+}

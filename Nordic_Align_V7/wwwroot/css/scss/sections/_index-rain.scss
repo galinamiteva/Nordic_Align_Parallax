@@ -14,12 +14,12 @@
         z-index: 10;
         pointer-events: none;
     }
-   
+
     &::before {
         top: 0;
         background: linear-gradient(to bottom, #031611 40%, transparent);
     }
-    
+
     &::after {
         bottom: 0;
         background: linear-gradient(to top, #031611 10%, transparent);
@@ -46,6 +46,18 @@
             &.layer-1 {
                 transform: translateZ(-55px) scale(1.06);
                 background-image: url('/images/layer-1.jpg');
+
+                /*&::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 100px;
+                    z-index: 10;
+                    pointer-events: none;
+                    bottom: 0;
+                    background: linear-gradient(to top, #031611 40%, transparent);
+               }*/
             }
 
             &.layer-2 {
