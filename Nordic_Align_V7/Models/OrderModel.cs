@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+
+
+
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
@@ -22,6 +26,8 @@ public class OrderModel
     [Required]
     public decimal Price { get; set; }
     public int? CourierId { get; set; }
+    [DisplayName("Mottagare")]
+    [Required(ErrorMessage = "Du måste välja en mottagare.")]
     public int? RecepientId { get; set; }
     public int? TransportId { get; set; }
 
@@ -30,3 +36,5 @@ public class OrderModel
     public virtual TranportModel Transport { get; set; } = null!;
     public virtual List<WarehouseModel> Warehouses { get; set; } = null!;
 }
+
+

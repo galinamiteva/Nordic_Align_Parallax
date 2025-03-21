@@ -53,7 +53,7 @@
             showError(recepientSelect, "Du måste välja en mottagare.");
             isValid = false;
         } else {
-            hideError(recepientSelect);
+            hideError(recepientSelect); // Скриваме грешката, ако е избран получател
         }
 
         // Ако някоя проверка не е успешна, спираме изпращането на формуляра
@@ -82,15 +82,26 @@
 
     // Добавяме слушател за събитие 'change' за полето select за получател
     recepientSelect.addEventListener('change', function () {
-        if (recepientSelect.value) {
-            hideError(recepientSelect);  // Скриваме грешката, когато е избран получател
+        // Скриваме грешката, когато е избран получател
+        if (recepientSelect.value && recepientSelect.value !== "") {
+            hideError(recepientSelect);
         } else {
             showError(recepientSelect, "Du måste välja en mottagare."); // Покажи грешка ако няма валиден получател
         }
     });
 
-    // Скриваме съобщението за грешка, ако полето за получател е променено чрез JavaScript (например, ако се избере нов получател автоматично)
-    if (recepientSelect.value) {
-        hideError(recepientSelect);
+    // Проверяваме началното състояние на грешките в localStorage (ако има)
+    function checkLocalStorageErrors() {
+        const fields = ['Sender', 'DeliveryDate', 'RecepientId'];
+        fields.forEach(field => {
+            const errorMessage = localStorage.getItem(field + "_error");
+            const input = document.querySelector(`input[name='${field}']`) || document.querySelector(`select[name='${field}']`);
+            if (errorMessage && input) {
+                showError(input, errorMessage);
+            }
+        });
     }
+
+    // Извикваме функцията за проверка при зареждане на страницата
+    checkLocalStorageErrors();
 });
