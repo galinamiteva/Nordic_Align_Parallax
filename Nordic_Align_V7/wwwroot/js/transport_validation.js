@@ -1,7 +1,6 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
 
-    // Функция за показване на грешка
     function showError(inputName, message) {
         const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
         if (errorSpan) {
@@ -9,7 +8,6 @@
         }
     }
 
-    // Функция за почистване на грешки
     function clearError(inputName) {
         const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
         if (errorSpan) {
@@ -17,7 +15,6 @@
         }
     }
 
-    // Проверка на всяко поле по време на въвеждане
     function validateField(inputName, value) {
         let isValid = true;
         if (inputName === "TransportNumber") {
@@ -60,7 +57,6 @@
         return isValid;
     }
 
-    // Следим за събитията на всички входни полета
     form.querySelectorAll("input").forEach(input => {
         input.addEventListener("input", function () {
             validateField(input.name, input.value.trim());
@@ -70,11 +66,9 @@
         });
     });
 
-    // Следим събитието за изпращане на формуляра
     form.addEventListener("submit", function (event) {
         let isValid = true;
 
-        // Превключваме проверката за всички полета
         form.querySelectorAll("input").forEach(input => {
             if (!validateField(input.name, input.value.trim())) {
                 isValid = false;
@@ -82,7 +76,7 @@
         });
 
         if (!isValid) {
-            event.preventDefault(); // Спираме изпращането на формуляра ако има грешки
+            event.preventDefault(); 
         }
     });
 });

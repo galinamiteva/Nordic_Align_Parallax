@@ -1,7 +1,6 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
 
-    // Функция за показване на съобщение за грешка
     function setError(inputName, message) {
         const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
         if (errorSpan) {
@@ -9,7 +8,6 @@
         }
     }
 
-    // Функция за изчистване на съобщение за грешка
     function clearError(inputName) {
         const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
         if (errorSpan) {
@@ -17,7 +15,6 @@
         }
     }
 
-    // Функция за проверка на валидността на всяко поле
     function validateField(input, regex, minLength, maxLength, message) {
         const value = input.value.trim();
         if (value.length >= minLength && value.length <= maxLength && regex.test(value)) {
@@ -29,7 +26,6 @@
         }
     }
 
-    // Проверка за пълно име
     document.querySelector("input[name='FullName']").addEventListener('input', function () {
         const fullName = this.value.trim();
         const words = fullName.split(/\s+/);
@@ -40,7 +36,6 @@
         }
     });
 
-    // Проверка за персонален номер
     document.querySelector("input[name='Personnummer']").addEventListener('input', function () {
         const persnr = this.value.trim();
         if (/^\d{12}$/.test(persnr)) {
@@ -50,7 +45,6 @@
         }
     });
 
-    // Проверка за дата на наемане
     document.querySelector("input[name='EmploymentDate']").addEventListener('input', function () {
         const employmentDate = this.value;
         if (employmentDate !== "0001-01-01") {
@@ -60,7 +54,6 @@
         }
     });
 
-    // Проверка за телефон
     document.querySelector("input[name='Phone']").addEventListener('input', function () {
         const phone = this.value.trim();
         if (phone.length >= 7 && phone.length <= 13) {
@@ -70,7 +63,6 @@
         }
     });
 
-    // Проверка за място на живеене (Град)
     document.querySelector("input[name='LivingPlace']").addEventListener('input', function () {
         const livingPlace = this.value.trim();
         if (/^[A-Za-zÅÄÖåäö]{2,}/.test(livingPlace)) {
@@ -80,11 +72,9 @@
         }
     });
 
-    // Проверка на формата при изпращане
     form.addEventListener("submit", function (event) {
         let isValid = true;
 
-        // Проверки на полета при изпращане на формата
         const fullName = document.querySelector("input[name='FullName']").value.trim();
         const words = fullName.split(/\s+/);
         if (words.length < 2) {
@@ -117,7 +107,7 @@
         }
 
         if (!isValid) {
-            event.preventDefault(); // Прекратява изпращането на формата, ако има грешки
+            event.preventDefault(); 
         }
     });
 });

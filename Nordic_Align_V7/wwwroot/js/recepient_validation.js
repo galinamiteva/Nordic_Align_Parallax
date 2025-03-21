@@ -18,7 +18,6 @@
             }
         }
 
-        // Функция за валидация на полетата при въвеждане
         function validateField(inputName) {
             const input = document.querySelector(`input[name='${inputName}']`);
             const value = input.value.trim();
@@ -60,16 +59,14 @@
             }
         }
 
-        // Добави проверка при въвеждане на данни в полетата
         const inputFields = ['FullName', 'PostalCode', 'DeliveryAddress', 'Phone'];
         inputFields.forEach(function (field) {
             const inputElement = document.querySelector(`input[name='${field}']`);
             inputElement.addEventListener('input', function () {
-                validateField(field); // Валидирай веднага при промяна
+                validateField(field); 
             });
         });
 
-        // Извърши проверка при изпращане на формата
         inputFields.forEach(function (field) {
             const value = document.querySelector(`input[name='${field}']`).value.trim();
             switch (field) {
@@ -113,7 +110,6 @@
             }
         });
 
-        // Ако формата не е валидна, предотврати нейното изпращане
         if (!isValid) {
             event.preventDefault();
         }
