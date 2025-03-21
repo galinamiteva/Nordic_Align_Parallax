@@ -1,75 +1,88 @@
-﻿
-document.addEventListener("DOMContentLoaded", function () {
+﻿document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (event) {
-        let isValid = true;
+    // Функция за показване на грешка
+    function showError(inputName, message) {
+        const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
+        if (errorSpan) {
+            errorSpan.textContent = message;
+        }
+    }
 
-        // Visa error funktion
-        function showError(inputName, message) {
-            const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
-            if (errorSpan) {
-                errorSpan.textContent = message;
+    // Функция за почистване на грешки
+    function clearError(inputName) {
+        const errorSpan = document.querySelector(`span[data-valmsg-for='${inputName}']`);
+        if (errorSpan) {
+            errorSpan.textContent = "";
+        }
+    }
+
+    // Проверка на всяко поле по време на въвеждане
+    function validateField(inputName, value) {
+        let isValid = true;
+        if (inputName === "TransportNumber") {
+            if (value.length < 6) {
+                showError(inputName, "Fältet måste innehålla minst 6 tecken.");
+                isValid = false;
+            } else {
+                clearError(inputName);
             }
         }
 
-        // Rena error funktion
-        function clearErrors() {
-            document.querySelectorAll("span.text-danger").forEach(span => span.textContent = "");
+        if (inputName === "RegistrationDate") {
+            if (value === "0001-01-01") {
+                showError(inputName, "Fältet får inte vara 01.01.0001.");
+                isValid = false;
+            } else {
+                clearError(inputName);
+            }
         }
 
-        clearErrors();
-
-        // Kontrollera transportnummer (minst 6 tecken)
-        const transportNumberInput = document.querySelector("input[name='TransportNumber']");
-        const transportNumber = transportNumberInput.value.trim();
-        if (transportNumber.length < 6) {
-            isValid = false;
-            showError("TransportNumber", "Fältet måste innehålla minst 6 tecken.");
+        if (inputName === "Brand" || inputName === "Model" || inputName === "Color") {
+            if (value.length <= 2) {
+                showError(inputName, "Fältet måste innehålla mer än 2 tecken.");
+                isValid = false;
+            } else {
+                clearError(inputName);
+            }
         }
 
-        // Kontrollera registreringsdatum (bör inte vara "0001-01-01")
-        const registrationDateInput = document.querySelector("input[name='RegistrationDate']");
-        const registrationDate = registrationDateInput.value.trim();
-        if (registrationDate === "0001-01-01") {
-            isValid = false;
-            showError("RegistrationDate", "Fältet får inte vara 01.01.0001.");
+        if (inputName === "Capacity") {
+            const capacity = parseFloat(value);
+            if (isNaN(capacity) || capacity <= 0) {
+                showError(inputName, "Fältet måste vara större än 0.");
+                isValid = false;
+            } else {
+                clearError(inputName);
+            }
         }
 
-        //  Brand (bör innehålla mer än 2 tecken)
-        const brandInput = document.querySelector("input[name='Brand']");
-        const brand = brandInput.value.trim();
-        if (brand.length <= 2) {
-            isValid = false;
-            showError("Brand", "Fältet måste innehålla mer än 2 tecken.");
-        }
+        return isValid;
+    }
 
-        //  Model (bör innehålla mer än 2 tecken)
-        const modelInput = document.querySelector("input[name='Model']");
-        const model = modelInput.value.trim();
-        if (model.length <= 2) {
-            isValid = false;
-            showError("Model", "Fältet måste innehålla mer än 2 tecken.");
-        }
+    // Следим за събитията на всички входни полета
+    form.querySelectorAll("input").forEach(input => {
+        input.addEventListener("input", function () {
+            validateField(input.name, input.value.trim());
+        });
+        input.addEventListener("blur", function () {
+            validateField(input.name, input.value.trim());
+        });
+    });
 
-        //  (bör innehålla mer än 2 tecken)
-        const colorInput = document.querySelector("input[name='Color']");
-        const color = colorInput.value.trim();
-        if (color.length <= 2) {
-            isValid = false;
-            showError("Color", "Fältet måste innehålla mer än 2 tecken.");
-        }
+    // Следим събитието за изпращане на формуляра
+    form.addEventListener("submit", function (event) {
+        let isValid = true;
 
-        // ВKontrollera kapacitet (måste vara större än 0)
-        const capacityInput = document.querySelector("input[name='Capacity']");
-        const capacity = parseFloat(capacityInput.value.trim());
-        if (isNaN(capacity) || capacity <= 0) {
-            isValid = false;
-            showError("Capacity", "Fältet måste vara större än 0.");
-        }
+        // Превключваме проверката за всички полета
+        form.querySelectorAll("input").forEach(input => {
+            if (!validateField(input.name, input.value.trim())) {
+                isValid = false;
+            }
+        });
 
         if (!isValid) {
-            event.preventDefault(); // Stoppa inlämningen av formuläret om ett fel upptäcks
+            event.preventDefault(); // Спираме изпращането на формуляра ако има грешки
         }
     });
 });
