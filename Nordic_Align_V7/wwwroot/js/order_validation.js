@@ -7,15 +7,19 @@
     // Функция за показване на съобщение за грешка
     function showError(input, message) {
         const errorSpan = input.closest('.inputBox').querySelector('.text-danger');
-        errorSpan.textContent = message;
-        errorSpan.style.display = 'block'; // Показваме съобщението за грешка
+        if (errorSpan) {
+            errorSpan.textContent = message;
+            errorSpan.style.display = 'block'; // Показваме съобщението за грешка
+        }
     }
 
     // Функция за скриване на съобщение за грешка
     function hideError(input) {
         const errorSpan = input.closest('.inputBox').querySelector('.text-danger');
-        errorSpan.textContent = '';
-        errorSpan.style.display = 'none'; // Скриваме съобщението за грешка
+        if (errorSpan) {
+            errorSpan.textContent = '';
+            errorSpan.style.display = 'none'; // Скриваме съобщението за грешка
+        }
     }
 
     // Проверка при подаване на формуляра
@@ -45,7 +49,7 @@
         }
 
         // Проверка за "RecepientId" (трябва да бъде избран получател)
-        if (!recepientSelect.value || recepientSelect.value === "null") {
+        if (!recepientSelect.value || recepientSelect.value === "") {
             showError(recepientSelect, "Du måste välja en mottagare.");
             isValid = false;
         } else {
@@ -78,8 +82,7 @@
 
     // Добавяме слушател за събитие 'change' за полето select за получател
     recepientSelect.addEventListener('change', function () {
-        // Проверяваме дали е избран валиден получател
-        if (recepientSelect.value && recepientSelect.value !== "null") {
+        if (recepientSelect.value) {
             hideError(recepientSelect);  // Скриваме грешката, когато е избран получател
         } else {
             showError(recepientSelect, "Du måste välja en mottagare."); // Покажи грешка ако няма валиден получател
@@ -87,7 +90,7 @@
     });
 
     // Скриваме съобщението за грешка, ако полето за получател е променено чрез JavaScript (например, ако се избере нов получател автоматично)
-    if (recepientSelect.value && recepientSelect.value !== "null") {
+    if (recepientSelect.value) {
         hideError(recepientSelect);
     }
 });

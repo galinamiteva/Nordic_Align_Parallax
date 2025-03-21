@@ -56,20 +56,21 @@
 
                      
 
-                    <div class="inputBox">
+                                      <div class="inputBox">
                         <label class="label">Mottagare</label>
                         <div class="inputBox-content select-content">
-                            <select asp-for="RecepientId" class="custom-select-dropdown">
+                            <select asp-for="RecepientId" class="custom-select-dropdown" name="RecepientId">
                                 <option value="">Välj mottagare (krävs)</option>
                                 @foreach (var recepient in ViewBag.Recepients)
                                 {
                                     <option value="@recepient.Id">@recepient.FullName</option>
                                 }
                             </select>
-                            <span style="color:red;" asp-validation-for="RecepientId" data-valmsg-for="RecepientId" class="text-danger"></span>
-
+                            <span class="text-danger" asp-validation-for="RecepientId" data-valmsg-for="RecepientId"></span>
                         </div>
                     </div>
+
+
 
                         @if (role == "Admin")
                         {
