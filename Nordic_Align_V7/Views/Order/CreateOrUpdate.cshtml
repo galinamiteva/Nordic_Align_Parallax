@@ -56,7 +56,7 @@
 
 
                         <div class="inputBox">
-                            <label class="label">Mottagare</label>
+                            <label class="label">Mottagare(obligatoriskt)</label>
                             <div class="inputBox-content select-content">
                                 <select asp-for="RecepientId" class="custom-select-dropdown" name="RecepientId" id="RecepientId">
                                     <option value="">Välj mottagare (krävs)</option>
@@ -65,7 +65,8 @@
                                         <option value="@recepient.Id">@recepient.FullName</option>
                                     }
                                 </select>
-                                <span asp-validation-for="RecepientId" class="text-danger"></span>
+@*                             <span style="color:red;" asp-validation-for="RecepientId" data-valmsg-for="RecepientId" class="text-danger"></span>
+ *@
                             </div>
                         </div>
 

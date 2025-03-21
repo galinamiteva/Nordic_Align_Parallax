@@ -22,6 +22,21 @@
 
                 <nav class="menu">
                     <ul class="menu__list">
+
+                            <li class="menu__list-item">
+                            <a class="menu__list-link @(currentController != "Home"  ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="home">Hem</a>
+                            </li>
+
+                            <li class="menu__list-item">
+                            <a class="menu__list-link @(currentController != "Home"  ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">Om</a>
+                            </li>
+                            
+                            <li class="menu__list-item">
+                            <a class="menu__list-link @(currentController != "Home"  ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="contact">Kontakt</a>
+                            </li>
+                           
+
+
                         @if (role == "Admin")
                         {
                             <li class="menu__list-item">
@@ -83,6 +98,17 @@
     </header>
 
 }
+
+<script type="text/javascript">
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0)
+    })
+    function toggle(){
+        var header = document.querySelector("header");
+        header.classList.toggle("active");
+    }
+</script>
 
 
 
