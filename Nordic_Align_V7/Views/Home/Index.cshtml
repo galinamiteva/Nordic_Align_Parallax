@@ -47,18 +47,24 @@
 <section class="contact" id="contact">
     <div class="container">
         <div class="contact__inner">
-            <form class="contact__form" action="">
+            <form class="contact__form" action="" novalidate>
+
+                <div id="form-message" class="form-message"></div>
+
+
                 <h2 class="contact__form-title">Contact</h2>
                 <div class="contact__form-row">
                     <div class="contact__form-inputbox">
                         <i class="bi bi-person"></i>
                         <input type="text" placeholder=" " id="name" required>
+
                         <label for="name">Name</label>
                     </div>
 
                     <div class="contact__form-inputbox">
                         <i class="bi bi-envelope"></i>
                         <input type="email" id="email" placeholder=" " required>
+
                         <label for="email">Email</label>
                     </div>
                </div>
@@ -66,10 +72,11 @@
                 <div class="contact__form-inputbox contact__form-textarea">
                     <i class="bi bi-pen"></i>
                     <textarea id="message" name="message" rows="3" cols="50" required></textarea>
+
                     <label for="message">Message</label>
                 </div>
 
-                <button class="button-secondary contact__form-btn" type="submit">Submit</button>
+                <button class="button-primary contact__form-btn" type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -127,36 +134,9 @@
     window.addEventListener("resize", loadRainScript);
 </script>
 
-<script>
-    document.getElementById("contact").addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        let name = document.getElementById("name").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !message) {
-            alert("Alla fält är obligatorisk");
-            return;
-        }
-
-        let response = await fetch("/Contact/SendMessage", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ Name: name, Email: email, Message: message })
-        });
-
-        let result = await response.text();
-        alert(result);
-    });
-</script>
-
-
-
-
 <script src="js/main.js"></script>
 <script src="~/js/app.js"></script>
-
+<script src="~/js/contact_validation.js"></script>
 
 <!-- RELLAX JS -->
 <script src="~/js/rellax.min.js"></script>
