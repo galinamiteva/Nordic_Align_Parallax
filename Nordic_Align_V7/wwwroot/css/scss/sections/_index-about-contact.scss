@@ -1,9 +1,9 @@
 
 /*===== SECTION =====*/
 .about {
-    background-color: #031611;
-    position:relative;
-    top:-70px;
+    background-color: $dark-green;
+    position: relative;
+    top: -70px;
 }
 
 .section {
@@ -18,19 +18,139 @@
     justify-content: space-evenly;
     align-items: center;
 
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    &::before {
+        bottom: 0;
+        background: linear-gradient(to top, rgba(1,2,9,.6) 20%, transparent);
+    }
+
+
+
+   
+
+
     &__data {
         margin-bottom: 3rem;
     }
 
     &__title {
-        font-size: var(--h2-font-size);
-        color: var(--first-color);
+        font-size: 1.5rem;
+        color: #0396A6;
         margin-bottom: 1rem;
     }
 
     &__img {
         width: 285px;
         border-radius: .5rem;
+    }
+}
+
+
+// CONTACT
+.contact {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url('/images/background-contact4.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    top: -70px;
+
+
+
+
+    input {
+        background-color: $white;
+    }
+
+    &__inner {
+        position: relative;
+        width: calc(var(--index) * 17);
+        height: calc(var(--index) * 18);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: 2px solid rgb(255, 255, 255, 0.2);
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        transform: translate3d(0, calc(var(--scrollTop) / 10), 0);
+        will-change: transform;
+    }
+
+    &__form {
+        &-title {
+            font-size: calc(var(--index) * 1.5);
+            font-weight: 700;
+            color: $white;
+            text-align: center;
+            margin-bottom: calc(var(--index) * 1);
+            line-height: calc(var(--index) * 1.5);
+        }
+
+        &-inputbox {
+            position: relative;
+            margin-bottom: calc(var(--index) * 1.5);
+            width: calc(var(--index) * 13.5);
+            border-bottom: 2px solid $white;
+
+
+            label {
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                color: $white;
+                font-size: calc(var(--index) * 0.7);
+                pointer-events: none;
+                transition: all .5s;
+            }
+
+            input {
+                width: 100%;
+                height: 40px;
+                background-color: transparent;
+                font-size: calc(var(--index) * 0.7);
+                padding: 0 35px 0 5px;
+                color: $white;
+
+                &:focus ~ label,
+                &:valid ~ label {
+                    top: -5px;
+                }
+            }
+
+            ion-icon {
+                position: absolute;
+                right: 8px;
+                color: $white;
+                font-size: 1.2em;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+       
+
+        &-btn {
+            width: 100%;
+            height: calc(var(--index) * 2);
+            border-radius: 40px;
+            background-color: $white;
+            font-size: calc(var(--index) * 0.7);
+            font-weight: 600;
+        }
     }
 }
 
