@@ -21,20 +21,20 @@ public class ContactController : Controller
         string.IsNullOrWhiteSpace(formData.Email) ||
         string.IsNullOrWhiteSpace(formData.Message))
         {
-            return BadRequest("Всички полета са задължителни.");
+            return BadRequest("Alla fält är obligatoriskt");
         }
 
-        string subject = $"Ново съобщение от {formData.Name}";
-        string body = $"<p><strong>Име:</strong> {formData.Name}</p><p><strong>Email:</strong> {formData.Email}</p><p><strong>Съобщение:</strong> {formData.Message}</p>";
+        string subject = $"Nytt meddelande från {formData.Name}";
+        string body = $"<p><strong>Name:</strong> {formData.Name}</p><p><strong>Email:</strong> {formData.Email}</p><p><strong>Meddelande:</strong> {formData.Message}</p>";
 
         try
         {
             await _mailService.SendEmailAsync("galinamiteva69@gmail.com", subject, body);
-            return Ok("Съобщението е изпратено успешно!");
+            return Ok("Succe!");
         }
         catch (Exception ex)
         {
-            return StatusCode(500, $"Грешка при изпращане на имейл: {ex.Message}");
+            return StatusCode(500, $"Fel: {ex.Message}");
         }
     }
 }
