@@ -2836,6 +2836,7 @@ body .select2-results__option[aria-selected] {
   backdrop-filter: blur(15px);
   transform: translate3d(0, calc(var(--scrollTop) / 10), 0);
   will-change: transform;
+  margin: 0 auto;
 }
 .contact__form-title {
   font-size: calc(var(--index) * 1.5);

@@ -87,6 +87,7 @@
         backdrop-filter: blur(15px);
         transform: translate3d(0, calc(var(--scrollTop) / 10), 0);
         will-change: transform;
+         margin: 0 auto; 
     }
 
     &__form {
@@ -141,7 +142,7 @@
             }
         }
 
-       
+
 
         &-btn {
             width: 100%;
@@ -156,9 +157,9 @@
 
 /*===== MEDIA QUERIES =====*/
 @media screen and (min-width: 760px) {
-   
 
-    
+
+
 
     .section {
         flex-direction: row;
