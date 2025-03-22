@@ -49,21 +49,23 @@
         <div class="contact__inner">
             <form class="contact__form" action="">
                 <h2 class="contact__form-title">Contact</h2>
-                <div class="contact__form-inputbox">
-                    <i class="bi bi-person"></i>
-                    <input type="text" required>
-                    <label for="">Name</label>
-                </div>
+                <div class="contact__form-row">
+                    <div class="contact__form-inputbox">
+                        <i class="bi bi-person"></i>
+                        <input type="text" placeholder=" " required>
+                        <label for="">Name</label>
+                    </div>
 
-                <div class="contact__form-inputbox">
-                    <i class="bi bi-envelope"></i>
-                    <input type="email" required>
-                    <label for="">Email</label>
-                </div>
+                    <div class="contact__form-inputbox">
+                        <i class="bi bi-envelope"></i>
+                        <input type="email" placeholder=" " required>
+                        <label for="">Email</label>
+                    </div>
+               </div>
 
-                <div class="contact__form-inputbox">                    
+                <div class="contact__form-inputbox contact__form-textarea">
                     <i class="bi bi-pen"></i>
-                    <textarea id="message" name="message" rows="3" cols="50"></textarea>
+                    <textarea id="message" name="message" rows="3" cols="50" required></textarea>
                     <label for="">Message</label>
                 </div>
 
