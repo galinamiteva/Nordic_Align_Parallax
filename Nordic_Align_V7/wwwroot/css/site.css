@@ -2937,11 +2937,6 @@ body .select2-results__option[aria-selected] {
 }
 .contact__form-btn {
   width: 100%;
-  height: calc(var(--index) * 2);
-  border-radius: 40px;
-  background-color: #FFF;
-  font-size: calc(var(--index) * 0.7);
-  font-weight: 600;
 }
 
 /*===== MEDIA QUERIES =====*/
