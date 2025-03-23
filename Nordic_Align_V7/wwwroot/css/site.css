@@ -2851,19 +2851,19 @@ body .select2-results__option[aria-selected] {
   text-align: center;
   border-radius: 20px;
   display: none;
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 .contact__form .form-message.success {
   background-color: #FFF;
   color: #0396A6;
-  font-size: 12px;
+  font-size: 1rem;
 }
 .contact__form .form-message.error {
   background-color: #FFF;
   color: #980942;
 }
 .contact__form-title {
-  font-size: calc(var(--index) * 1.8);
+  font-size: 2rem;
   font-weight: 700;
   color: #FFF;
   text-align: center;
@@ -2873,7 +2873,7 @@ body .select2-results__option[aria-selected] {
 .contact__form-row {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 92%;
   margin-bottom: 32px;
 }
 .contact__form-inputbox {
@@ -2881,7 +2881,7 @@ body .select2-results__option[aria-selected] {
   position: relative;
   margin-bottom: calc(var(--index) * 1.5);
   margin: 0 10px;
-  width: 48%;
+  width: 40%;
   border-bottom: 2px solid #FFF;
 }
 .contact__form-inputbox label {
@@ -2890,7 +2890,7 @@ body .select2-results__option[aria-selected] {
   left: 5px;
   transform: translateY(-70%);
   color: #FFF;
-  font-size: calc(var(--index) * 1.1);
+  font-size: 1.2rem;
   pointer-events: none;
   transition: all 0.5s;
 }
@@ -2898,13 +2898,13 @@ body .select2-results__option[aria-selected] {
   width: 100%;
   height: 40px;
   background-color: transparent;
-  font-size: calc(var(--index) * 1);
+  font-size: 1rem;
   padding: 0 35px 0 5px;
   color: #FFF;
   border: none;
 }
 .contact__form-inputbox input:focus ~ label, .contact__form-inputbox input:valid ~ label, .contact__form-inputbox input:not(:placeholder-shown) ~ label {
-  top: -11px;
+  top: -15px;
   transform: translateY(0);
 }
 .contact__form-inputbox input:focus, .contact__form-inputbox input:focus-visible {
@@ -2928,7 +2928,7 @@ body .select2-results__option[aria-selected] {
   transition: all 0.5s;
 }
 .contact__form-textarea {
-  width: 100%;
+  width: 88%;
   position: relative;
   border-bottom: 2px solid #FFF;
   margin-top: 15px;
@@ -2938,7 +2938,7 @@ body .select2-results__option[aria-selected] {
   top: 52px;
   left: 5px;
   color: #FFF;
-  font-size: calc(var(--index) * 1.1);
+  font-size: 1.2rem;
   pointer-events: none;
   transition: all 0.5s;
 }
@@ -2946,7 +2946,7 @@ body .select2-results__option[aria-selected] {
   width: 100%;
   height: 80px;
   background-color: transparent;
-  font-size: calc(var(--index) * 1);
+  font-size: 1rem;
   padding: 10px 35px 0 5px;
   color: #FFF;
   border: none;
@@ -2961,7 +2961,66 @@ body .select2-results__option[aria-selected] {
   outline: none;
 }
 .contact__form-btn {
-  width: 100%;
+  width: 90%;
+}
+@media (max-width: 1200px) {
+  .contact__inner {
+    width: 600px;
+    height: 380px;
+  }
+  .contact .contact__form-inputbox label,
+  .contact .contact__form-textarea label {
+    font-size: 1.1rem;
+  }
+  .contact .contact__form-inputbox input,
+  .contact .contact__form-textarea textarea {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 991px) {
+  .contact__inner {
+    width: 530px;
+    height: 350px;
+  }
+  .contact .contact__form-inputbox label,
+  .contact .contact__form-textarea label {
+    font-size: 1rem;
+  }
+  .contact .contact__form-inputbox input,
+  .contact .contact__form-textarea textarea {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 767px) {
+  .contact__inner {
+    width: 450px;
+    height: 350px;
+  }
+  .contact .contact__form-inputbox label,
+  .contact .contact__form-textarea label {
+    font-size: 1rem;
+  }
+  .contact .contact__form-inputbox input,
+  .contact .contact__form-textarea textarea {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 575px) {
+  .contact__inner {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  .contact .contact__form {
+    width: 100%;
+  }
+  .contact .contact__form-inputbox {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .contact .contact__form-textarea {
+    width: 100%;
+  }
 }
 
 /*===== MEDIA QUERIES =====*/
