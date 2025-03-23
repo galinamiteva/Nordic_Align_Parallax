@@ -4,7 +4,7 @@
     background-position: center;
     min-height: 100vh;
     background-size: cover;
-    color: var(--text);
+    color: $white;
     overflow: hidden;
     position: relative;
     top: -70px;
@@ -42,4 +42,8 @@
     &__img {
         width: calc(var(--index) * 6);
     }
+}
+.product .container{
+    position:relative;
+    top:-200px;
 }
