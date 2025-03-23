@@ -1,4 +1,4 @@
-.product {
+.why {
      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), url('/images/aurora_up.png');
    // background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), linear-gradient(to top, transparent, transparent, transparent, transparent), url('/images/aurora_up.png');
     background-position: center;
@@ -43,7 +43,7 @@
         width: calc(var(--index) * 6);
     }
 }
-.product .container{
+.why .container{
     position:relative;
     top:-200px;
 }

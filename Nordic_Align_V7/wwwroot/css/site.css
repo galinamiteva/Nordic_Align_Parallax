@@ -429,6 +429,23 @@ body .select2-results__option[aria-selected] {
   background-size: cover;
   background-position: center;
 }
+.contact-form-login .logo-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-form-login .logo img {
+  display: block;
+  height: 45px;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
 .contact-form-login .container {
   position: relative;
   width: 350px;
@@ -553,6 +570,23 @@ body .select2-results__option[aria-selected] {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+}
+.contact-form .logo-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-form .logo img {
+  display: block;
+  height: 45px;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 .contact-form .register {
   position: relative;
@@ -3072,7 +3106,7 @@ body .select2-results__option[aria-selected] {
     width: 450px;
   }
 }
-.product {
+.why {
   background-image: linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent, transparent, transparent), linear-gradient(to top, rgb(0, 0, 0) 1px, transparent, transparent, transparent), url("/images/aurora_up.png");
   background-position: center;
   min-height: 100vh;
@@ -3082,7 +3116,7 @@ body .select2-results__option[aria-selected] {
   position: relative;
   top: -70px;
 }
-.product__inner {
+.why__inner {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -3095,25 +3129,25 @@ body .select2-results__option[aria-selected] {
   z-index: 10;
   will-change: transform;
 }
-.product__title {
+.why__title {
   margin-bottom: 10px;
   text-transform: uppercase;
   font-size: calc(var(--index) * 2);
   letter-spacing: calc(var(--index) / 5);
   font-weight: 600;
 }
-.product__paragraph {
+.why__paragraph {
   font-weight: 400;
   text-align: center;
   font-size: calc(var(--index) * 0.9);
   max-width: calc(var(--index) * 30);
   letter-spacing: 2px;
 }
-.product__img {
+.why__img {
   width: calc(var(--index) * 6);
 }
 
-.product .container {
+.why .container {
   position: relative;
   top: -200px;
 }
