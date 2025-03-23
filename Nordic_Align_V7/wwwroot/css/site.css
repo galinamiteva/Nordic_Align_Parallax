@@ -2805,7 +2805,7 @@ body .select2-results__option[aria-selected] {
 }
 .section__data {
   margin-bottom: 3rem;
-  padding: 0 20px;
+  padding: 0 20px 0 30px;
 }
 .section__title {
   font-size: 1.5rem;
