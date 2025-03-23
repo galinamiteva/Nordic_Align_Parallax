@@ -2798,6 +2798,7 @@ body .select2-results__option[aria-selected] {
 }
 .section__data {
   margin-bottom: 3rem;
+  padding: 0 20px;
 }
 .section__title {
   font-size: 1.5rem;
@@ -2805,7 +2806,7 @@ body .select2-results__option[aria-selected] {
   margin-bottom: 1rem;
 }
 .section__img {
-  width: 285px;
+  width: 450px;
   border-radius: 0.5rem;
 }
 
@@ -3023,7 +3024,6 @@ body .select2-results__option[aria-selected] {
   }
 }
 
-/*===== MEDIA QUERIES =====*/
 @media screen and (min-width: 760px) {
   .section {
     flex-direction: row;
@@ -3032,8 +3032,25 @@ body .select2-results__option[aria-selected] {
   }
   .section__text {
     padding-right: 4rem;
+    padding: 0 10px;
   }
   .section__img {
     width: 470px;
+  }
+}
+@media (max-width: 991px) {
+  .section__text {
+    font-size: 0.8rem;
+  }
+  .section__img {
+    width: 350px;
+  }
+}
+@media (max-width: 1200px) {
+  .section__text {
+    font-size: 1rem;
+  }
+  .section__img {
+    width: 450px;
   }
 }

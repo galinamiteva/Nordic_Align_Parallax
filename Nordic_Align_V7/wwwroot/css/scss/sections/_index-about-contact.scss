@@ -40,6 +40,7 @@
 
     &__data {
         margin-bottom: 3rem;
+        padding:0 20px;
     }
 
     &__title {
@@ -49,10 +50,13 @@
     }
 
     &__img {
-        width: 285px;
+        width: 450px;
         border-radius: .5rem;
     }
+
+
 }
+
 
 
 
@@ -317,7 +321,7 @@
 
 
 
-/*===== MEDIA QUERIES =====*/
+
 @media screen and (min-width: 760px) {
 
 
@@ -330,10 +334,40 @@
 
         &__text {
             padding-right: 4rem;
+            padding:0 10px;
         }
 
         &__img {
             width: 470px;
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    .section {
+
+
+        &__text {
+            font-size: 0.8rem;
+        }
+
+        &__img {
+            width: 350px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .section {
+
+
+        &__text {
+            font-size: 1rem;
+        }
+
+        &__img {
+            width: 450px;
         }
     }
 }
