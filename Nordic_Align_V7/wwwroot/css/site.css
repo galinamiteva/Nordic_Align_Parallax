@@ -2856,14 +2856,14 @@ body .select2-results__option[aria-selected] {
 .contact__form .form-message.success {
   background-color: #FFF;
   color: #0396A6;
-  border: 1px solid #c3e6cb;
+  font-size: 12px;
 }
 .contact__form .form-message.error {
   background-color: #FFF;
   color: #980942;
 }
 .contact__form-title {
-  font-size: calc(var(--index) * 1.5);
+  font-size: calc(var(--index) * 1.8);
   font-weight: 700;
   color: #FFF;
   text-align: center;
@@ -2890,7 +2890,7 @@ body .select2-results__option[aria-selected] {
   left: 5px;
   transform: translateY(-70%);
   color: #FFF;
-  font-size: calc(var(--index) * 0.7);
+  font-size: calc(var(--index) * 1.1);
   pointer-events: none;
   transition: all 0.5s;
 }
@@ -2898,7 +2898,7 @@ body .select2-results__option[aria-selected] {
   width: 100%;
   height: 40px;
   background-color: transparent;
-  font-size: calc(var(--index) * 0.7);
+  font-size: calc(var(--index) * 1);
   padding: 0 35px 0 5px;
   color: #FFF;
   border: none;
@@ -2938,7 +2938,7 @@ body .select2-results__option[aria-selected] {
   top: 52px;
   left: 5px;
   color: #FFF;
-  font-size: calc(var(--index) * 0.7);
+  font-size: calc(var(--index) * 1.1);
   pointer-events: none;
   transition: all 0.5s;
 }
@@ -2946,7 +2946,7 @@ body .select2-results__option[aria-selected] {
   width: 100%;
   height: 80px;
   background-color: transparent;
-  font-size: calc(var(--index) * 0.7);
+  font-size: calc(var(--index) * 1);
   padding: 10px 35px 0 5px;
   color: #FFF;
   border: none;

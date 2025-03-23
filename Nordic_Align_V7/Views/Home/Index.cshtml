@@ -1,10 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-   
+
 }
 
 <section class="layers" id="home">
-    
+
 
 
     <div class="layers__container">
@@ -15,7 +15,7 @@
 
         <div class="layers__item layer-3">
             <div class="hero-content">
-                
+
                 <h1>Nordic Align </h1>
                 <div class="hero__content-p">Supply Chain Consulting AB</div>
 
@@ -33,14 +33,14 @@
 
 
 <section class="about" id="about">
-                <div class="section">
-                    <div class="section__data">
-                        <h2 class="section__title">Om oss</h2>
-                            <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eosDoloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eosDoloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eos Doloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eos, numquam iusto aliquid expedita est sapiente quaerat inventore voluptatem corporis aliquam.</p>
-                    </div>
-        
-                    <img src="/images/Truck7.png" alt="" class="section__img">
-                </div>
+    <div class="section">
+        <div class="section__data">
+            <h2 class="section__title">Om oss</h2>
+            <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eosDoloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eosDoloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eos Doloribus, laboriosam. Esse ipsum culpa laboriosam, totam hic quidem recusandae eos, numquam iusto aliquid expedita est sapiente quaerat inventore voluptatem corporis aliquam.</p>
+        </div>
+
+        <img src="/images/Truck7.png" alt="" class="section__img">
+    </div>
 </section>
 
 
@@ -67,7 +67,7 @@
 
                         <label for="email">Email</label>
                     </div>
-               </div>
+                </div>
 
                 <div class="contact__form-inputbox contact__form-textarea">
                     <i class="bi bi-pen"></i>
@@ -94,14 +94,14 @@
       if (window.innerWidth > 1024) {
         if (!document.querySelector('script[src*="rain.js"]')) {
           let script = document.createElement("script");
-          script.src = "./js/rain.js?v=" + new Date().getTime(); 
+          script.src = "./js/rain.js?v=" + new Date().getTime();
           script.async = true;
           script.classList.add("rain-script");
           document.body.appendChild(script);
 
           script.onload = () => {
             if (typeof animateRain === "function") {
-              rainAnimation = requestAnimationFrame(animateRain); 
+              rainAnimation = requestAnimationFrame(animateRain);
             }
           };
         }
@@ -124,7 +124,7 @@
 
         if (canvas) {
           let ctx = canvas.getContext("2d");
-          ctx.clearRect(0, 0, canvas.width, canvas.height); 
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
           canvas.remove();
         }
       }

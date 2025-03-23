@@ -1,22 +1,22 @@
 ﻿
 
 
-    //Contact script
-    document.addEventListener("DOMContentLoaded", function () {
-        let form = document.querySelector(".contact__form");
+//Contact script
+document.addEventListener("DOMContentLoaded", function () {
+    let form = document.querySelector(".contact__form");
     let messageElement = document.getElementById("form-message");
 
     if (!form) {
         console.error("Ingen form!");
-    return;
-        }
+        return;
+    }
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
 
         if (!name || !email || !message) {
             showMessage("Alla fält är obligatoriska", "error");
@@ -52,16 +52,16 @@
         form.reset();
     });
 
-        function showMessage(message, type) {
-            messageElement.textContent = message;
-            messageElement.classList.remove("success", "error");
-            messageElement.classList.add(type);
-            messageElement.style.display = "block";
+    function showMessage(message, type) {
+        messageElement.textContent = message;
+        messageElement.classList.remove("success", "error");
+        messageElement.classList.add(type);
+        messageElement.style.display = "block";
 
-            setTimeout(function () {
-                messageElement.style.display = "none";
-            }, 1000);
-        }
+        setTimeout(function () {
+            messageElement.style.display = "none";
+        }, 2000);
+    }
 
-        
-    });
+
+});

@@ -30,7 +30,7 @@ public class ContactController : Controller
         try
         {
             await _mailService.SendEmailAsync("galinamiteva69@gmail.com", subject, body);
-            return Ok("Succe!");
+            return Ok("Tack för ditt meddelande! Vi kommer att svara så snart som möjligt.");
         }
         catch (Exception ex)
         {
