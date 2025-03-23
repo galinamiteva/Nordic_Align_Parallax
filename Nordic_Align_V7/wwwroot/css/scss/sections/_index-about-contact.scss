@@ -63,7 +63,8 @@
 
 .contact {
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url('/images/background-contact4.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url('/images/aurora_down.png');
+   // background-image: linear-gradient(to bottom, transparent, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url('/images/aurora_down.png');
     background-size: cover;
     background-position: center;
     display: flex;

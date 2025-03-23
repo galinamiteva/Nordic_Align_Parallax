@@ -100,6 +100,14 @@ body .select2-results__option[aria-selected] {
   padding: 20px 0;
   color: #FFF;
 }
+.header__inner .logo img {
+  display: block;
+  height: 45px;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
 .header .menu {
   flex-grow: 1;
 }
@@ -289,6 +297,9 @@ body .select2-results__option[aria-selected] {
   position: relative;
   top: -88px;
   height: 99px;
+}
+.footer .container {
+  padding-top: 50px;
 }
 
 .layers {
@@ -2819,7 +2830,7 @@ body .select2-results__option[aria-selected] {
 
 .contact {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url("/images/background-contact4.jpg");
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url("/images/aurora_down.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -3060,4 +3071,44 @@ body .select2-results__option[aria-selected] {
   .section__img {
     width: 450px;
   }
+}
+.product {
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent, transparent, transparent), linear-gradient(to top, rgb(0, 0, 0) 1px, transparent, transparent, transparent), url("/images/aurora_up.png");
+  background-position: center;
+  min-height: 100vh;
+  background-size: cover;
+  color: var(--text);
+  overflow: hidden;
+  position: relative;
+  top: -70px;
+}
+.product__inner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(0, calc(var(--scrollTop) / 3), 0) translateX(-50%);
+  transition: var(--transition);
+  z-index: 10;
+  will-change: transform;
+}
+.product__title {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: calc(var(--index) * 2);
+  letter-spacing: calc(var(--index) / 5);
+  font-weight: 600;
+}
+.product__paragraph {
+  font-weight: 400;
+  text-align: center;
+  font-size: calc(var(--index) * 0.9);
+  max-width: calc(var(--index) * 30);
+  letter-spacing: 2px;
+}
+.product__img {
+  width: calc(var(--index) * 6);
 }
