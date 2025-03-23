@@ -284,6 +284,13 @@ body .select2-results__option[aria-selected] {
     min-width: 100%;
   }
 }
+.footer {
+  background-color: #000;
+  position: relative;
+  top: -88px;
+  height: 99px;
+}
+
 .layers {
   overflow: hidden;
   position: relative;
