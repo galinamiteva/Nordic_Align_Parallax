@@ -3295,3 +3295,40 @@ body .select2-results__option[aria-selected] {
 .privacy .container a:hover {
   text-decoration: underline;
 }
+
+#error {
+  height: 100%;
+}
+#error .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 135px;
+}
+#error .container img {
+  width: 500px;
+}
+#error .container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#error .container .content .title {
+  font-weight: 800;
+  line-height: 160%;
+  font-weight: 400;
+  color: #000;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #000;
+  font-size: 32px !important;
+  margin-bottom: 10px;
+}
+#error .container .content p {
+  margin-bottom: 40px;
+}
+#error .container .content a {
+  color: #0396A6;
+}

@@ -58,9 +58,10 @@ QuestPDF.Settings.License = LicenseType.Community;
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/error");
     app.UseHsts();
 }
+app.UseStatusCodePagesWithReExecute("/error", "?statusCode={0}");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -37,6 +37,14 @@ namespace Nordic_Align_V7.Controllers
             return View(model); 
         }
 
+
+        [Route("/error")]
+        public IActionResult Error404(int statusCode) => View();
+
+
+        
+
+
         // Other actions...
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,11 +1,12 @@
 ﻿@{
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
     var footerClass = currentController == "Privacy" ? "footer-light" : "footer-dark";
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
 
 
 }
 
-@if (currentController != "Account" && currentController != "Courier" && currentController != "Order" && currentController != "Transport" && currentController != "Warehouse" && currentController != "Recepient" && currentController != "Transport" && currentController != "Invoice" && currentController != "InvoiceNoTax")
+@if (currentController != "Account" && currentController != "Courier" && currentController != "Order" && currentController != "Transport" && currentController != "Warehouse" && currentController != "Recepient" && currentController != "Transport" && currentController != "Invoice" && currentController != "InvoiceNoTax" && currentAction != "Error404")
    
 
 {
