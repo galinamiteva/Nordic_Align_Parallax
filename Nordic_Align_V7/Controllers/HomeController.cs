@@ -21,10 +21,7 @@ namespace Nordic_Align_V7.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        
 
         // POST: /Home/Contact
         [HttpPost]

@@ -154,6 +154,9 @@ body .select2-results__option[aria-selected] {
   border-right: 2px solid rgba(255, 255, 255, 0.3);
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
+.header #account {
+  margin-top: 5px;
+}
 .header .logo {
   color: #FFF;
   font-size: calc(var(--index) * 1.2);
@@ -280,6 +283,7 @@ body .select2-results__option[aria-selected] {
   }
   .header__inner {
     padding: 10px 0;
+    align-items: center;
   }
   .header__btn {
     padding: 5px 13px;
@@ -293,13 +297,21 @@ body .select2-results__option[aria-selected] {
   }
 }
 .footer {
-  background-color: #000;
   position: relative;
   top: -88px;
   height: 99px;
 }
+.footer-dark {
+  background-color: #000;
+}
+.footer-light {
+  background-color: #d2ebf9;
+}
 .footer .container {
   padding-top: 50px;
+}
+.footer .container a {
+  color: #0396A6 !important;
 }
 
 .layers {
@@ -3149,5 +3161,137 @@ body .select2-results__option[aria-selected] {
 
 .why .container {
   position: relative;
-  top: -200px;
+  top: -300px;
+}
+
+.privacy {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
+}
+.privacy .color {
+  position: absolute;
+  filter: blur(150px);
+}
+.privacy .color:nth-child(1) {
+  top: -350px;
+  width: 800px;
+  height: 800px;
+  background: #e3f2fd;
+}
+.privacy .color:nth-child(2) {
+  bottom: -150px;
+  left: 10px;
+  width: 500px;
+  height: 500px;
+  background: #cae9ff;
+}
+.privacy .color:nth-child(3) {
+  bottom: 30px;
+  right: 20px;
+  width: 500px;
+  height: 300px;
+  background: #c4f0ef;
+}
+.privacy .box {
+  position: relative;
+  margin-top: 90px;
+}
+.privacy .box .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+.privacy .box .square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+.privacy .box .square:nth-child(2) {
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+.privacy .box .square:nth-child(3) {
+  top: 150px;
+  right: -100px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+.privacy .box .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+.privacy .box .square:nth-child(5) {
+  top: 80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+}
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+.privacy .container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  width: 80%;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 200px;
+}
+.privacy .container h1 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-top: 26px;
+}
+.privacy .container h2 {
+  font-size: 1.5rem;
+  color: #000;
+  margin-top: 1.5rem;
+}
+.privacy .container p, .privacy .container ul {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.6;
+}
+.privacy .container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+.privacy .container a {
+  color: #0396A6;
+  text-decoration: none;
+}
+.privacy .container a:hover {
+  text-decoration: underline;
 }

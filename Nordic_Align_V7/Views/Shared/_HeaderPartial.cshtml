@@ -61,7 +61,7 @@
                             <li class="menu__list-item">
                                 <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" asp-controller="Warehouse" asp-action="Index">Lager</a>
                             </li>
-                            <li class="menu__list-item">
+                            <li class="menu__list-item" >
                                 <a class="menu__list-link dropdown-toggle @(currentController != "Home" ? "menu__list-black" : "")" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Invoice
                                 </a>
@@ -78,7 +78,7 @@
                     </ul>
                 </nav>
 
-                <ul class="menu__list">
+                <ul class="menu__list" id="account">
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logout</a></li>

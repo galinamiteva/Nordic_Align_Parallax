@@ -1,10 +1,21 @@
 .footer {
-    background-color: $black;
     position: relative;
     top: -88px;
     height: 99px;
 
+    &-dark {
+        background-color: $black;
+    }
+
+    &-light {
+        background-color: #d2ebf9;
+    }
+
+
     .container {
         padding-top: 50px;
+        a{
+            color:$blue !important;
+        }
     }
 }
