@@ -646,12 +646,12 @@ body .select2-results__option[aria-selected] {
   justify-content: space-between;
 }
 .contact-form form .inputBox a {
-  color: #FFF;
+  color: #000;
   text-decoration: none;
   font-size: 0.85rem;
 }
 .contact-form form .inputBox p {
-  color: #FFF;
+  color: #000;
   font-size: 0.85rem;
 }
 .contact-form form .inputBox a#login {
@@ -665,7 +665,7 @@ body .select2-results__option[aria-selected] {
   padding: 6px 15px;
   border-radius: 4px;
   font-size: 0.85em;
-  color: #FFF;
+  color: #000;
   z-index: 10000;
 }
 .contact-form form .inputBox input::placeholder {
@@ -675,6 +675,7 @@ body .select2-results__option[aria-selected] {
   background: #f49a24;
   font-weight: 500;
   cursor: pointer;
+  color: #FFF;
 }
 .contact-form form .inputBox span {
   color: red;
@@ -717,7 +718,7 @@ body .select2-results__option[aria-selected] {
 .contact-form input:-webkit-autofill:focus,
 .contact-form input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #FFF !important;
+  -webkit-text-fill-color: #000 !important;
 }
 
 .courier {
@@ -2847,7 +2848,7 @@ body .select2-results__option[aria-selected] {
   justify-content: space-evenly;
   align-items: center;
 }
-.section::before {
+.section::before, .section::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2857,6 +2858,10 @@ body .select2-results__option[aria-selected] {
   pointer-events: none;
 }
 .section::before {
+  top: 0;
+  background: linear-gradient(to bottom, #0E1115 30%, transparent);
+}
+.section::after {
   bottom: 0;
   background: linear-gradient(to top, rgba(1, 2, 9, 0.6) 20%, transparent);
 }
