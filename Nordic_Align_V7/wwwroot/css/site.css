@@ -260,7 +260,7 @@ body .select2-results__option[aria-selected] {
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   }
   .menu[data-role=Admin] {
-    height: 550px !important;
+    height: 415px !important;
   }
   .menu[data-role=User] {
     height: 330px;

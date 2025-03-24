@@ -10,7 +10,6 @@
 @if (currentController != "Account")
 {
     <header class="header">
-
         <div class="container">
             <div class="header__inner">
                 <button class="burger">
@@ -20,26 +19,28 @@
                 </button>
 
                 <a class="logo" asp-controller="Home" asp-action="Index">
-                    <img src="/images/miniLogo.png" alt="Logo" >
+                    <img src="/images/miniLogo.png" alt="Logo">
                 </a>
-
 
                 <nav class="menu" data-role="@(role == "User" ? "User" : role == "Admin" ? "Admin" : "None")">
                     <ul class="menu__list">
-                        <li class="menu__list-item">
-                            <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="home">Hem</a>
-                        </li>
-                        <li class="menu__list-item">
-                            <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">Översikt</a>
-                        </li>
-                        <li class="menu__list-item">
-                            <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="why_us">Varför oss</a>
-                        </li>
-                        <li class="menu__list-item">
-                            <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="contact">Kontakt</a>
-                        </li>
+                        @if (role != "Admin")
+                        {
+                            <li class="menu__list-item">
+                                <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="home">Hem</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">Översikt</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="why_us">Varför oss</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="contact">Kontakt</a>
+                            </li>
+                        }
 
-                        @if (role == "User")
+                        @if (role == "User" || role == "Admin")
                         {
                             <li class="menu__list-item">
                                 <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" asp-controller="Recepient" asp-action="Index">Mottagare</a>
@@ -51,12 +52,6 @@
 
                         @if (role == "Admin")
                         {
-                            <li class="menu__list-item">
-                                <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" asp-controller="Order" asp-action="Index">Order</a>
-                            </li>
-                            <li class="menu__list-item">
-                                <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" asp-controller="Recepient" asp-action="Index">Mottagare</a>
-                            </li>
                             <li class="menu__list-item">
                                 <a class="menu__list-link @(currentController != "Home" ? "menu__list-black" : "")" asp-area="" asp-controller="Courier" asp-action="Index">Kurirer</a>
                             </li>
