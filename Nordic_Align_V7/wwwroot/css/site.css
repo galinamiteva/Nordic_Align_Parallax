@@ -263,7 +263,7 @@ body .select2-results__option[aria-selected] {
     height: 550px !important;
   }
   .menu[data-role=User] {
-    height: 300px;
+    height: 330px;
   }
   .menu[data-role=None] {
     height: 250px;
