@@ -334,7 +334,7 @@ body .select2-results__option[aria-selected] {
 }
 .layers::after {
   bottom: 0;
-  background: linear-gradient(to top, #0f1f0c 20%, transparent);
+  background: linear-gradient(to top, #0E1115 30%, transparent);
 }
 .layers > .layers__container {
   height: 100vh;
@@ -2830,7 +2830,7 @@ body .select2-results__option[aria-selected] {
 
 /*===== SECTION =====*/
 .about {
-  background-color: #0f1f0c;
+  background-color: #0E050E;
   position: relative;
   top: -70px;
 }
@@ -2862,7 +2862,7 @@ body .select2-results__option[aria-selected] {
 }
 .section__data {
   margin-bottom: 3rem;
-  padding: 0 20px 0 30px;
+  padding: 0 40px 0 30px;
 }
 .section__title {
   font-size: 1.5rem;
