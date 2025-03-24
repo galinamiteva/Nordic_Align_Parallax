@@ -97,7 +97,7 @@ body .select2-results__option[aria-selected] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 0 20px 90px;
   color: #FFF;
 }
 .header__inner .logo img {
