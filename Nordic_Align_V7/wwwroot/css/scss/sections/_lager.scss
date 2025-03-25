@@ -338,7 +338,7 @@
 
     .container {
         position: relative;
-        min-width: 700px;
+        min-width: 700px !important;
         min-height: 550px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
@@ -357,7 +357,7 @@
             h2 {
                 position: relative;
                 color: $black;
-                font-size: 25px;
+                font-size: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
                 margin-bottom: 40px;
@@ -399,11 +399,19 @@
 
             .table {
                 margin-bottom: 3rem;
+                font-size: .7rem;
 
+                @media (min-width: 756px) {
+                    font-size: .9rem;
+                }
 
                 .icon {
-                    font-size: 20px;
+                    font-size: .8rem;
                     color: rgba(102,101,101,1.5);
+
+                    @media (min-width: 756px) {
+                        font-size: 1.1rem;
+                    }
                 }
             }
 

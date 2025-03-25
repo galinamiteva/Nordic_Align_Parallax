@@ -439,7 +439,7 @@
 
     .container {
         position: relative;
-        min-width: 800px;
+        min-width: 700px !important;
         min-height: 700px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
@@ -454,12 +454,20 @@
         margin-bottom: 400px;
         padding-bottom: 3rem;
 
+        @media (min-width: 756px) {
+            min-width: 800px !important;
+        }
+
+        @media (min-width: 991px) {
+            min-width: 900px !important;
+        }
+
         .form {
 
             h2 {
                 position: relative;
                 color: $black;
-                font-size: 25px;
+                font-size: 2rem;
                 font-weight: 600;
                 letter-spacing: 1px;
                 margin-bottom: 40px;
@@ -503,11 +511,19 @@
 
             .table {
                 margin-bottom: 2rem;
+                font-size: .7rem;
 
+                @media (min-width: 756px) {
+                    font-size: .9rem;
+                }
 
                 .icon {
-                    font-size: 20px;
+                    font-size: .8rem;
                     color: rgba(102,101,101,1.5);
+
+                    @media (min-width: 756px) {
+                        font-size: 1.1rem;
+                    }
                 }
             }
 

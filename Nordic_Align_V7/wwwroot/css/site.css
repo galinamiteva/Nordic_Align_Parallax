@@ -1011,7 +1011,7 @@ body .select2-results__option[aria-selected] {
 }
 .courier-table .container {
   position: relative;
-  min-width: 800px;
+  min-width: 700px !important;
   min-height: 700px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -1026,10 +1026,15 @@ body .select2-results__option[aria-selected] {
   margin-bottom: 400px;
   padding-bottom: 3rem;
 }
+@media (min-width: 756px) {
+  .courier-table .container {
+    min-width: 800px !important;
+  }
+}
 .courier-table .container .form h2 {
   position: relative;
   color: #000;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -1054,7 +1059,7 @@ body .select2-results__option[aria-selected] {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 1px;
   color: #000;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -1064,10 +1069,21 @@ body .select2-results__option[aria-selected] {
 }
 .courier-table .container .form .table {
   margin-bottom: 2rem;
+  font-size: 0.7rem;
+}
+@media (min-width: 756px) {
+  .courier-table .container .form .table {
+    font-size: 0.9rem;
+  }
 }
 .courier-table .container .form .table .icon {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: rgb(102, 101, 101);
+}
+@media (min-width: 756px) {
+  .courier-table .container .form .table .icon {
+    font-size: 1.1rem;
+  }
 }
 .courier-table .container .form .button-secondary {
   margin-bottom: 3rem;
@@ -1451,7 +1467,7 @@ body .select2-results__option[aria-selected] {
 }
 .order-table .container {
   position: relative;
-  min-width: 800px;
+  min-width: 700px !important;
   min-height: 700px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -1466,10 +1482,20 @@ body .select2-results__option[aria-selected] {
   margin-bottom: 400px;
   padding-bottom: 3rem;
 }
+@media (min-width: 756px) {
+  .order-table .container {
+    min-width: 800px !important;
+  }
+}
+@media (min-width: 991px) {
+  .order-table .container {
+    min-width: 900px !important;
+  }
+}
 .order-table .container .form h2 {
   position: relative;
   color: #000;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -1508,10 +1534,21 @@ body .select2-results__option[aria-selected] {
 }
 .order-table .container .form .table {
   margin-bottom: 2rem;
+  font-size: 0.7rem;
+}
+@media (min-width: 756px) {
+  .order-table .container .form .table {
+    font-size: 0.9rem;
+  }
 }
 .order-table .container .form .table .icon {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: rgb(102, 101, 101);
+}
+@media (min-width: 756px) {
+  .order-table .container .form .table .icon {
+    font-size: 1.1rem;
+  }
 }
 .order-table .container .form .button-secondary {
   margin-bottom: 3rem;
@@ -1814,7 +1851,7 @@ body .select2-results__option[aria-selected] {
 }
 .mottagare-table .container {
   position: relative;
-  min-width: 800px;
+  min-width: 700px !important;
   min-height: 600px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -1829,10 +1866,15 @@ body .select2-results__option[aria-selected] {
   margin-bottom: 400px;
   padding-bottom: 3rem;
 }
+@media (min-width: 756px) {
+  .mottagare-table .container {
+    min-width: 800px !important;
+  }
+}
 .mottagare-table .container .form h2 {
   position: relative;
   color: #000;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -1867,10 +1909,21 @@ body .select2-results__option[aria-selected] {
 }
 .mottagare-table .container .form .table {
   margin-bottom: 3rem;
+  font-size: 0.7rem;
+}
+@media (min-width: 756px) {
+  .mottagare-table .container .form .table {
+    font-size: 0.9rem;
+  }
 }
 .mottagare-table .container .form .table .icon {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: rgb(102, 101, 101);
+}
+@media (min-width: 756px) {
+  .mottagare-table .container .form .table .icon {
+    font-size: 1.1rem;
+  }
 }
 .mottagare-table .container .form .button-secondary {
   margin-bottom: 3rem;
@@ -1996,7 +2049,7 @@ body .select2-results__option[aria-selected] {
 .transport .container .form h2 {
   position: relative;
   color: #000;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -2173,7 +2226,7 @@ body .select2-results__option[aria-selected] {
 }
 .transport-table .container {
   position: relative;
-  min-width: 800px;
+  min-width: 700px !important;
   min-height: 500px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -2188,10 +2241,15 @@ body .select2-results__option[aria-selected] {
   margin-bottom: 400px;
   padding-bottom: 3rem;
 }
+@media (min-width: 757px) {
+  .transport-table .container {
+    min-width: 800px !important;
+  }
+}
 .transport-table .container .form h2 {
   position: relative;
   color: #000;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -2226,10 +2284,21 @@ body .select2-results__option[aria-selected] {
 }
 .transport-table .container .form .table {
   margin-bottom: 2rem;
+  font-size: 0.7rem;
+}
+@media (min-width: 757px) {
+  .transport-table .container .form .table {
+    font-size: 0.9rem;
+  }
 }
 .transport-table .container .form .table .icon {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: rgb(102, 101, 101);
+}
+@media (min-width: 757px) {
+  .transport-table .container .form .table .icon {
+    font-size: 1.1rem;
+  }
 }
 .transport-table .container .form .button-secondary {
   margin-bottom: 3rem;
@@ -2532,7 +2601,7 @@ body .select2-results__option[aria-selected] {
 }
 .lager-table .container {
   position: relative;
-  min-width: 700px;
+  min-width: 700px !important;
   min-height: 550px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -2550,7 +2619,7 @@ body .select2-results__option[aria-selected] {
 .lager-table .container .form h2 {
   position: relative;
   color: #000;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -2585,10 +2654,21 @@ body .select2-results__option[aria-selected] {
 }
 .lager-table .container .form .table {
   margin-bottom: 3rem;
+  font-size: 0.7rem;
+}
+@media (min-width: 756px) {
+  .lager-table .container .form .table {
+    font-size: 0.9rem;
+  }
 }
 .lager-table .container .form .table .icon {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: rgb(102, 101, 101);
+}
+@media (min-width: 756px) {
+  .lager-table .container .form .table .icon {
+    font-size: 1.1rem;
+  }
 }
 .lager-table .container .form .button-secondary {
   margin-bottom: 3rem;
