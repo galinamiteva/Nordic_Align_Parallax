@@ -41,7 +41,7 @@ public class AccountController(UserManager<UserModel> userManager, SignInManager
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
-            Console.WriteLine($"User {user.Email} created successfully."); 
+            Console.WriteLine($"User {user.Email} created successfully.");
             if (isFirstUser)
             {
                 await _userManager.AddToRoleAsync(user, "Admin");
@@ -55,7 +55,7 @@ public class AccountController(UserManager<UserModel> userManager, SignInManager
         }
         foreach (var error in result.Errors)
         {
-            Console.WriteLine($"Error: {error.Description}"); 
+            Console.WriteLine($"Error: {error.Description}");
             ModelState.AddModelError("", error.Description);
         }
         return View(model);
@@ -74,7 +74,7 @@ public class AccountController(UserManager<UserModel> userManager, SignInManager
             ViewBag.LoginFail = "Login failed. Please check your inputs.";
             Console.WriteLine("Model state is invalid."); // Debug
             return View(model);
-        } 
+        }
 
         var result = await _signInManager.PasswordSignInAsync(email, password, false, false);
         if (result.Succeeded)
