@@ -20,6 +20,9 @@ public class InvoiceController : Controller
         _dbContext = dbContext;
     }
 
+
+
+
     [HttpGet]
     public IActionResult CreateInvoice()
     {
@@ -57,6 +60,8 @@ public class InvoiceController : Controller
 
 
             };
+
+
             using var transaction = _dbContext.Database.BeginTransaction();
 
             _dbContext.Invoices.Add(invoice);
@@ -67,7 +72,10 @@ public class InvoiceController : Controller
             {
                 return Content("Error: Invalid item data. Please check the input.");
             }
-
+            if (prices.Any(p => p <= 0))
+            {
+                return Content("Error: Invalid item data");
+            }
             var invoiceItems = new List<InvoiceItemModel>();
 
             for (int i = 0; i < itemNames.Count; i++)
@@ -101,12 +109,14 @@ public class InvoiceController : Controller
             var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
-            return result ? Content("Invoice email has been sent successfully.") : Content("An error occurred while sending the email.");
+            return result ? Content("Invoice email has been sent successfully.") : Content("Error: Failed to send email.");
+
+
         }
         catch (Exception ex)
         {
             Console.WriteLine("Error: " + ex.Message);
-            return Content($"A processing error occurred: {ex.Message}");
+            return Content("A processing error occurred");
         }
     }
 
@@ -249,10 +259,12 @@ public class InvoiceController : Controller
     }
 
 
-    private bool SendEmailWithAttachment(string recipientEmail, string subject, string body, byte[] attachmentBytes)
+    public bool SendEmailWithAttachment(string recipientEmail, string subject, string body, byte[] attachmentBytes)
     {
         try
         {
+            Console.WriteLine($"Attempting to send email to: {recipientEmail}");
+
             var smtpSettings = _configuration.GetSection("Smtp");
             var fromEmail = smtpSettings["Username"];
             var fromName = smtpSettings["FromName"];
@@ -285,6 +297,8 @@ public class InvoiceController : Controller
             message.Attachments.Add(new Attachment(new MemoryStream(attachmentBytes), "Invoice.pdf"));
 
             smtp.Send(message);
+            Console.WriteLine("Email sent successfully.");
+
             return true;
         }
         catch (Exception ex)

@@ -8,6 +8,7 @@ using Nordic_Align_V7.ViewModels;
 
 using Microsoft.AspNetCore.Http;
 
+namespace Nordic_Align_V7.Tests;
 public class AccountControllerTests
 {
     private readonly Mock<UserManager<UserModel>> _userManagerMock;

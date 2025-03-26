@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Nordic_Align_V7.Models;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Nordic_Align_V7;
 
@@ -16,6 +17,14 @@ public class InvoiceDBContext : DbContext
         _userManager = userManager;
     }
 
+    public InvoiceDBContext(DbContextOptions<InvoiceDBContext> options, IConfiguration configuration) : base(options)
+    {
+        _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+    }
+
+
+
+
     public virtual DbSet<AddressModel> Addresses { get; set; }
     public virtual DbSet<InvoiceModel> Invoices { get; set; }
     public virtual DbSet<InvoiceItemModel> InvoiceItems { get; set; }
@@ -25,7 +34,9 @@ public class InvoiceDBContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             var connectionString = _configuration.GetConnectionString("InvoiceDBConnectionString");
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString)
+            .ConfigureWarnings(warnings => warnings.Ignore(InMemoryEventId.TransactionIgnoredWarning));
+
         }
     }
 
@@ -45,4 +56,7 @@ public class InvoiceDBContext : DbContext
             .HasForeignKey(ii => ii.InvoiceId)
             .OnDelete(DeleteBehavior.Cascade);
     }
+
+   
+
 }
