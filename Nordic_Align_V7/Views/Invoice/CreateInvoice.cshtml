@@ -3,16 +3,23 @@
 
 
 <section class="invoice" style="background: url('/images/Truck7.png') no-repeat center center; background-size: cover; height: 100vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-        <div class="cloud1"><img src="/images/Cloud4.png"></div>
-        <div class="cloud2"><img src="/images/Cloud2.png"></div>
-        <div class="cloud3"><img src="/images/Cloud3.png"></div>
-        <div class="cloud5"><img src="/images/Cloud4.png"></div>
-        <div class="cloud4"><img src="/images/Cloud5.png"></div>
+    <div class="cloud1"><img src="/images/Cloud4.png"></div>
+    <div class="cloud2"><img src="/images/Cloud2.png"></div>
+    <div class="cloud3"><img src="/images/Cloud3.png"></div>
+    <div class="cloud5"><img src="/images/Cloud4.png"></div>
+    <div class="cloud4"><img src="/images/Cloud5.png"></div>
 
 
     <div class="content">
         <div class="container">
             <div class="form">
+                <div id="form-message" class="form-message">
+                    @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
+                    {
+                        <div >@ViewBag.RegisterFail</div>
+                    }
+
+                </div>
 
                 <h2>Skapa faktura</h2>
 
@@ -102,7 +109,7 @@
                         </div>
                     </div>
 
-                  
+
 
 
                     <div class="box-product">
@@ -124,7 +131,7 @@
                                         <label for="Items[@i].Quantity">Antal:</label>
                                         <div class="inputBox-content">
                                             <input type="number" id="Items[i].Quantity" name="quantities[]" min="1" required oninput="validity.valid||(value='');">
-                                           
+
                                             <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
 
 
@@ -136,7 +143,7 @@
                                         <label for="Items[@i].Price">Pris:</label>
                                         <div class="inputBox-content">
                                             <input type="number" id="Items[i].Price" name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
-                                           
+
                                             <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -152,7 +159,7 @@
 
                     @*     Add komment om vi vill*@   
 
-                  
+
                     <div class="inputBox">
                         <label for="Comment">Terms (valfritt)</label>
                         <div class="inputBox-content">
@@ -163,91 +170,88 @@
                     <button class="button-secondary" type="submit">Generera och skicka</button>
                 </form>
 
-                @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
-                {
-                    <div style="color:red;">@ViewBag.RegisterFail</div>
-                }
+              
 
             </div>
 
         </div>
     </div>
-    
+
 
 </section>
 
 <script defer src="~/js/main.js"></script>
 
 <script>
-    let itemIndex = 1; 
-        function addItem() {
-        const container = document.getElementById("items-container");
-        const div = document.createElement("div");
-        div.classList.add("item-row");
-        div.innerHTML = `
-            <div class="box">
-                <div class="inputBox">
-                    <label>Produkt:</label>
-                    <div class="inputBox-content">
-                        <input type="text" name="itemNames[]" required>
-                        <span style="color:red;" data-valmsg-for="itemNames[]" class="text-danger"></span>
+        let itemIndex = 1;
+            function addItem() {
+            const container = document.getElementById("items-container");
+            const div = document.createElement("div");
+            div.classList.add("item-row");
+            div.innerHTML = `
+                <div class="box">
+                    <div class="inputBox">
+                        <label>Produkt:</label>
+                        <div class="inputBox-content">
+                            <input type="text" name="itemNames[]" required>
+                            <span style="color:red;" data-valmsg-for="itemNames[]" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Antal:</label>
+                        <div class="inputBox-content">
+                                <input type="number" name="quantities[]" min="1" required oninput="validity.valid||(value='');">
+                            <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Pris:</label>
+                        <div class="inputBox-content">
+                                <input type="number" step="0.01"  name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
+                            <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
+            `;
+            container.appendChild(div);
+               let newInputs = div.querySelectorAll('input');
+        newInputs.forEach(input => {
+            input.addEventListener('keyup', validateInput);
+            input.addEventListener('blur', validateInput);
+        });
+        }
 
-                <div class="inputBox">
-                    <label>Antal:</label>
-                    <div class="inputBox-content">
-                            <input type="number" name="quantities[]" min="1" required oninput="validity.valid||(value='');">
-                        <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
-                    </div>
-                </div>
+        function calculateDueDate() {
+            const issueDateInput = document.getElementById("IssueDate");
+            const dueDateInput = document.getElementById("DueDate");
 
-                <div class="inputBox">
-                    <label>Pris:</label>
-                    <div class="inputBox-content">
-                            <input type="number" step="0.01"  name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
-                        <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-        `;
-        container.appendChild(div);
-           let newInputs = div.querySelectorAll('input');
-    newInputs.forEach(input => {
-        input.addEventListener('keyup', validateInput);
-        input.addEventListener('blur', validateInput);
-    });
-    }
+            if (issueDateInput.value) {
+                let issueDate = new Date(issueDateInput.value);
+                issueDate.setDate(issueDate.getDate() + 30);
 
-    function calculateDueDate() {
-        const issueDateInput = document.getElementById("IssueDate");
-        const dueDateInput = document.getElementById("DueDate");
+                let dueDateStr = issueDate.toISOString().split("T")[0];
+                dueDateInput.value = dueDateStr;
+            }
+        }
 
-        if (issueDateInput.value) {
-            let issueDate = new Date(issueDateInput.value);
-            issueDate.setDate(issueDate.getDate() + 30); 
-
-            let dueDateStr = issueDate.toISOString().split("T")[0]; 
-            dueDateInput.value = dueDateStr;
+        function validateInput(e) {
+        switch (e.target.type) {
+            case 'text':
+                textValidator(e.target);
+                break;
+            case 'number':
+                numberValidator(e.target);
+                break;
+            case 'email':
+                emailValidator(e.target);
+                break;
+            case 'date':
+                dateValidator(e.target);
+                break;
         }
     }
-
-    function validateInput(e) {
-    switch (e.target.type) {
-        case 'text':
-            textValidator(e.target);
-            break;
-        case 'number':
-            numberValidator(e.target);
-            break;
-        case 'email':
-            emailValidator(e.target);
-            break;
-        case 'date':
-            dateValidator(e.target);
-            break;
-    }
-}
 
 </script>
 

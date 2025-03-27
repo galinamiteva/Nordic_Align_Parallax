@@ -135,6 +135,32 @@
                 padding: 20px;
                 overflow-y: auto;
 
+                .form-message {
+                    display: none;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    text-align: center;
+                    width:100%;
+                }
+
+                .form-message.success {
+                    display: block;
+                    color: $blue;
+                    background-color: $white;
+                    border: none;
+
+                }
+
+                .form-message.error {
+                    display: block;
+                    color: $alert-danger;
+                    background-color: $white;
+                    border: none;
+                }
+
+
                 h2 {
                     position: relative;
                     color: $black;

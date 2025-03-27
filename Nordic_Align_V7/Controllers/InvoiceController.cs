@@ -70,12 +70,17 @@ public class InvoiceController : Controller
 
             if (itemNames == null || prices == null || quantities == null || itemNames.Count != prices.Count || itemNames.Count != quantities.Count)
             {
-                return Content("Error: Invalid item data. Please check the input.");
+                ViewBag.RegisterFail = "Error: Invalid item data. Please check the input.";
+                return View();
             }
+
             if (prices.Any(p => p <= 0))
             {
-                return Content("Error: Invalid item data");
+                ViewBag.RegisterFail = "Error: Invalid item data";
+                return View();
             }
+
+
             var invoiceItems = new List<InvoiceItemModel>();
 
             for (int i = 0; i < itemNames.Count; i++)
@@ -109,14 +114,24 @@ public class InvoiceController : Controller
             var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
-            return result ? Content("Invoice email has been sent successfully.") : Content("Error: Failed to send email.");
+            if (result)
+            {
+                ViewBag.RegisterFail = "Invoice email has been sent successfully.";
+            }
+            else
+            {
+                ViewBag.RegisterFail = "Error: Failed to send email.";
+            }
 
+            ModelState.Clear();
+
+            return View();
 
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error: " + ex.Message);
-            return Content("A processing error occurred");
+            ViewBag.RegisterFail = "A processing error occurred";
+            return View();
         }
     }
 

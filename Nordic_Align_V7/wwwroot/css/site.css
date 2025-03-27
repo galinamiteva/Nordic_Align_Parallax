@@ -2795,6 +2795,27 @@ body .select2-results__option[aria-selected] {
   padding: 20px;
   overflow-y: auto;
 }
+.invoice .content .container .form .form-message {
+  display: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+.invoice .content .container .form .form-message.success {
+  display: block;
+  color: #0396A6;
+  background-color: #FFF;
+  border: none;
+}
+.invoice .content .container .form .form-message.error {
+  display: block;
+  color: #980942;
+  background-color: #FFF;
+  border: none;
+}
 .invoice .content .container .form h2 {
   position: relative;
   color: #000;
