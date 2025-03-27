@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Nordic_Align_V7.Models;
 
 namespace Nordic_Align_V7.Controllers;
@@ -49,11 +50,17 @@ public class RecepientController : Controller
     //DELETE
     public IActionResult Delete(int id)
     {
-        var recepient = _db.Recepients.FirstOrDefault(x => x.Id == id);
+        var recepient = _db.Recepients.Include(r => r.Orders).FirstOrDefault(x => x.Id == id);
 
         if (recepient == null)
         {
-            return NotFound(); // 404 fel
+            return NotFound(); // 404 грешка, ако не съществува
+        }
+
+        if (recepient.Orders != null && recepient.Orders.Any())
+        {
+            TempData["ErrorMessage"] = "Operation är omöjlig. Mottagaren har aktiva beställningar.";
+            return RedirectToAction("Index");
         }
 
         _db.Recepients.Remove(recepient);
@@ -61,4 +68,5 @@ public class RecepientController : Controller
 
         return RedirectToAction("Index");
     }
+
 }

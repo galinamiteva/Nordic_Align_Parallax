@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Nordic_Align_V7.Models;
 
@@ -59,11 +60,25 @@ public class CourierController : Controller
     //DELETE
     public IActionResult Delete(int id)
     {
-        var courier = _db.Couriers.FirstOrDefault(x => x.Id == id);
-        _db.Couriers.Remove(courier!);
+        var courier = _db.Couriers.Include(c => c.Orders).FirstOrDefault(x => x.Id == id);
+
+        if (courier == null)
+        {
+            return NotFound(); 
+        }
+
+        if (courier.Orders != null && courier.Orders.Any())
+        {
+            TempData["ErrorMessage"] = "Operation är omöjlig. Kuriren har aktiva beställningar.";
+            return RedirectToAction("Index");
+        }
+
+        _db.Couriers.Remove(courier);
         _db.SaveChanges();
+
         return RedirectToAction("Index");
     }
+
 
     //SEARCH
     public IActionResult Search(string searchString)

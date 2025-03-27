@@ -334,6 +334,15 @@
 }
 
 
+
+
+div#error-message.alert {
+    background: $white;
+    color: $alert-danger;
+    width: 100%;
+}
+
+
 .order-table {
     overflow: hidden;
     display: flex;

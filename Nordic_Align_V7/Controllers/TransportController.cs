@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nordic_Align_V7.Models;
 using Nordic_Align_V7;
+using Microsoft.EntityFrameworkCore;
 
 public class TransportController : Controller
 {
@@ -60,9 +61,23 @@ public class TransportController : Controller
     //DELETE
     public IActionResult Delete(int id)
     {
-        var transport = _db.Transports.FirstOrDefault(x => x.Id == id);
-        _db.Transports.Remove(transport!);
+        var transport = _db.Transports.Include(t => t.Orders).FirstOrDefault(x => x.Id == id);
+
+        if (transport == null)
+        {
+            return NotFound(); 
+        }
+
+        if (transport.Orders != null && transport.Orders.Any())
+        {
+            TempData["ErrorMessage"] = "Operation är omöjlig. Transporten är kopplad till aktiva beställningar.";
+            return RedirectToAction("Index");
+        }
+
+        _db.Transports.Remove(transport);
         _db.SaveChanges();
+
         return RedirectToAction("Index");
     }
+
 }

@@ -19,6 +19,24 @@
 
         <div class="container">
             <div class="form">
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div id="error-message" class="alert">
+                        @TempData["ErrorMessage"]
+                    </div>
+
+                    <script>
+                        setTimeout(function() {
+                            var errorMessage = document.getElementById("error-message");
+                            if (errorMessage) {
+                                errorMessage.style.display = "none";
+                            }
+                        }, 4000);
+                    </script>
+                }
+
+
+
                 <h2>Transport tabell</h2>
 
 

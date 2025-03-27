@@ -921,6 +921,13 @@ body .select2-results__option[aria-selected] {
   -webkit-text-fill-color: #000 !important;
 }
 
+div#error-message.alert {
+  background: #FFF;
+  color: #980942;
+  width: 100%;
+  text-align: center;
+}
+
 .courier-table {
   overflow: hidden;
   display: flex;
@@ -1377,6 +1384,12 @@ body .select2-results__option[aria-selected] {
   -webkit-text-fill-color: #000 !important;
 }
 
+div#error-message.alert {
+  background: #FFF;
+  color: #980942;
+  width: 100%;
+}
+
 .order-table {
   overflow: hidden;
   display: flex;
@@ -1761,6 +1774,12 @@ body .select2-results__option[aria-selected] {
   -webkit-text-fill-color: #000 !important;
 }
 
+div#error-message.alert {
+  background: #FFF;
+  color: #980942;
+  width: 100%;
+}
+
 .mottagare-table {
   overflow: hidden;
   display: flex;
@@ -2136,6 +2155,12 @@ body .select2-results__option[aria-selected] {
   -webkit-text-fill-color: #000 !important;
 }
 
+div#error-message.alert {
+  background: #FFF;
+  color: #980942;
+  width: 100%;
+}
+
 .transport-table {
   overflow: hidden;
   display: flex;
@@ -2509,6 +2534,12 @@ body .select2-results__option[aria-selected] {
 .lager input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #000 !important;
+}
+
+div#error-message.alert {
+  background: #FFF;
+  color: #980942;
+  width: 100%;
 }
 
 .lager-table {

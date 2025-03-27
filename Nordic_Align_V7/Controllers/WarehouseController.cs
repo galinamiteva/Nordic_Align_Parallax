@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Nordic_Align_V7.Models;
 
 namespace Nordic_Align_V7.Controllers;
@@ -47,9 +48,23 @@ public class WarehouseController : Controller
     //DELETE
     public IActionResult Delete(int id)
     {
-        var warehouse = _db.Warehouses.FirstOrDefault(x => x.Id == id);
-        _db.Warehouses.Remove(warehouse!);
+        var warehouse = _db.Warehouses.Include(w => w.Orders).FirstOrDefault(x => x.Id == id);
+
+        if (warehouse == null)
+        {
+            return NotFound(); /
+        }
+
+        if (warehouse.Orders != null && warehouse.Orders.Any())
+        {
+            TempData["ErrorMessage"] = "Operation är omöjlig. Lagret har aktiva beställningar.";
+            return RedirectToAction("Index");
+        }
+
+        _db.Warehouses.Remove(warehouse);
         _db.SaveChanges();
+
         return RedirectToAction("Index");
     }
+
 }

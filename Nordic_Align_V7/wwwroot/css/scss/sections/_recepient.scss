@@ -123,6 +123,7 @@
             height: 100%;
             padding: 20px;
 
+
             h2 {
                 position: relative;
                 color: $black;
@@ -231,6 +232,14 @@
         -webkit-text-fill-color: $black !important;
     }
 }
+
+
+div#error-message.alert {
+    background: $white;
+    color: $alert-danger;
+    width: 100%;
+}
+
 
 
 .mottagare-table {
