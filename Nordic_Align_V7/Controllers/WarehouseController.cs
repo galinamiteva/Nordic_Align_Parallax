@@ -52,7 +52,7 @@ public class WarehouseController : Controller
 
         if (warehouse == null)
         {
-            return NotFound(); /
+            return NotFound(); 
         }
 
         if (warehouse.Orders != null && warehouse.Orders.Any())
