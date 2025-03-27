@@ -9,14 +9,15 @@ using Nordic_Align_V7.ViewModels;
 using Microsoft.AspNetCore.Http;
 
 namespace Nordic_Align_V7.Tests;
-public class AccountControllerTests
+
+public class LoginRegisterTests
 {
     private readonly Mock<UserManager<UserModel>> _userManagerMock;
     private readonly Mock<SignInManager<UserModel>> _signInManagerMock;
     private readonly Mock<RoleManager<IdentityRole>> _roleManagerMock;
     private readonly AccountController _controller;
 
-    public AccountControllerTests()
+    public LoginRegisterTests()
     {
         _userManagerMock = new Mock<UserManager<UserModel>>(
             Mock.Of<IUserStore<UserModel>>(), null!, null!, null!, null!, null!, null!, null!, null!);
@@ -109,5 +110,4 @@ public class AccountControllerTests
         var viewResult = Assert.IsType<ViewResult>(result);
         Assert.True(_controller.ModelState.ContainsKey(""));
     }
-
 }

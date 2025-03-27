@@ -60,6 +60,8 @@ public class InvoiceNoTaxController : Controller
             };
             using var transaction = _dbContext.Database.BeginTransaction();
 
+            
+
             _dbContext.Invoices.Add(invoice);
             _dbContext.SaveChanges();
 

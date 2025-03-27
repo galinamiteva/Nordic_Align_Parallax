@@ -63,6 +63,8 @@ public class InvoiceController : Controller
 
             using var transaction = _dbContext.Database.BeginTransaction();
 
+           
+
             _dbContext.Invoices.Add(invoice);
             _dbContext.SaveChanges();
             Console.WriteLine($"Invoice saved with ID: {invoice.Id}");

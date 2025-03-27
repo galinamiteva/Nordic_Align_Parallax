@@ -55,8 +55,6 @@ public class InvoiceDBContext : DbContext
             .WithOne(ii => ii.Invoice)
             .HasForeignKey(ii => ii.InvoiceId)
             .OnDelete(DeleteBehavior.Cascade);
-    }
-
-   
+    }  
 
 }
