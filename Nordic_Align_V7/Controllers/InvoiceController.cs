@@ -5,7 +5,6 @@ using Nordic_Align_V7.Models;
 using QuestPDF.Helpers;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
-using Nordic_Align_V7.ViewModels;
 using Nordic_Align_V7;
 
 
@@ -130,6 +129,7 @@ public class InvoiceController : Controller
         }
         catch (Exception ex)
         {
+            Console.WriteLine("Error: " + ex.Message);
             ViewBag.RegisterFail = "A processing error occurred";
             return View();
         }

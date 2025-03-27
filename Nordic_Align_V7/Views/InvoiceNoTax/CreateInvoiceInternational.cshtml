@@ -11,6 +11,13 @@
     <div class="content">
         <div class="container">
             <div class="form">
+                <div id="form-message" class="form-message">
+                    @if (!string.IsNullOrEmpty(ViewBag.RegisterFail))
+                    {
+                        <div>@ViewBag.RegisterFail</div>
+                    }
+
+                </div>
                 <h2>Skapa faktura(Ej Moms)</h2>
 
                 <form method="post" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational" novalidate>

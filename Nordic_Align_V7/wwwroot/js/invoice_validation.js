@@ -36,7 +36,7 @@ const showMessage = (message, type) => {
 
     setTimeout(() => {
         messageElement.style.display = "none";
-    }, 40000);
+    }, 4000);
 };
 
 

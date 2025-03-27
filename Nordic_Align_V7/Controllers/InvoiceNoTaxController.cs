@@ -65,7 +65,14 @@ public class InvoiceNoTaxController : Controller
 
             if (itemNames == null || prices == null || quantities == null || itemNames.Count != prices.Count || itemNames.Count != quantities.Count)
             {
-                return Content("Error: Invalid item data. Please check the input.");
+                ViewBag.RegisterFail = "Error: Invalid item data. Please check the input.";
+                return View();
+            }
+
+            if (prices.Any(p => p <= 0))
+            {
+                ViewBag.RegisterFail = "Error: Invalid item data";
+                return View();
             }
 
             var invoiceItems = new List<InvoiceItemModel>();
@@ -86,18 +93,37 @@ public class InvoiceNoTaxController : Controller
             }
             invoice.Items = invoiceItems;
             _dbContext.InvoiceItems.AddRange(invoiceItems);
+
+            Console.WriteLine($"Received {itemNames.Count} items, {prices.Count} prices, {quantities.Count} quantities.");
+            for (int i = 0; i < itemNames.Count; i++)
+            {
+                Console.WriteLine($"Item {i}: {itemNames[i]}, Price: {prices[i]}, Quantity: {quantities[i]}");
+            }
+
             _dbContext.SaveChanges();
             transaction.Commit();
 
             var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
-            return result ? Content("Invoice email has been sent successfully.") : Content("An error occurred while sending the email.");
+            if (result)
+            {
+                ViewBag.RegisterFail = "Invoice email has been sent successfully.";
+            }
+            else
+            {
+                ViewBag.RegisterFail = "Error: Failed to send email.";
+            }
+
+            ModelState.Clear();
+
+            return View();
         }
         catch (Exception ex)
         {
             Console.WriteLine("Error: " + ex.Message);
-            return Content($"A processing error occurred: {ex.Message}");
+            ViewBag.RegisterFail = "A processing error occurred";
+            return View();
         }
     }
 
