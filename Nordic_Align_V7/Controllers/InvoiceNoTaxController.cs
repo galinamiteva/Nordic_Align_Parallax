@@ -29,7 +29,7 @@ public class InvoiceNoTaxController : Controller
     [HttpPost]
     public IActionResult CreateInvoiceInternational(string email, string invoiceNumber, DateTime issueDate,
         string companyName, string street, string city, string country, string postalCode, string? state,
-        string? phone, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
+        string? phone, string? vatNumber, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
     {
         try
         {
@@ -55,8 +55,8 @@ public class InvoiceNoTaxController : Controller
                 IssueDate = issueDate,
                 DueDate = dueDate,
                 CustomerAddress = customerAddress,
-                Comment = comment
-
+                Comment = comment,
+                VatNumber = vatNumber
             };
             using var transaction = _dbContext.Database.BeginTransaction();
 
@@ -105,7 +105,7 @@ public class InvoiceNoTaxController : Controller
             _dbContext.SaveChanges();
             transaction.Commit();
 
-            var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
+            var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, vatNumber!, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
             if (result)
@@ -130,7 +130,7 @@ public class InvoiceNoTaxController : Controller
     }
 
     private byte[] GenerateInvoicePdf(string invoiceNumber, DateTime issueDate, DateTime dueDate,
-    string companyName, string street, string city, string country, string postalCode, string state,
+    string companyName, string? vatNumber, string street, string city, string country, string postalCode, string state,
     string email, string phone, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
     {
         decimal total = prices.Zip(quantities, (p, q) => p * q).Sum();
@@ -157,6 +157,7 @@ public class InvoiceNoTaxController : Controller
                         col.Item().PaddingBottom(13);
                         col.Item().PaddingBottom(3).Text("Bill To:").FontColor(Colors.Grey.Lighten1);
                         col.Item().Text(companyName).Bold();
+                        col.Item().Text($"VAT: {vatNumber} ");
                         col.Item().Text(street);
                         col.Item().Text($"{postalCode} {city}");
                         col.Item().Text(country);
@@ -175,10 +176,10 @@ public class InvoiceNoTaxController : Controller
 
                             innerRow.ConstantItem(80).Column(leftCol =>
                             {
-                                leftCol.Item().PaddingBottom(7).Text("Date:").FontColor(Colors.Grey.Lighten1);
-                                leftCol.Item().PaddingBottom(7).Text("PaymentTerms:").FontColor(Colors.Grey.Lighten1);
-                                leftCol.Item().PaddingBottom(12).Text("Due Date:").FontColor(Colors.Grey.Lighten1);
-                                leftCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text("Balance Due:").Bold();
+                                leftCol.Item().PaddingBottom(7).Text("Date:").FontColor(Colors.Grey.Lighten1).AlignEnd() ;
+                                leftCol.Item().PaddingBottom(7).Text("PaymentTerms:").FontColor(Colors.Grey.Lighten1).AlignEnd();
+                                leftCol.Item().PaddingBottom(12).Text("Due Date:").FontColor(Colors.Grey.Lighten1).AlignEnd();
+                                leftCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text("Balance Due:").AlignEnd().Bold();
 
                             });
 
@@ -206,22 +207,26 @@ public class InvoiceNoTaxController : Controller
                     column.Item().PaddingTop(30).Element(container => ComposeStyledTable(container, itemNames, prices, quantities));
                     column.Item().PaddingTop(10).AlignRight().Text($"Total: {total:C}").FontSize(14);
 
-                    if (!string.IsNullOrWhiteSpace(comment))
-                    {
-                        column.Item().PaddingTop(30).AlignLeft().Text($" {comment}");
-                    }
+                    
 
                 });
 
-                page.Footer().PaddingBottom(70).Column(column =>
+                page.Footer().PaddingBottom(90).Column(column =>
                 {
                     column.Item().PaddingBottom(7).Text("Notes:").FontColor(Colors.Grey.Lighten1);
                     column.Item().Text("Nordic Align Supply Chain Consulting");
+                    column.Item().PaddingBottom(7).Text("VAT: SE559480618301");
                     column.Item().Text("Kontonr 814 655 698-3");
-                    column.Item().Text("Clearingnr 8169-5");
-                    column.Item().PaddingTop(10).Text("International payments");
+                    column.Item().PaddingBottom(7).Text("Clearingnr 8169-5");
+                    column.Item().Text("International payments");
                     column.Item().Text("IBAN SE22 8000 0816 9581 4655 6983");
-                    column.Item().Text("BIC SWEDSES");
+                    column.Item().PaddingBottom(15).Text("BIC SWEDSES");
+
+                    if (!string.IsNullOrWhiteSpace(comment))
+                    {
+                        column.Item().PaddingBottom(7).Text("Terms:").FontColor(Colors.Grey.Lighten1);
+                        column.Item().AlignLeft().Text($" {comment}");
+                    }
                 });
             });
         }).GeneratePdf();
