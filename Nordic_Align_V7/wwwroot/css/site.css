@@ -3288,8 +3288,6 @@ div#error-message.alert {
   margin-bottom: 1rem;
 }
 .why__paragraph {
-  /*text-align: justify;*/
-  /* max-width: 800px;*/
   margin-bottom: 20px;
 }
 .why__grid {
@@ -3297,12 +3295,16 @@ div#error-message.alert {
   grid-template-columns: repeat(4, 1fr);
   gap: 3px;
   width: 100%;
-  /* margin-top: 20px;*/
 }
 .why__list {
   padding: 10px;
   border-radius: 5px;
   text-align: left;
+}
+@media (max-width: 768px) {
+  .why__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .why__img {
   width: calc(var(--index) * 6);
@@ -3311,6 +3313,11 @@ div#error-message.alert {
 .why .container {
   position: relative;
   top: -300px;
+}
+@media (max-width: 768px) {
+  .why .container {
+    min-width: unset !important;
+  }
 }
 
 .privacy {
