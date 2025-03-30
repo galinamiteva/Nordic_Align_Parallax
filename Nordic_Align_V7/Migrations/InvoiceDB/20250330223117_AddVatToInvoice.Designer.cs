@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nordic_Align_V7;
 
@@ -11,9 +12,11 @@ using Nordic_Align_V7;
 namespace Nordic_Align_V7.Migrations.InvoiceDB
 {
     [DbContext(typeof(InvoiceDBContext))]
-    partial class InvoiceDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250330223117_AddVatToInvoice")]
+    partial class AddVatToInvoice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

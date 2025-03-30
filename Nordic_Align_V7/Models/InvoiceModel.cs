@@ -8,7 +8,7 @@ public class InvoiceModel
     public DateTime IssueDate { get; set; }
     public DateTime DueDate { get; set; }
     public string? Comment { get; set; }
-
+    public string? VatNumber { get; set; }
 
     public AddressModel CustomerAddress { get; set; } = null!;
     public List<InvoiceItemModel> Items { get; set; } = null!;

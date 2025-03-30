@@ -31,7 +31,7 @@ public class InvoiceController : Controller
     [HttpPost]
     public IActionResult CreateInvoice(string email, string invoiceNumber, DateTime issueDate,
         string companyName, string street, string city, string country, string postalCode, string? state,
-        string? phone, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
+        string? phone, string? vatNumber, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
     {
         try
         {
@@ -45,7 +45,7 @@ public class InvoiceController : Controller
                 Country = country,
                 PostalCode = postalCode,
                 State = state,
-                Email = email,
+                Email = email,                
                 Phone = phone
             };
 
@@ -55,7 +55,8 @@ public class InvoiceController : Controller
                 IssueDate = issueDate,
                 DueDate = dueDate,
                 CustomerAddress = customerAddress,
-                Comment = comment
+                Comment = comment,
+                VatNumber=vatNumber
 
 
             };
@@ -112,7 +113,7 @@ public class InvoiceController : Controller
 
             transaction.Commit();
 
-            var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
+            var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, vatNumber!, street, city,  country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
             if (result)
@@ -138,7 +139,7 @@ public class InvoiceController : Controller
     }
 
     private byte[] GenerateInvoicePdf(string invoiceNumber, DateTime issueDate, DateTime dueDate,
-        string companyName, string street, string city, string country, string postalCode, string state,
+        string companyName, string? vatNumber, string street, string city,  string country, string postalCode, string state,
         string email, string phone, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
     {
         decimal subtotal = prices.Zip(quantities, (p, q) => p * q).Sum();
@@ -167,8 +168,9 @@ public class InvoiceController : Controller
                         col.Item().PaddingBottom(13);
                         col.Item().PaddingBottom(3).Text("Bill To:").FontColor(Colors.Grey.Lighten1);
                         col.Item().Text(companyName).Bold();
+                        col.Item().Text($"VAT: {vatNumber} ");
                         col.Item().Text(street);
-                        col.Item().Text($"{postalCode} {city}");
+                        col.Item().Text($"{postalCode} {city}");                        
                         col.Item().Text(country);
                         col.Item().Text(email);
 
@@ -216,23 +218,27 @@ public class InvoiceController : Controller
                     column.Item().PaddingTop(7).AlignRight().Text($"Tax (25%): {tax:C}");
                     column.Item().PaddingTop(7).AlignRight().Text($"Total: {total:C}").SemiBold();
 
-                    if (!string.IsNullOrWhiteSpace(comment))
-                    {
-                        column.Item().PaddingTop(30).AlignLeft().Text($" {comment}");
-                    }
+                   
 
                 });
 
                 // Add footer at the end of the page
-                page.Footer().PaddingBottom(70).Column(column =>
+                page.Footer().PaddingBottom(90).Column(column =>
                 {
                     column.Item().PaddingBottom(7).Text("Notes:").FontColor(Colors.Grey.Lighten1);
                     column.Item().Text("Nordic Align Supply Chain Consulting");
+                    column.Item().PaddingBottom(7).Text("VAT: SE559480618301");
                     column.Item().Text("Kontonr 814 655 698-3");
-                    column.Item().Text("Clearingnr 8169-5");
-                    column.Item().PaddingTop(10).Text("International payments");
+                    column.Item().PaddingBottom(7).Text("Clearingnr 8169-5");
+                    column.Item().Text("International payments");
                     column.Item().Text("IBAN SE22 8000 0816 9581 4655 6983");
-                    column.Item().Text("BIC SWEDSES");
+                    column.Item().PaddingBottom(15).Text("BIC SWEDSES");
+
+                    if (!string.IsNullOrWhiteSpace(comment))
+                    {
+                        column.Item().PaddingBottom(7).Text("Terms:").FontColor(Colors.Grey.Lighten1);
+                        column.Item().AlignLeft().Text($" {comment}");
+                    }
                 });
             });
         }).GeneratePdf();
