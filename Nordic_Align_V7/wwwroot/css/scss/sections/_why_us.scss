@@ -1,5 +1,5 @@
 .why {
-     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), url('/images/aurora_up.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 1) 1px, transparent, transparent, transparent), url('/images/aurora_up.png');
     background-position: center;
     min-height: 100vh;
     background-size: cover;
@@ -7,6 +7,7 @@
     overflow: hidden;
     position: relative;
     top: -70px;
+
 
     &__inner {
         height: 100vh;
@@ -20,22 +21,33 @@
         transition: var(--transition);
         z-index: 10;
         will-change: transform;
+        width: 100%;
     }
 
     &__title {
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        font-size: calc(var(--index) * 2);
-        letter-spacing: calc(var(--index) / 5);
-        font-weight: 600;
+        font-size: 1.5rem;
+        color: $blue;
+        margin-bottom: 1rem;
     }
 
     &__paragraph {
-        font-weight: 400;
-        text-align: center;
-        font-size: calc(var(--index) * .9);
-        max-width: calc(var(--index) * 30);
-        letter-spacing: 2px;
+        /*text-align: justify;*/
+        /* max-width: 800px;*/
+        margin-bottom: 20px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+        width:100%;
+        /* margin-top: 20px;*/
+    }
+
+    &__list {
+        padding: 10px;
+        border-radius: 5px;
+        text-align: left;
     }
 
     &__img {
