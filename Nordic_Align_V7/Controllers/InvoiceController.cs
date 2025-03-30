@@ -185,10 +185,10 @@ public class InvoiceController : Controller
 
                             innerRow.ConstantItem(80).Column(leftCol =>
                             {
-                                leftCol.Item().PaddingBottom(7).Text("Date:").FontColor(Colors.Grey.Lighten1);
-                                leftCol.Item().PaddingBottom(7).Text("PaymentTerms:").FontColor(Colors.Grey.Lighten1);
-                                leftCol.Item().PaddingBottom(12).Text("Due Date:").FontColor(Colors.Grey.Lighten1);
-                                leftCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text("Balance Due:").Bold();
+                                leftCol.Item().PaddingBottom(7).Text("Date:").FontColor(Colors.Grey.Lighten1).AlignEnd(); ;
+                                leftCol.Item().PaddingBottom(7).Text("PaymentTerms:").FontColor(Colors.Grey.Lighten1).AlignEnd(); ;
+                                leftCol.Item().PaddingBottom(12).Text("Due Date:").FontColor(Colors.Grey.Lighten1).AlignEnd(); ;
+                                leftCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text("Balance Due:").AlignEnd().Bold();
 
                             });
 
