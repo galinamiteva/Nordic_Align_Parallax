@@ -97,7 +97,7 @@ body .select2-results__option[aria-selected] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0 20px 90px;
+  padding: 20px 0 20px 10px;
   color: #FFF;
 }
 .header__inner .logo img {
@@ -3228,7 +3228,7 @@ div#error-message.alert {
   }
 }
 
-@media screen and (min-width: 760px) {
+@media (min-width: 768px) {
   .section {
     flex-direction: row;
     margin-left: auto;
@@ -3280,7 +3280,17 @@ div#error-message.alert {
   transition: var(--transition);
   z-index: 10;
   will-change: transform;
-  width: 100%;
+  width: 80%;
+}
+@media (max-width: 991px) {
+  .why__inner {
+    width: 120%;
+  }
+}
+@media (max-width: 575px) {
+  .why__inner {
+    width: 80%;
+  }
 }
 .why__title {
   font-size: 1.5rem;

@@ -21,7 +21,15 @@
         transition: var(--transition);
         z-index: 10;
         will-change: transform;
-        width: 100%;
+        width: 80%;
+
+        @media (max-width: 991px) {
+            width: 120%;
+        }
+
+        @media (max-width: 575px) {
+            width: 80%;
+        }
     }
 
     &__title {
@@ -49,7 +57,7 @@
 
     @media (max-width: 768px) {
         &__grid {
-            grid-template-columns: repeat(3, 1fr); 
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 
