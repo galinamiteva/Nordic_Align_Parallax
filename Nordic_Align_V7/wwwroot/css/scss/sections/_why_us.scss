@@ -21,7 +21,11 @@
         transition: var(--transition);
         z-index: 10;
         will-change: transform;
-        width: 80%;
+        width: 67%;
+
+        @media (max-width: 1200px) {
+            width: 90%;
+        }
 
         @media (max-width: 991px) {
             width: 120%;
