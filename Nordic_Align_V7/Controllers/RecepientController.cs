@@ -53,7 +53,7 @@ public class RecepientController : Controller
         var recepient = _db.Recepients.Include(r => r.Orders).FirstOrDefault(x => x.Id == id);
 
         if (recepient == null)
-        {equals i
+        {
             return NotFound(); // 404 fel om inte exist
         }
 
