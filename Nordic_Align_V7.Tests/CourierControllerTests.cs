@@ -16,7 +16,7 @@ public class CourierControllerTest
 
     public CourierControllerTest()
     {
-        // Използвайте InMemoryDatabase за тестовете
+        // е InMemoryDatabase for tester
         var options = new DbContextOptionsBuilder<NordicAlignDBContext>()
                       .UseInMemoryDatabase(databaseName: "TestDatabase")
                       .Options;

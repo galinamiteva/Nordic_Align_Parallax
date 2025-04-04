@@ -54,7 +54,7 @@ public class RecepientController : Controller
 
         if (recepient == null)
         {
-            return NotFound(); // 404 грешка, ако не съществува
+            return NotFound(); // 404 fel om inte exist
         }
 
         if (recepient.Orders != null && recepient.Orders.Any())

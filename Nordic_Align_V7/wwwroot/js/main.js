@@ -22,7 +22,7 @@
 
         menuLinks.forEach((link) => {
             link.addEventListener("click", function (e) {
-                let targetHref = this.getAttribute("href"); // Използваме getAttribute
+                let targetHref = this.getAttribute("href"); // Use getAttribute
 
                 console.log("Clicked link:", targetHref);
 
