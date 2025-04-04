@@ -47,6 +47,8 @@ $register-background: '/images/Register.jpg';
         z-index: 100;
         transition: 0.5s;
         overflow: hidden;
+
+       
     }
 
     form {
@@ -173,3 +175,5 @@ $register-background: '/images/Register.jpg';
         -webkit-text-fill-color: $black !important;
     }
 }
+
+

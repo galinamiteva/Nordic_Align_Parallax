@@ -9,17 +9,19 @@
     </div>
 
     <div class="container">
-      
+
         <span></span>
         <span></span>
         <span></span>
 
         <form method="post" class="signin" id="signinForm" asp-controller="Account" asp-action="Login" onclick="return validateForm(event);" novalidate>
+            
+            
             <h2>Login</h2>
 
             <div class="inputBox">
-                <input asp-for="Email" type="email"  id="Email" data-val="true" class="form-control" placeholder="Email">
-                <span style="color:red;"  asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+                <input asp-for="Email" type="email" id="Email" data-val="true" class="form-control" placeholder="Email">
+                <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
 
             </div>
 
@@ -29,7 +31,7 @@
             </div>
 
             <div class="inputBox group">
-                <a href="#">Forgot Password</a>
+                <a href="#">Har du inget konto?</a>
                 <a asp-controller="Account" asp-action="Register">SignUp</a>
             </div>
 
@@ -48,18 +50,15 @@
 
 
 <style>
-   
+
     @@keyframes animate {
-        0%
+        0% {
+            --a: 0deg;
+        }
 
-    {
-        --a: 0deg;
-    }
-
-    100% {
-        --a: 360deg;
-    }
-
+        100% {
+            --a: 360deg;
+        }
     }
 
     @@property --a {

@@ -153,7 +153,7 @@ public class InvoiceNoTaxController : Controller
                         col.Item().Text("Hagaesplanaden 73");
                         col.Item().Text("113 68 Stockholm");
                         col.Item().Text("Sweden");
-                        col.Item().Text("nordicalign@gmail.com");
+                        col.Item().Text("galinamiteva69@gmail.com");
                         col.Item().PaddingBottom(13);
                         col.Item().PaddingBottom(3).Text("Bill To:").FontColor(Colors.Grey.Lighten1);
                         col.Item().Text(companyName).Bold();
