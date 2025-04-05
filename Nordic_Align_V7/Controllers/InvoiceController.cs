@@ -158,7 +158,7 @@ public class InvoiceController : Controller
                 {
                     row.RelativeItem().Column(col =>
                     {
-                        col.Item().Image("wwwroot/images/Logo_Nordic.png").FitWidth();
+                        col.Item().Image("https://nordicimagestorage.blob.core.windows.net/files/Logo_Nordic.png").FitWidth();
                         col.Item().PaddingBottom(40);
                         col.Item().Text("Nordic Align Supply Chain Consulting AB").Bold();
                         col.Item().Text("Hagaesplanaden 73");

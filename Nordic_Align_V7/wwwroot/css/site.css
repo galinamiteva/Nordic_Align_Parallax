@@ -371,7 +371,7 @@ body .select2-results__option[aria-selected] {
 }
 .layers > .layers__container > .layers__item.layer-2 {
   transform: translateZ(80px) scale(0.8);
-  background-image: url("/images/layer-2.jpg");
+  background-image: url("https://nordicimagestorage.blob.core.windows.net/files/layer-2.png");
 }
 .layers > .layers__container > .layers__item.layer-3 {
   transform: translateZ(180px) scale(0.8);
@@ -3016,7 +3016,7 @@ div#error-message.alert {
 
 .contact {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url("/images/aurora_down.png");
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 5px, transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.9) 1px, transparent, transparent, transparent), url("https://nordicimagestorage.blob.core.windows.net/files/aurora_down.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -3259,7 +3259,7 @@ div#error-message.alert {
   }
 }
 .why {
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent, transparent, transparent), linear-gradient(to top, rgb(0, 0, 0) 1px, transparent, transparent, transparent), url("/images/aurora_up.png");
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent, transparent, transparent), linear-gradient(to top, rgb(0, 0, 0) 1px, transparent, transparent, transparent), url("https://nordicimagestorage.blob.core.windows.net/files/aurora_up.png");
   background-position: center;
   min-height: 100vh;
   background-size: cover;
