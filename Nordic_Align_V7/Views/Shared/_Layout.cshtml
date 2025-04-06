@@ -21,12 +21,17 @@
   
 </head>
 <body>
-    <div class="wrapper">
-        
+    <div class="wrapper" style="height: calc(var(--vh, 1vh) * 100);">
+
+
+    
+
        
         @await Html.PartialAsync("~/Views/Shared/_HeaderPartial.cshtml")
             
-        <div class="container_rain ">
+        
+        <div class="container_rain" >
+
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
@@ -40,6 +45,13 @@
 
     
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script>
+          const setFullHeight = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+        window.addEventListener('resize', setFullHeight);
+        setFullHeight();
+    </script>
 </body>
 </html>

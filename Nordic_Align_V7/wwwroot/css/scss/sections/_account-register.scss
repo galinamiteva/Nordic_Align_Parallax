@@ -4,7 +4,9 @@ $register-background: '/images/Register.jpg';
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
     min-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 
     &::before {
         content: '';
@@ -47,8 +49,6 @@ $register-background: '/images/Register.jpg';
         z-index: 100;
         transition: 0.5s;
         overflow: hidden;
-
-       
     }
 
     form {

@@ -1,5 +1,7 @@
 #error {
-    height: 10vh;
+    min-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    margin-bottom: 0;
 
     .container {
         height: 100%;
@@ -7,7 +9,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top:135px;
+        margin-top: 135px;
+
         img {
             width: 500px;
         }
@@ -28,7 +31,7 @@
             }
 
             a {
-                color:$blue;
+                color: $blue;
             }
         }
     }

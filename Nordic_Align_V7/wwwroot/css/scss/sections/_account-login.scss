@@ -4,8 +4,10 @@ $login-background: '/images/Login.jpg';
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     position: relative;
+    margin-bottom: 0;
+    min-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 
     &::before {
         content: '';

@@ -2,6 +2,8 @@
     position: relative;
     top: -88px;
     height: 99px;
+    margin: 0;
+    padding: 0;
 
     &-dark {
         background-color: $black;
@@ -14,8 +16,9 @@
 
     .container {
         padding-top: 50px;
-        a{
-            color:$blue !important;
+
+        a {
+            color: $blue !important;
         }
     }
 }
