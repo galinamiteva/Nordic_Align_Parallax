@@ -1,12 +1,12 @@
 ﻿@using Nordic_Align_V7.ViewModels
 @model InvoiceViewModel
 
-<section class="invoice" style="background: url('https://nordicimagestorage.blob.core.windows.net/files/Truck4.png') no-repeat center center; background-size: cover; height: 100vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div class="cloud1"><img src="https://nordicimagestorage.blob.core.windows.net/files/Cloud4.png"></div>
-    <div class="cloud2"><img src="https://nordicimagestorage.blob.core.windows.net/files/Cloud2.png"></div>
-    <div class="cloud3"><img src="https://nordicimagestorage.blob.core.windows.net/files/Cloud3.png"></div>
-    <div class="cloud5"><img src="https://nordicimagestorage.blob.core.windows.net/files/Cloud4.png"></div>
-    <div class="cloud4"><img src="https://nordicimagestorage.blob.core.windows.net/files/Cloud5.png"></div>
+<section class="invoice" style="background: url('/images/Truck4.png') no-repeat center center; background-size: cover; height: 100vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="cloud1"><img src="/images/Cloud4.png"></div>
+    <div class="cloud2"><img src="/images/Cloud2.png"></div>
+    <div class="cloud3"><img src="/images/Cloud3.png"></div>
+    <div class="cloud5"><img src="/images/Cloud4.png"></div>
+    <div class="cloud4"><img src="/images/Cloud5.png"></div>
 
     <div class="content">
         <div class="container">
@@ -31,15 +31,23 @@
 
                             </div>
                         </div>
-                       
+
                         <div class="inputBox">
                             <label for="IssueDate">Utfärdandedatum</label>
                             <div class="inputBox-content">
                                 <input type="date" id="IssueDate" name="IssueDate" required onchange="calculateDueDate()">
                                 <span style="color:red;" asp-validation-for="IssueDate" data-valmsg-for="IssueDate" class="text-danger"></span>
 
-                            </div>                            
-                        </div>                     
+                            </div>
+                        </div>
+
+                        <div class="inputBox" style="display: none;">
+                            <label for="DueDate">Förfallodatum:</label>
+                            <div class="inputBox-content">
+                                <input type="date" id="DueDate" name="DueDate" readonly>
+                            </div>
+                        </div>
+
                         <div class="inputBox">
                             <label for="CompanyName">Företag:</label>
                             <div class="inputBox-content">
@@ -48,30 +56,30 @@
 
                             </div>
                         </div>
-                                                                    
+
                     </div>
-                    
+
                     <div class="box">
-                        
-                        
+
+
                         <div class="inputBox">
                             <label for="Street">Adress:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="Street" name="Street" required>
                                 <span style="color:red;" asp-validation-for="Street" data-valmsg-for="Street" class="text-danger"></span>
 
-                            </div>                            
+                            </div>
                         </div>
-                        
+
                         <div class="inputBox">
                             <label for="City">Stad:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="City" name="City" required>
                                 <span style="color:red;" asp-validation-for="City" data-valmsg-for="City" class="text-danger"></span>
 
-                            </div>                            
-                        </div> 
-                        
+                            </div>
+                        </div>
+
                         <div class="inputBox">
                             <label for="PostalCode">Postnummer:</label>
                             <div class="inputBox-content">
@@ -83,8 +91,8 @@
                     </div>
 
                     <div class="box">
-                        
-                        
+
+
                         <div class="inputBox">
                             <label for="Country">Land:</label>
                             <div class="inputBox-content">
@@ -93,16 +101,16 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="inputBox">
                             <label for="Email">E-post:</label>
                             <div class="inputBox-content">
                                 <input type="email" id="Email" name="Email" required>
                                 <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
 
-                            </div>                            
-                        </div> 
-                        
+                            </div>
+                        </div>
+
                         <div class="inputBox">
                             <label for="VatNumber">Vat nummer:</label>
                             <div class="inputBox-content">
@@ -148,10 +156,10 @@
                             }
                         </div>
                     </div>
-                    
+
 
                     <button type="button" class="button-primary" onclick="addItem()">Lägg till produkt</button>
-                   
+
                     @*     Add komment om vi vill*@   
 
                     <div class="inputBox">
@@ -160,9 +168,9 @@
                             <textarea id="Comment" name="Comment" rows="1" cols="50"></textarea>
                         </div>
                     </div>
-                   
 
-                    <button class="button-secondary"  type="submit">Generera och skicka</button>
+
+                    <button class="button-secondary" type="submit">Generera och skicka</button>
                 </form>
 
             </div>

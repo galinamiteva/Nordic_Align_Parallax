@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            
+
             let formData = new FormData(invoiceForm);
 
             try {

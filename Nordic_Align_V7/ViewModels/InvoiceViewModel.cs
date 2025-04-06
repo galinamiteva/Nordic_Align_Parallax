@@ -6,7 +6,7 @@ public class InvoiceViewModel
 {
     public string InvoiceNumber { get; set; } = null!;
     public DateTime IssueDate { get; set; }
-    public DateTime DueDate { get; set; }
+    public DateTime? DueDate { get; set; }
     public string? Comment { get; set; }
     public string? VatNumber { get; set; }
 

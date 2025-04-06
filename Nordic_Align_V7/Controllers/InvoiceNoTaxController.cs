@@ -60,7 +60,7 @@ public class InvoiceNoTaxController : Controller
             };
             using var transaction = _dbContext.Database.BeginTransaction();
 
-            
+
 
             _dbContext.Invoices.Add(invoice);
             _dbContext.SaveChanges();
@@ -147,13 +147,13 @@ public class InvoiceNoTaxController : Controller
                 {
                     row.RelativeItem().Column(col =>
                     {
-                        col.Item().Image("https://nordicimagestorage.blob.core.windows.net/files/Logo_Nordic.png").FitWidth();
+                        col.Item().Image("wwwroot/images/Logo_Nordic.png").FitWidth();
                         col.Item().PaddingBottom(40);
                         col.Item().Text("Nordic Align Supply Chain Consulting AB").Bold();
                         col.Item().Text("Hagaesplanaden 73");
                         col.Item().Text("113 68 Stockholm");
                         col.Item().Text("Sweden");
-                        col.Item().Text("galinamiteva69@gmail.com");
+                        col.Item().Text("nordicalign@gmail.com");
                         col.Item().PaddingBottom(13);
                         col.Item().PaddingBottom(3).Text("Bill To:").FontColor(Colors.Grey.Lighten1);
                         col.Item().Text(companyName).Bold();
@@ -176,7 +176,7 @@ public class InvoiceNoTaxController : Controller
 
                             innerRow.ConstantItem(80).Column(leftCol =>
                             {
-                                leftCol.Item().PaddingBottom(7).Text("Date:").FontColor(Colors.Grey.Lighten1).AlignEnd() ;
+                                leftCol.Item().PaddingBottom(7).Text("Date:").FontColor(Colors.Grey.Lighten1).AlignEnd();
                                 leftCol.Item().PaddingBottom(7).Text("PaymentTerms:").FontColor(Colors.Grey.Lighten1).AlignEnd();
                                 leftCol.Item().PaddingBottom(12).Text("Due Date:").FontColor(Colors.Grey.Lighten1).AlignEnd();
                                 leftCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text("Balance Due:").AlignEnd().Bold();
@@ -207,7 +207,7 @@ public class InvoiceNoTaxController : Controller
                     column.Item().PaddingTop(30).Element(container => ComposeStyledTable(container, itemNames, prices, quantities));
                     column.Item().PaddingTop(10).AlignRight().Text($"Total: {total:C}").FontSize(14);
 
-                    
+
 
                 });
 

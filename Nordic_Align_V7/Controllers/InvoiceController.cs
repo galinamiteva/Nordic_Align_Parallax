@@ -45,7 +45,7 @@ public class InvoiceController : Controller
                 Country = country,
                 PostalCode = postalCode,
                 State = state,
-                Email = email,                
+                Email = email,
                 Phone = phone
             };
 
@@ -56,7 +56,7 @@ public class InvoiceController : Controller
                 DueDate = dueDate,
                 CustomerAddress = customerAddress,
                 Comment = comment,
-                VatNumber=vatNumber
+                VatNumber = vatNumber
 
 
             };
@@ -64,7 +64,7 @@ public class InvoiceController : Controller
 
             using var transaction = _dbContext.Database.BeginTransaction();
 
-           
+
 
             _dbContext.Invoices.Add(invoice);
             _dbContext.SaveChanges();
@@ -113,7 +113,7 @@ public class InvoiceController : Controller
 
             transaction.Commit();
 
-            var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, vatNumber!, street, city,  country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
+            var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, vatNumber!, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
             if (result)
@@ -139,7 +139,7 @@ public class InvoiceController : Controller
     }
 
     private byte[] GenerateInvoicePdf(string invoiceNumber, DateTime issueDate, DateTime dueDate,
-        string companyName, string? vatNumber, string street, string city,  string country, string postalCode, string state,
+        string companyName, string? vatNumber, string street, string city, string country, string postalCode, string state,
         string email, string phone, string? comment, List<string> itemNames, List<decimal> prices, List<int> quantities)
     {
         decimal subtotal = prices.Zip(quantities, (p, q) => p * q).Sum();
@@ -158,19 +158,19 @@ public class InvoiceController : Controller
                 {
                     row.RelativeItem().Column(col =>
                     {
-                        col.Item().Image("https://nordicimagestorage.blob.core.windows.net/files/Logo_Nordic.png").FitWidth();
+                        col.Item().Image("wwwroot/images/Logo_Nordic.png").FitWidth();
                         col.Item().PaddingBottom(40);
                         col.Item().Text("Nordic Align Supply Chain Consulting AB").Bold();
                         col.Item().Text("Hagaesplanaden 73");
                         col.Item().Text("113 68 Stockholm");
                         col.Item().Text("Sweden");
-                        col.Item().Text("galinamiteva69@gmail.com");
+                        col.Item().Text("nordicalign@gmail.com");
                         col.Item().PaddingBottom(13);
                         col.Item().PaddingBottom(3).Text("Bill To:").FontColor(Colors.Grey.Lighten1);
                         col.Item().Text(companyName).Bold();
                         col.Item().Text($"VAT: {vatNumber} ");
                         col.Item().Text(street);
-                        col.Item().Text($"{postalCode} {city}");                        
+                        col.Item().Text($"{postalCode} {city}");
                         col.Item().Text(country);
                         col.Item().Text(email);
 
@@ -218,7 +218,7 @@ public class InvoiceController : Controller
                     column.Item().PaddingTop(7).AlignRight().Text($"Tax (25%): {tax:C}");
                     column.Item().PaddingTop(7).AlignRight().Text($"Total: {total:C}").SemiBold();
 
-                   
+
 
                 });
 
