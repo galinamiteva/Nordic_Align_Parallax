@@ -2853,6 +2853,7 @@ div#error-message.alert {
 @media (min-width: 1200px) {
   .invoice .content .container {
     max-width: 1140px;
+    width: 870px;
   }
 }
 .invoice .content .container .form {
