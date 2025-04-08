@@ -115,7 +115,8 @@
         margin-top: 50px;
 
         .container {
-            width: 800px;
+            width: 540px ;
+            max-width: 540px ;
             min-height: 600px;
             max-height: 90vh;
             overflow-y: auto;
@@ -130,13 +131,24 @@
             border-right: 1px solid rgba(255, 255, 255, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-            @media (max-width: 576px) {
-                
-                    min-width: 540px;
-               
+
+
+            @media (min-width: 576px) {
+                max-width: 540px;
+                width: 100%;
             }
 
+            @media (min-width: 768px) {
+                max-width: 720px;
+            }
 
+            @media (min-width: 992px) {
+                max-width: 960px;
+            }
+
+            @media (min-width: 1200px) {
+                max-width: 1140px;
+            }
 
             .form {
                 position: relative;

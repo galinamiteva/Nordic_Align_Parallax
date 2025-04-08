@@ -2818,7 +2818,8 @@ div#error-message.alert {
   margin-top: 50px;
 }
 .invoice .content .container {
-  width: 800px;
+  width: 540px;
+  max-width: 540px;
   min-height: 600px;
   max-height: 90vh;
   overflow-y: auto;
@@ -2833,9 +2834,25 @@ div#error-message.alert {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .invoice .content .container {
-    min-width: 540px;
+    max-width: 540px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .invoice .content .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .invoice .content .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .invoice .content .container {
+    max-width: 1140px;
   }
 }
 .invoice .content .container .form {
