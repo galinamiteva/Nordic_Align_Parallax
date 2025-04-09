@@ -731,7 +731,7 @@ body .select2-results__option[aria-selected] {
   background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
   margin-bottom: 0;
   min-height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 120px);
 }
 .courier .color {
   position: absolute;
@@ -827,7 +827,6 @@ body .select2-results__option[aria-selected] {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 200px;
 }
 .courier .container .form {
   position: relative;
@@ -1113,7 +1112,7 @@ div#error-message.alert {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 130px);
   background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
   margin-bottom: 0;
 }
@@ -1211,7 +1210,6 @@ div#error-message.alert {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 200px;
 }
 .order .container .form {
   position: relative;
@@ -1586,7 +1584,7 @@ div#error-message.alert {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 20px);
   background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
   margin-bottom: 0;
 }
@@ -1684,7 +1682,6 @@ div#error-message.alert {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 200px;
 }
 .mottagare .container .form {
   position: relative;
@@ -1969,7 +1966,7 @@ div#error-message.alert {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 20px);
   background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
   margin-bottom: 0;
 }
@@ -2067,7 +2064,6 @@ div#error-message.alert {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 200px;
 }
 .transport .container .form {
   position: relative;
@@ -2352,7 +2348,7 @@ div#error-message.alert {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 20px);
   background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
   margin-bottom: 0;
 }
@@ -2450,7 +2446,6 @@ div#error-message.alert {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 200px;
 }
 .lager .container .form {
   position: relative;
