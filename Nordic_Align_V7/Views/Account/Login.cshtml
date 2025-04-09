@@ -20,13 +20,13 @@
             <h2>Login</h2>
 
             <div class="inputBox">
-                <input asp-for="Email" type="email" id="Email" data-val="true" class="form-control" placeholder="Email">
+                <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email" class="form-control" placeholder="Email">
                 <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
 
             </div>
 
             <div class="inputBox">
-                <input asp-for="Password" type="password" data-val="true" id="Password" class="form-control" placeholder="Password" />
+                <input asp-for="Password" type="password" data-val="true" id="Password" aria-label="Password" class="form-control" placeholder="Password" />
                 <span style="color:red;" asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
             </div>
 

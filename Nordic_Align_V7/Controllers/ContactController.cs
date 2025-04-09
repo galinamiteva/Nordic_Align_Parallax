@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.SqlServer.Server;
 using Nordic_Align_V7.Models;
 using Nordic_Align_V7.Services;
 
@@ -25,7 +24,8 @@ public class ContactController : Controller
         }
 
         string subject = $"Nytt meddelande från {formData.Name}";
-        string body = $"<p><strong>Name:</strong> {formData.Name}</p><p><strong>Email:</strong> {formData.Email}</p><p><strong>Meddelande:</strong> {formData.Message}</p>";
+        string body = $"<p><strong>Name:</strong> {formData.Name}</p><p><strong>Email:</strong>" +
+          $" {formData.Email}</p><p><strong>Meddelande:</strong> {formData.Message}</p>";
 
         try
         {

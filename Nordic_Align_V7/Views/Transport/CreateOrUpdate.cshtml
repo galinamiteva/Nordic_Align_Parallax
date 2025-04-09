@@ -3,7 +3,7 @@
 
 @{
     // Ställ in titeln beroende på om modellen är tom eller inte
-    ViewData["Title"] = Model != null && Model.Id != 0 ? "Byt bil" : "Lägga till en bil";
+    ViewData["Title"] = Model != null && Model.Id != 0 ? "Ändra bil" : "Lägga till en bil";
 }
 
 <section class="transport">
@@ -30,7 +30,7 @@
                         <label asp-for="TransportNumber" class="label"></label>
                         <div class="inputBox-content">
                             <input asp-for="TransportNumber" class="form-control" />
-                            <span style="color:red;" asp-validation-for="TransportNumber" data-valmsg-for="TransportNumber" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="TransportNumber" data-valmsg-for="TransportNumber" class="text-danger" aria-live="polite"></span>
 
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         <label asp-for="Brand" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Brand" class="form-control" />
-                            <span style="color:red;" asp-validation-for="Brand" data-valmsg-for="Brand" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Brand" data-valmsg-for="Brand" class="text-danger" aria-live="polite"></span>
 
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         <label asp-for="Model" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Model" type="text" class="form-control" formnovalidate />
-                            <span style="color:red;" asp-validation-for="Model" data-valmsg-for="Model" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Model" data-valmsg-for="Model" class="text-danger" aria-live="polite"></span>
 
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                         <label asp-for="RegistrationDate" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="RegistrationDate" type="date" class="form-control" formnovalidate />
-                            <span asp-validation-for="RegistrationDate" class="text-danger"></span>
+                            <span style="color:red;"  asp-validation-for="RegistrationDate" class="text-danger" aria-live="polite"></span>
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                         <label asp-for="Color" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Color" type="text" class="form-control" />
-                            <span style="color:red;" asp-validation-for="Color" data-valmsg-for="Color" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Color" data-valmsg-for="Color" class="text-danger" aria-live="polite"></span>
 
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         <label asp-for="Capacity" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Capacity" type="text" class="form-control" />
-                            <span style="color:red;" asp-validation-for="Capacity" data-valmsg-for="Capacity" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Capacity" data-valmsg-for="Capacity" class="text-danger" aria-live="polite"></span>
 
                         </div>
                     </div>
@@ -82,8 +82,8 @@
 
                     <div class="inputBox inputButton-group">
                         <div class="inputBox-btn">
-                            <button type="submit" class="button-primary btn-submit">Spara</button>
-                            <a asp-action="Index" class="button-secondary btn-submit">Avboka</a>
+                            <button type="submit" class="button-primary btn-submit" aria-label="Save">Spara</button>
+                            <a asp-action="Index" class="button-secondary btn-submit" aria-label="Close">Avboka</a>
 
                         </div>
                     </div>

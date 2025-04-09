@@ -18,26 +18,26 @@
             <h2>Registration</h2>
             
             <div class="inputBox">
-                <input asp-for="FirstName" type="text" id="FirstName" data-val="true" class="form-control" placeholder="First name">
+                <input asp-for="FirstName" type="text" id="FirstName" data-val="true" aria-label="First name" class="form-control" placeholder="First name">
                 <span style="color:red;"  asp-validation-for="FirstName" data-valmsg-for="FirstName" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="LastName" type="text" id="LastName" data-val="true" class="form-control" placeholder="Last name">
+                <input asp-for="LastName" type="text" id="LastName" data-val="true"  aria-label="Last name" class="form-control" placeholder="Last name">
                 <span style="color:red;"  asp-validation-for="LastName" data-valmsg-for="LastName" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="Email" type="email"  id="Email" data-val="true" class="form-control" placeholder="Email">
+                <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email"  class="form-control" placeholder="Email">
                 <span style="color:red;"  asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="Password" type="password" data-val="true" id="Password" class="form-control" placeholder="Create Password">
+                <input asp-for="Password" type="password" data-val="true" id="Password" aria-label="Password" class="form-control" placeholder="Create Password">
                 <span style="color:red;"  asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
             </div>
             <div class="inputBox">
-                <input asp-for="ConfirmPassword" type="password" data-val="true" id="ConfirmPassword" class="form-control"  placeholder="Confirm Password">
+                <input asp-for="ConfirmPassword" type="password" data-val="true" aria-label="Confirm password" id="ConfirmPassword" class="form-control" placeholder="Confirm Password">
                 <span style="color:red;"  asp-validation-for="ConfirmPassword" data-valmsg-for="ConfirmPassword" class="text-danger"></span>
             </div>
 

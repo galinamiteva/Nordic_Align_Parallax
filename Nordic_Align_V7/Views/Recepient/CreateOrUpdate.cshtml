@@ -33,7 +33,7 @@
                         <label asp-for="FullName" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="FullName" class="form-control" />
-                            <span style="color:red;" asp-validation-for="FullName" data-valmsg-for="FullName" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="FullName" data-valmsg-for="FullName" class="text-danger" aria-live="polite"></span>
 
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <label asp-for="PostalCode" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="PostalCode" class="form-control" />
-                            <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger" aria-live="polite"></span>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                         <label asp-for="DeliveryAddress" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="DeliveryAddress" class="form-control" />
-                            <span style="color:red;" asp-validation-for="DeliveryAddress" data-valmsg-for="DeliveryAddress" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="DeliveryAddress" data-valmsg-for="DeliveryAddress" class="text-danger" aria-live="polite"></span>
                         </div>
                     </div>
 
@@ -59,14 +59,14 @@
                         <label asp-for="Phone" class="label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Phone" class="form-control" />
-                            <span style="color:red;" asp-validation-for="Phone" data-valmsg-for="Phone" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Phone" data-valmsg-for="Phone" class="text-danger" aria-live="polite"></span>
                         </div>
                     </div>
 
                     <div class="inputBox inputButton-group">
                         <div class="inputBox-btn">
-                            <button type="submit" class="button-primary btn-submit">Spara</button>
-                            <a asp-action="Index" class="button-secondary btn-submit">Avboka</a>
+                            <button type="submit" class="button-primary btn-submit" aria-label="Save" >Spara</button>
+                            <a asp-action="Index" class="button-secondary btn-submit" aria-label="Close">Avboka</a>
                         </div>
                     </div>
                 </form>

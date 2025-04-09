@@ -41,20 +41,20 @@
                 <h2>Kurir tabell</h2>
                 <form asp-action="Search">
                     <div class="inputBox">
-                        <input type="text" name="searchString" class="form-control" placeholder="Sök på kurirnamn..." />
-                        <button type="submit" class="button-primary">Sök efter</button>
+                        <input type="text" name="searchString" class="form-control" aria-label="Search by courier name.. " placeholder="Sök på kurirnamn..." />
+                        <button type="submit" class="button-primary" aria-label="Search">Sök efter</button>
                     </div>
                 </form>
                 <table class="table">
                     <tr>
-                        <th>@Html.DisplayNameFor(model => model.FullName)</th>
-                        <th>@Html.DisplayNameFor(model => model.Personnummer)</th>
-                        <th>@Html.DisplayNameFor(model => model.EmploymentDate)</th>
-                        <th>@Html.DisplayNameFor(model => model.StartWorkTime)</th>
-                        <th>@Html.DisplayNameFor(model => model.EndWorkTime)</th>
-                        <th>@Html.DisplayNameFor(model => model.LivingPlace)</th>
-                        <th>@Html.DisplayNameFor(model => model.Phone)</th>
-                        <th></th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.FullName)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Personnummer)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.EmploymentDate)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.StartWorkTime)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.EndWorkTime)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.LivingPlace)</th>
+                        <th scope="col">@Html.DisplayNameFor(model => model.Phone)</th>
+                        <th ></th>
                     </tr>
                     @foreach (var item in Model)
                     {
@@ -70,11 +70,11 @@
 
                          
 
-                            <th>@Html.DisplayFor(modelItem => item.LivingPlace)</th>
-                            <th>@Html.DisplayFor(modelItem => item.Phone)</th>
-                            <th><a class="icon" href="/Courier/Edit?id=@item.Id">&#9998;</a></th>
+                            <th scope="col" >@Html.DisplayFor(modelItem => item.LivingPlace)</th>
+                            <th scope="col">@Html.DisplayFor(modelItem => item.Phone)</th>
+                            <th><a class="icon" aria-label="Edit"  href="/Courier/Edit?id=@item.Id">&#9998;</a></th>
                             <th>
-                                <a class="icon"  href="/Courier/Delete?id=@item.Id">&#128465;</a>
+                                <a class="icon" aria-label="Delete" href="/Courier/Delete?id=@item.Id">&#128465;</a>
                             </th>
                         </tr>
                     }

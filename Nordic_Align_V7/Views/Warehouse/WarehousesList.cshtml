@@ -43,16 +43,16 @@
                 <table class="table">
 
                     <tr>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Name)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Address)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Phone)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Capacity)
                         </th>
                         <th></th>
@@ -60,23 +60,23 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Name)
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Address)
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Phone)
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Capacity)
                             </th>
-                            <th>
-                                <a class="icon" href="/Warehouse/Edit?id=@item.Id">&#9998;</a>
+                            <th scope="col">
+                                <a class="icon" aria-label="Edit" href="/Warehouse/Edit?id=@item.Id">&#9998;</a>
                             </th>
-                            <th>
-                                <a class="icon" href="/Warehouse/Delete?id=@item.Id">&#128465;</a>
+                            <th scope="col">
+                                <a class="icon" aria-label="Delete"  href="/Warehouse/Delete?id=@item.Id">&#128465;</a>
                             </th>
                         </tr>
                     }

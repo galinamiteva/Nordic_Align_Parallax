@@ -3,11 +3,11 @@
 
 
 <section class="invoice" style="background: url('/images/Truck7.png') no-repeat center center; background-size: cover; height: 100vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div class="cloud1"><img src="/images/Cloud4.png"></div>
-    <div class="cloud2"><img src="/images/Cloud2.png"></div>
-    <div class="cloud3"><img src="/images/Cloud3.png"></div>
-    <div class="cloud5"><img src="/images/Cloud4.png"></div>
-    <div class="cloud4"><img src="/images/Cloud5.png"></div>
+    <div class="cloud1"><img src="/images/Cloud4.png" alt="cloud"></div>
+    <div class="cloud2"><img src="/images/Cloud2.png" alt="cloud"></div>
+    <div class="cloud3"><img src="/images/Cloud3.png" alt="cloud"></div>
+    <div class="cloud5"><img src="/images/Cloud4.png" alt="cloud"></div>
+    <div class="cloud4"><img src="/images/Cloud5.png" alt="cloud"></div>
 
 
     <div class="content">
@@ -30,8 +30,8 @@
                         <div class="inputBox">
                             <label for="InvoiceNumber">Fakturanummer:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="InvoiceNumber" name="InvoiceNumber" required>
-                                <span style="color:red;" asp-validation-for="InvoiceNumber" data-valmsg-for="InvoiceNumber" class="text-danger"></span>
+                                <input type="text" id="InvoiceNumber" name="InvoiceNumber" aria-label="InvoiceNumber" required>
+                                <span style="color:red;" asp-validation-for="InvoiceNumber" data-valmsg-for="InvoiceNumber" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -39,8 +39,8 @@
                         <div class="inputBox">
                             <label for="IssueDate">Utfärdandedatum</label>
                             <div class="inputBox-content">
-                                <input type="date" id="IssueDate" name="IssueDate" required onchange="calculateDueDate()">
-                                <span style="color:red;" asp-validation-for="IssueDate" data-valmsg-for="IssueDate" class="text-danger"></span>
+                                <input type="date" id="IssueDate" name="IssueDate" aria-label="IssueDate" required onchange="calculateDueDate()">
+                                <span style="color:red;" asp-validation-for="IssueDate" data-valmsg-for="IssueDate" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -48,15 +48,15 @@
                         <div class="inputBox" style="display: none;">
                             <label for="DueDate">Förfallodatum:</label>
                             <div class="inputBox-content">
-                                <input type="date" id="DueDate" name="DueDate" readonly>
+                                <input type="date" id="DueDate" aria-label="DueDate" name="DueDate" readonly>
                             </div>
                         </div>
 
                         <div class="inputBox">
                             <label for="CompanyName">Företag:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="CompanyName" name="CompanyName" required>
-                                <span style="color:red;" asp-validation-for="CompanyName" data-valmsg-for="CompanyName" class="text-danger"></span>
+                                <input type="text" id="CompanyName" aria-label="CompanyName" name="CompanyName" required>
+                                <span style="color:red;" asp-validation-for="CompanyName" data-valmsg-for="CompanyName" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -69,24 +69,24 @@
                         <div class="inputBox">
                             <label for="Street">Adress:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="Street" name="Street" required>
-                                <span style="color:red;" asp-validation-for="Street" data-valmsg-for="Street" class="text-danger"></span>
+                                <input type="text" id="Street" name="Street" aria-label="Street" required>
+                                <span style="color:red;" asp-validation-for="Street" data-valmsg-for="Street" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
                         <div class="inputBox">
                             <label for="City">Stad:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="City" name="City" required>
-                                <span style="color:red;" asp-validation-for="City" data-valmsg-for="City" class="text-danger"></span>
+                                <input type="text" id="City" name="City" aria-label="City" required>
+                                <span style="color:red;" asp-validation-for="City" data-valmsg-for="City" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
                         <div class="inputBox">
                             <label for="PostalCode">Postnummer:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="PostalCode" name="PostalCode" required>
-                                <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger"></span>
+                                <input type="text" id="PostalCode" name="PostalCode" aria-label="Postal Code" required>
+                                <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -99,8 +99,8 @@
                         <div class="inputBox">
                             <label for="Country">Land:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="Country" name="Country" required>
-                                <span style="color:red;" asp-validation-for="Country" data-valmsg-for="Country" class="text-danger"></span>
+                                <input type="text" id="Country" name="Country" aria-label="Country"  required>
+                                <span style="color:red;" asp-validation-for="Country" data-valmsg-for="Country" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -108,8 +108,8 @@
                         <div class="inputBox">
                             <label for="Email">E-post:</label>
                             <div class="inputBox-content">
-                                <input type="email" id="Email" name="Email" required>
-                                <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
+                                <input type="email" id="Email" name="Email" aria-label="Email" required>
+                                <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -117,8 +117,8 @@
                         <div class="inputBox">
                             <label for="VatNumber">Vat nummer:</label>
                             <div class="inputBox-content">
-                                <input type="text" id="VatNumber" name="VatNumber" required>
-                                <span style="color:red;" asp-validation-for="VatNumber" data-valmsg-for="VatNumber" class="text-danger"></span>
+                                <input type="text" id="VatNumber" name="VatNumber"  aria-label="Vat number" required>
+                                <span style="color:red;" asp-validation-for="VatNumber" data-valmsg-for="VatNumber" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -137,8 +137,8 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Item">Produkt:</label>
                                         <div class="inputBox-content">
-                                            <input type="text" id="Items[i].Item" name="itemNames[]" required>
-                                            <span style="color:red;" asp-validation-for="Items[i].Item" data-valmsg-for="Items[i].Item" class="text-danger"></span>
+                                            <input type="text" id="Items[i].Item" name="itemNames[]" aria-label="Product name"  required>
+                                            <span style="color:red;" asp-validation-for="Items[i].Item" data-valmsg-for="Items[i].Item" class="text-danger" aria-live="polite"></span>
 
                                         </div>
                                     </div>
@@ -146,9 +146,9 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Quantity">Antal:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" id="Items[i].Quantity" name="quantities[]" min="1" required oninput="validity.valid||(value='');">
+                                            <input type="number" id="Items[i].Quantity" name="quantities[]" aria-label="Quantity" min="1" required oninput="validity.valid||(value='');" aria-live="polite">
 
-                                            <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
+                                            <span style="color:red;" data-valmsg-for="quantities[]"   class="text-danger"></span>
 
 
                                         </div>
@@ -158,9 +158,9 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Price">Pris:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" id="Items[i].Price" name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
+                                            <input type="number" id="Items[i].Price" name="prices[]" aria-label="Price" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
 
-                                            <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>
+                                            <span style="color:red;" data-valmsg-for="prices[]" class="text-danger" aria-live="polite"></span>
                                         </div>
                                     </div>
 
@@ -170,7 +170,7 @@
                         </div>
 
                     </div>
-                    <button class="button-primary" type="button" onclick="addItem()">Lägg till produkt</button>
+                    <button class="button-primary" type="button" aria-label="Add product"  onclick="addItem()">Lägg till produkt</button>
 
 
                     @*     Add komment om vi vill*@   
@@ -183,7 +183,7 @@
                         </div>
                     </div>
 
-                    <button class="button-secondary" type="submit">Generera och skicka</button>
+                    <button class="button-secondary" aria-label="Generera and send"  type="submit">Generera och skicka</button>
                 </form>
 
 

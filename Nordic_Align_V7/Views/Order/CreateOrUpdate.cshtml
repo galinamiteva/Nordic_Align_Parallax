@@ -3,7 +3,7 @@
 
 @{
     // Ställ in titeln beroende på om modellen är tom eller inte
-    ViewData["Title"] = Model != null && Model.Id != 0 ? "Change order" : "Lägg till order";
+    ViewData["Title"] = Model != null && Model.Id != 0 ? "Ändra order" : "Lägg till order";
 
     var user = await UserManager.GetUserAsync(User);
     var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
@@ -40,7 +40,7 @@
                             <div class="inputBox-content">
                             <input asp-for="Sender" class="form-control" disabled />
                             <input type="hidden" asp-for="Sender" />
-                            <span style="color:red;" asp-validation-for="Sender" data-valmsg-for="Sender" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="Sender" data-valmsg-for="Sender" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                             <label asp-for="DeliveryDate" class="label"></label>
                             <div class="inputBox-content">
                                 <input asp-for="DeliveryDate" class="form-control" />
-                                <span style="color:red;" asp-validation-for="DeliveryDate" data-valmsg-for="DeliveryDate" class="text-danger"></span>
+                            <span style="color:red;" asp-validation-for="DeliveryDate" data-valmsg-for="DeliveryDate" class="text-danger" aria-live="polite"></span>
 
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                                 <label asp-for="Price" class="label"></label>
                                 <div class="inputBox-content">
                                     <input asp-for="Price" type="text" class="form-control" />
-                                    <span style="color:red;" asp-validation-for="Price" data-valmsg-for="Price" class="text-danger"></span>
+                                <span style="color:red;" asp-validation-for="Price" data-valmsg-for="Price" class="text-danger" aria-live="polite"></span>
 
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                             }
                                         }
                                     </select>
-                                <span style="color:red;" asp-validation-for="CourierId" data-valmsg-for="CourierId" class="text-danger"></span>
+                                <span style="color:red;" asp-validation-for="CourierId" data-valmsg-for="CourierId" class="text-danger" aria-live="polite"></span>
 
                                 </div>
                             </div>                      
@@ -126,7 +126,7 @@
                                             }
                                         }
                                     </select>
-                                <span style="color:red;" asp-validation-for="TransportId" data-valmsg-for="TransportId" class="text-danger"></span>
+                                <span style="color:red;" asp-validation-for="TransportId" data-valmsg-for="TransportId" class="text-danger" aria-live="polite"></span>
 
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                         }
                         <div class="inputBox inputButton-group">
                             <div class="inputBox-btn">
-                                <button type="submit" class="button-primary btn-submit">Spara</button>
+                            <button type="submit" class="button-primary btn-submit" aria-label="Save">Spara</button>
                                 <a asp-action="Index"
                                    asp-controller="@(role == "Admin" ? "Order" : "Home")"
                                    class="button-secondary btn-submit">Avboka</a>

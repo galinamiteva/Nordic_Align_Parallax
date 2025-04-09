@@ -40,15 +40,15 @@
 
                 <table class="table">
                     <tr>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Sender)
                         </th>
 
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.OrderDate)
                         </th>
 
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.DeliveryDate)
                         </th>
 
@@ -60,16 +60,16 @@
 
                         @if (role == "Admin")
                         {
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayNameFor(model => model.Price)
                             </th>
-                            <th>
+                            <th scope="col">
                                 Kurir
                             </th>
-                            <th>
+                            <th scope="col">
                                 Transport
                             </th>
-                            <th>
+                            <th scope="col">
                                 Lager
                             </th>
                         }
@@ -78,7 +78,7 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <th>
+                            <th scope="col">
                                 @if (string.IsNullOrEmpty(item.Sender))
                                 {
                                     @ViewBag.UserFullName
@@ -89,16 +89,16 @@
                                 }
                             </th>
 
-                            <th>
+                            <th scope="col">
                                 @item.OrderDate.ToShortDateString()
                             </th>
 
-                            <th>
+                            <th scope="col">
                                 @item.DeliveryDate.ToShortDateString()
                             </th>
 
 
-                            <th>
+                            <th scope="col">
                                 @(item.Recepient != null ? item.Recepient.FullName : "Mottagare okänd")
                             </th>
 
@@ -106,17 +106,17 @@
                             @if (role == "Admin")
                             {
 
-                                <th>
+                                <th scope="col">
                                     @(item.Price != 100 ? item.Price.ToString() : "Add Price ")
                                 </th>
 
-                                <th>
+                                <th scope="col">
                                     @(item.Courier != null ? item.Courier.FullName : " Ej Info ")
                                 </th>
-                                <th>
+                                <th scope="col">
                                     @(item.Transport != null ? item.Transport.TransportNumber : " Ej Info")
                                 </th>
-                                <th>
+                                <th scope="col">
                                     @(item.Warehouses.Count() != 0 ? string.Join(", ", item.Warehouses.Select(x => x.Name)) : "Ej Info")
                                 </th>
 
@@ -125,11 +125,11 @@
 
 
                             <th>
-                                <a class="icon"  href="/Order/Edit?id=@item.Id">&#9998;</a>
+                                <a class="icon" aria-label="Edit" href="/Order/Edit?id=@item.Id">&#9998;</a>
                             </th>
 
                             <th>
-                                <a class="icon" href="/Order/Delete?id=@item.Id">&#128465;</a>
+                                <a class="icon" aria-label="Delete"  href="/Order/Delete?id=@item.Id">&#128465;</a>
                             </th>
 
                         </tr>

@@ -70,7 +70,7 @@ public class TransportController : Controller
 
         if (transport.Orders != null && transport.Orders.Any())
         {
-            TempData["ErrorMessage"] = "Operation är omöjlig. Transporten är kopplad till aktiva beställningar.";
+            TempData["ErrorMessage"] = "Operation är omöjlig. Fordonen är kopplad till aktiva beställningar.";
             return RedirectToAction("Index");
         }
 

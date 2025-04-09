@@ -42,22 +42,22 @@
 
                 <table class="table">
                     <tr>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.TransportNumber)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Brand)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Model)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.RegistrationDate)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Color)
                         </th>
-                        <th>
+                        <th scope="col">
                             @Html.DisplayNameFor(model => model.Capacity)
                         </th>
                         <th></th>
@@ -65,29 +65,29 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <th>
+                            <th scope="col">
                                 <a style="color:black" href="/Order/OrdersByTransportId?transportId=@item.Id">@Html.DisplayFor(modelItem => item.TransportNumber)</a>
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Brand)
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Model)
                             </th>
                             <th>
                                 @item.RegistrationDate.ToShortDateString()
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Color)
                             </th>
-                            <th>
+                            <th scope="col">
                                 @Html.DisplayFor(modelItem => item.Capacity)
                             </th>
-                            <th>
-                                <a class="icon" href="/Transport/Edit?id=@item.Id">&#9998;</a>
+                            <th scope="col">
+                                <a class="icon" aria-label="Edit"  href="/Transport/Edit?id=@item.Id">&#9998;</a>
                             </th>
-                            <th>
-                                <a class="icon" href="/Transport/Delete?id=@item.Id">&#128465;</a>
+                            <th scope="col">
+                                <a class="icon" aria-label="Delete"  href="/Transport/Delete?id=@item.Id">&#128465;</a>
                             </th>
                         </tr>
                     }
