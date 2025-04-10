@@ -2876,7 +2876,7 @@ div#error-message.alert {
   background-color: #FFF;
   border: none;
 }
-.invoice .content .container .form h2 {
+.invoice .content .container .form h1 {
   position: relative;
   color: #000;
   font-size: 25px;
@@ -2885,7 +2885,7 @@ div#error-message.alert {
   margin-bottom: 25px;
   text-align: left;
 }
-.invoice .content .container .form h2::before {
+.invoice .content .container .form h1::before {
   content: "";
   position: absolute;
   left: 0;
