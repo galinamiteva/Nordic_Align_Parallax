@@ -1516,6 +1516,7 @@ div#error-message.alert {
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .order-table .container .form h1:before {
   content: "";
@@ -1901,6 +1902,7 @@ div#error-message.alert {
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .mottagare-table .container .form h1:before {
   content: "";
