@@ -1042,7 +1042,7 @@ div#error-message.alert {
     min-width: 800px !important;
   }
 }
-.courier-table .container .form h2 {
+.courier-table .container .form h1 {
   position: relative;
   color: #000;
   font-size: 2rem;
@@ -1050,7 +1050,7 @@ div#error-message.alert {
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
-.courier-table .container .form h2:before {
+.courier-table .container .form h1:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1509,7 +1509,7 @@ div#error-message.alert {
     min-width: 900px !important;
   }
 }
-.order-table .container .form h2 {
+.order-table .container .form h1 {
   position: relative;
   color: #000;
   font-size: 2rem;
@@ -1517,7 +1517,7 @@ div#error-message.alert {
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
-.order-table .container .form h2:before {
+.order-table .container .form h1:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1894,7 +1894,7 @@ div#error-message.alert {
     min-width: 800px !important;
   }
 }
-.mottagare-table .container .form h2 {
+.mottagare-table .container .form h1 {
   position: relative;
   color: #000;
   font-size: 2rem;
@@ -1902,7 +1902,7 @@ div#error-message.alert {
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
-.mottagare-table .container .form h2:before {
+.mottagare-table .container .form h1:before {
   content: "";
   position: absolute;
   left: 0;
@@ -2275,7 +2275,7 @@ div#error-message.alert {
     min-width: 800px !important;
   }
 }
-.transport-table .container .form h2 {
+.transport-table .container .form h1 {
   position: relative;
   color: #000;
   font-size: 2rem;
@@ -2283,7 +2283,7 @@ div#error-message.alert {
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
-.transport-table .container .form h2:before {
+.transport-table .container .form h1:before {
   content: "";
   position: absolute;
   left: 0;
@@ -2651,7 +2651,7 @@ div#error-message.alert {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 3rem;
 }
-.lager-table .container .form h2 {
+.lager-table .container .form h1 {
   position: relative;
   color: #000;
   font-size: 2rem;
@@ -2659,7 +2659,7 @@ div#error-message.alert {
   letter-spacing: 1px;
   margin-bottom: 40px;
 }
-.lager-table .container .form h2:before {
+.lager-table .container .form h1:before {
   content: "";
   position: absolute;
   left: 0;
