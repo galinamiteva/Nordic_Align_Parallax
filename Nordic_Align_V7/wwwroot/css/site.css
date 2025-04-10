@@ -484,7 +484,7 @@ body .select2-results__option[aria-selected] {
   gap: 23px;
   transition: 0.5s;
 }
-.contact-form-login form h2 {
+.contact-form-login form h1 {
   position: relative;
   color: #000;
   font-size: 1.5em;
@@ -634,7 +634,7 @@ body .select2-results__option[aria-selected] {
 .contact-form form::before {
   opacity: 1;
 }
-.contact-form form h2 {
+.contact-form form h1 {
   position: relative;
   color: #000;
   font-size: 1.5em;
