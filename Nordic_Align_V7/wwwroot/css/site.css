@@ -318,13 +318,12 @@ body .select2-results__option[aria-selected] {
 }
 .footer .container {
   padding-top: 50px;
+}
+.footer .container p.p-white {
   color: #FFF !important;
 }
-.footer .container p-white {
-  color: #FFF;
-}
-.footer .container p-black {
-  color: #000;
+.footer .container p.p-black {
+  color: #000 !important;
 }
 .footer .container p a {
   color: #0396A6 !important;

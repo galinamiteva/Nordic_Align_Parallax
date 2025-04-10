@@ -16,16 +16,16 @@
 
     .container {
         padding-top: 50px;
-        color: $white !important;
+
 
         p {
 
-            &-white {
-                color: $white;
+            &.p-white {
+                color: $white !important;
             }
 
-            &-black {
-                color: $black;
+            &.p-black {
+                color: $black !important;
             }
 
             a {
