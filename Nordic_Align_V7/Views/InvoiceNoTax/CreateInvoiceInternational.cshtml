@@ -133,7 +133,7 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Item">Produkt:</label>
                                         <div class="inputBox-content">
-                                            <input type="text" name="itemNames[]" aria-label="Product name" required>
+                                            <input type="text" id="Items[@i].Item" name="itemNames[]" aria-label="Product name" required>
                                             <span style="color:red;" asp-validation-for="Items[i].Item" data-valmsg-for="Items[i].Item" class="text-danger" aria-live="polite"></span>
 
                                         </div>
@@ -142,7 +142,7 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Quantity">Antal:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" name="quantities[]" aria-label="Quantity" required>
+                                            <input type="number" id="Items[@i].Quantity" name="quantities[]" aria-label="Quantity" required>
                                             <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger" aria-live="polite"></span>
 
                                         </div>
@@ -151,7 +151,7 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Price">Pris:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" step="0.01" name="prices[]" aria-label="Price" required>
+                                            <input type="number" id="Items[@i].Price step=" 0.01" name="prices[]" aria-label="Price" required>
                                             <span style="color:red;" data-valmsg-for="prices[]" class="text-danger" aria-live="polite"></span>
 
                                         </div>

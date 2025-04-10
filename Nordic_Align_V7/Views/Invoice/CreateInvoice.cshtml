@@ -141,7 +141,7 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Item">Produkt:</label>
                                         <div class="inputBox-content">
-                                            <input type="text" id="Items[i].Item" name="itemNames[]" aria-label="Product name"  required>
+                                            <input type="text" id="Items[@i].Item" name="itemNames[]" aria-label="Product name"  required>
                                             <span style="color:red;" asp-validation-for="Items[i].Item" data-valmsg-for="Items[i].Item" class="text-danger" aria-live="polite"></span>
 
                                         </div>
@@ -150,7 +150,7 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Quantity">Antal:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" id="Items[i].Quantity" name="quantities[]" aria-label="Quantity" min="1" required oninput="validity.valid||(value='');" aria-live="polite">
+                                            <input type="number" id="Items[@i].Quantity" name="quantities[]" aria-label="Quantity" min="1" required oninput="validity.valid||(value='');" aria-live="polite">
 
                                             <span style="color:red;" data-valmsg-for="quantities[]"   class="text-danger"></span>
 
@@ -162,7 +162,7 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Price">Pris:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" id="Items[i].Price" name="prices[]" aria-label="Price" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
+                                            <input type="number" id="Items[@i].Price" name="prices[]" aria-label="Price" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
 
                                             <span style="color:red;" data-valmsg-for="prices[]" class="text-danger" aria-live="polite"></span>
                                         </div>
