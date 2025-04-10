@@ -17,6 +17,7 @@
 
     function validateField(inputName, value) {
         let isValid = true;
+
         if (inputName === "TransportNumber") {
             if (value.length < 6) {
                 showError(inputName, "Fältet måste innehålla minst 6 tecken.");
@@ -27,8 +28,11 @@
         }
 
         if (inputName === "RegistrationDate") {
-            if (value === "0001-01-01") {
-                showError(inputName, "Fältet får inte vara 01.01.0001.");
+            const minDate = new Date("2000-01-01");
+            const inputDate = new Date(value);
+
+            if (value === "0001-01-01" || inputDate < minDate) {
+                showError(inputName, "Datumet måste vara efter 01.01.2000.");
                 isValid = false;
             } else {
                 clearError(inputName);
@@ -76,7 +80,7 @@
         });
 
         if (!isValid) {
-            event.preventDefault(); 
+            event.preventDefault();
         }
     });
 });

@@ -15,17 +15,7 @@
         }
     }
 
-    function validateField(input, regex, minLength, maxLength, message) {
-        const value = input.value.trim();
-        if (value.length >= minLength && value.length <= maxLength && regex.test(value)) {
-            clearError(input.name);
-            return true;
-        } else {
-            setError(input.name, message);
-            return false;
-        }
-    }
-
+    // FullName
     document.querySelector("input[name='FullName']").addEventListener('input', function () {
         const fullName = this.value.trim();
         const words = fullName.split(/\s+/);
@@ -36,6 +26,7 @@
         }
     });
 
+    // Personnummer
     document.querySelector("input[name='Personnummer']").addEventListener('input', function () {
         const persnr = this.value.trim();
         if (/^\d{12}$/.test(persnr)) {
@@ -45,15 +36,22 @@
         }
     });
 
-    document.querySelector("input[name='EmploymentDate']").addEventListener('input', function () {
-        const employmentDate = this.value;
-        if (employmentDate !== "0001-01-01") {
-            clearError("EmploymentDate");
+    // EmploymentDate
+    const employmentDateInput = document.querySelector("input[name='EmploymentDate']");
+    employmentDateInput.addEventListener('input', function () {
+        const employmentDate = new Date(this.value);
+        const minDate = new Date("2024-07-01");
+
+        if (isNaN(employmentDate)) {
+            setError("EmploymentDate", "Vänligen ange ett giltigt datum.");
+        } else if (employmentDate < minDate) {
+            setError("EmploymentDate", "Anställningsdatumet kan inte vara före 1 juli 2024.");
         } else {
-            setError("EmploymentDate", "Fältet kan inte vara 01.01.0001.");
+            clearError("EmploymentDate");
         }
     });
 
+    // Phone
     document.querySelector("input[name='Phone']").addEventListener('input', function () {
         const phone = this.value.trim();
         if (phone.length >= 7 && phone.length <= 13) {
@@ -63,6 +61,7 @@
         }
     });
 
+    // LivingPlace
     document.querySelector("input[name='LivingPlace']").addEventListener('input', function () {
         const livingPlace = this.value.trim();
         if (/^[A-Za-zÅÄÖåäö]{2,}/.test(livingPlace)) {
@@ -72,6 +71,31 @@
         }
     });
 
+    // StartWorkTime и EndWorkTime
+    const startWorkTimeInput = document.querySelector("input[name='StartWorkTime']");
+    const endWorkTimeInput = document.querySelector("input[name='EndWorkTime']");
+
+    startWorkTimeInput.addEventListener('input', validateWorkTime);
+    endWorkTimeInput.addEventListener('input', validateWorkTime);
+
+    function validateWorkTime() {
+        const startWorkTime = startWorkTimeInput.value;
+        const endWorkTime = endWorkTimeInput.value;
+
+        clearError("StartWorkTime");
+        clearError("EndWorkTime");
+
+        if (startWorkTime && endWorkTime) {
+            const [startHours, startMinutes] = startWorkTime.split(":").map(Number);
+            const [endHours, endMinutes] = endWorkTime.split(":").map(Number);
+
+            if (startHours > endHours || (startHours === endHours && startMinutes >= endMinutes)) {
+                setError("EndWorkTime", "Sluttiden måste vara senare än starttiden.");
+            }
+        }
+    }
+
+    // Submit 
     form.addEventListener("submit", function (event) {
         let isValid = true;
 
@@ -88,10 +112,16 @@
             setError("Personnummer", "Fältet måste innehålla 12 siffror.");
         }
 
-        const employmentDate = document.querySelector("input[name='EmploymentDate']").value;
-        if (employmentDate === "0001-01-01") {
+        const employmentDateValue = employmentDateInput.value;
+        const employmentDate = new Date(employmentDateValue);
+        const minDate = new Date("2024-07-01");
+
+        if (isNaN(employmentDate)) {
             isValid = false;
-            setError("EmploymentDate", "Fältet kan inte vara 01.01.0001.");
+            setError("EmploymentDate", "Vänligen ange ett giltigt datum.");
+        } else if (employmentDate < minDate) {
+            isValid = false;
+            setError("EmploymentDate", "Anställningsdatumet kan inte vara före 1 juli 2024.");
         }
 
         const phone = document.querySelector("input[name='Phone']").value.trim();
@@ -106,10 +136,29 @@
             setError("LivingPlace", "Fältet måste innehålla minst två tecken.");
         }
 
+        const startWorkTime = startWorkTimeInput.value;
+        const endWorkTime = endWorkTimeInput.value;
+
+        clearError("StartWorkTime");
+        clearError("EndWorkTime");
+
+        if (startWorkTime === "" || endWorkTime === "") {
+            isValid = false;
+            setError("StartWorkTime", "Vänligen ange starttid.");
+            setError("EndWorkTime", "Vänligen ange sluttid.");
+        } else {
+            const [startHours, startMinutes] = startWorkTime.split(":").map(Number);
+            const [endHours, endMinutes] = endWorkTime.split(":").map(Number);
+
+            if (startHours > endHours || (startHours === endHours && startMinutes >= endMinutes)) {
+                isValid = false;
+                setError("EndWorkTime", "Sluttiden måste vara efter starttiden.");
+            }
+        }
+
         if (!isValid) {
-            event.preventDefault(); 
+            event.preventDefault();
         }
     });
+
 });
-
-
