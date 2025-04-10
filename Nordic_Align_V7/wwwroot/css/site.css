@@ -318,9 +318,11 @@ body .select2-results__option[aria-selected] {
 }
 .footer .container {
   padding-top: 50px;
+  color: #FFF !important;
 }
 .footer .container a {
   color: #0396A6 !important;
+  font-size: 16px;
 }
 
 .layers {
