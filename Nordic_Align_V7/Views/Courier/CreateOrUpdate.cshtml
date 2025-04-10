@@ -23,7 +23,7 @@
 
                <div class="container">
                     <div class="form">
-                        <h2>@ViewData["Title"]</h2>
+                        <h1>@ViewData["Title"]</h1>
 
                         <form asp-action="@(Model != null && Model.Id != 0 ? "Edit" : "Create")" method="post" class="needs-validation" novalidate>
                             <input type="hidden" asp-for="Id" />
