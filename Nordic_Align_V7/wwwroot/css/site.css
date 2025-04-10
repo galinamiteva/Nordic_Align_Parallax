@@ -320,7 +320,13 @@ body .select2-results__option[aria-selected] {
   padding-top: 50px;
   color: #FFF !important;
 }
-.footer .container a {
+.footer .container p-white {
+  color: #FFF;
+}
+.footer .container p-black {
+  color: #000;
+}
+.footer .container p a {
   color: #0396A6 !important;
   font-size: 16px;
 }

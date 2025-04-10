@@ -2,7 +2,7 @@
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
     var footerClass = currentController == "Privacy" ? "footer-light" : "footer-dark";
     var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
-
+    var footerColor = currentController == "Privacy" ? "p-black" : "p-white";
 
 }
 
@@ -11,8 +11,11 @@
 
 {
     <footer class="footer text-muted @footerClass">
-        <div class="container">
-            &copy; 2025 - Nordic Align Supply Chain Consulting AB - <a asp-area="" asp-controller="Privacy" asp-action="Index">Privacy</a>
+        <div class="container" >
+            <p class="text-muted @footerClass">
+                &copy; 2025 - Nordic Align Supply Chain Consulting AB - <a asp-area="" asp-controller="Privacy" asp-action="Index">Privacy</a>
+
+            </p>
         </div>
     </footer>
 }
