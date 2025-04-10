@@ -3378,7 +3378,7 @@ div#error-message.alert {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 500px);
   background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
   margin-bottom: 0;
 }
