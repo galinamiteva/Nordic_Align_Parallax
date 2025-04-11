@@ -151,7 +151,9 @@
                                     <div class="inputBox">
                                         <label for="Items[@i].Price">Pris:</label>
                                         <div class="inputBox-content">
-                                            <input type="number" id="Items[@i].Price step=" 0.01" name="prices[]" aria-label="Price" required>
+                                            @* <input type="number" id="Items[@i].Price step=" 0.05" name="prices[]" aria-label="Price" required> *@
+                                            <input type="number" id="Items[@i].Price" name="prices[]" aria-label="Price" required step=" 0.05">
+
                                             <span style="color:red;" data-valmsg-for="prices[]" class="text-danger" aria-live="polite"></span>
 
                                         </div>
