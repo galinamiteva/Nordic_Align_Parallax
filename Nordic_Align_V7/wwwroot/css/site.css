@@ -3520,7 +3520,6 @@ div#error-message.alert {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 135px;
 }
 #error .container img {
   width: 500px;
