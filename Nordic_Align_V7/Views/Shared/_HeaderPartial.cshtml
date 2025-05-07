@@ -59,21 +59,21 @@
                                 <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Courier" asp-action="Index">Kurirer</a>
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Transport" asp-action="Index">Fordonsflotta</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Transport" asp-action="Index">Fordonflotta</a>
                             </li>
                             <li class="menu__list-item">
                                 <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Warehouse" asp-action="Index">Lager</a>
                             </li>
                             <li class="menu__list-item" >
                                 <a class="menu__list-link dropdown-toggle @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Invoice
+                                    Faktura
                                 </a>
                                 <ul class="dropdown-menu custom-dropdown @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")"  aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Skapa Invoice</a>
+                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Skapa Faktura</a>
                                     </li>
                                     <li>
-                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">Skapa NoTax Invoice</a>
+                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">Skapa EjMoms Faktura</a>
                                     </li>
                                 </ul>
                             </li>
@@ -84,7 +84,7 @@
                 <ul class="menu__list" id="account">
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logga ut</a></li>
                     }
                     else
                     {

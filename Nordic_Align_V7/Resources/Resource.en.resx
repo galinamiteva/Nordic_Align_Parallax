@@ -118,321 +118,322 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CXtransformationsstrategi;" xml:space="preserve">
-    <value>CX transformations strategi;</value>
+    <value>CX Transformation Strategy</value>
   </data>
   <data name="DataAI_lösningar;" xml:space="preserve">
-    <value>Data AI-lösningar;</value>
+    <value>Data &amp; AI Solutions</value>
   </data>
   <data name="Driftshantering;" xml:space="preserve">
-    <value>Drifts hantering;</value>
+    <value>Operations Management</value>
   </data>
   <data name="Driftsanalys;" xml:space="preserve">
-    <value>Driftsanalys;</value>
+    <value>Operations Analysis</value>
   </data>
   <data name="Efterfrågeprognos;" xml:space="preserve">
-    <value>Efterfråge prognos;</value>
+    <value>Demand Forecasting</value>
   </data>
   <data name="EnterprisePerformanceManagement(EPM)" xml:space="preserve">
-    <value>Enterprise Performance Management (EPM);</value>
+    <value>Enterprise Performance Management (EPM)</value>
   </data>
   <data name="Tjänster_text" xml:space="preserve">
-    <value>Ett baspaket erbjuds tillsammans med tilläggstjänster såsom framtida färdplanering, IT-lösningar, optimering, analys och andra mervärdestjänster. Vi erbjuder dessutom följande tjänster till fast pris inom paketlösningar:</value>
+    <value>A basic package is offered along with add-on services such as future roadmap planning, IT solutions, optimization, analytics, and other value-added services. We also provide the following fixed-price services as part of packaged solutions:</value>
   </data>
   <data name="Framtidafärdplanering;" xml:space="preserve">
-    <value>Framtida färdplanering;</value>
+    <value>Future Roadmap Planning</value>
   </data>
   <data name="FullständigterbjudandepaketDeluxe" xml:space="preserve">
-    <value>Fullständigt erbjudande paket Deluxe;</value>
+    <value>Complete Deluxe Offer Package</value>
   </data>
   <data name="Fullständigt paket;" xml:space="preserve">
-    <value>Fullständigt paket;</value>
+    <value>Skapa</value>
   </data>
   <data name="Hem" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Inköpslösningar" xml:space="preserve">
-    <value>Inköps lösningar;</value>
+    <value>Procurement Solutions;</value>
   </data>
   <data name="E_Post" xml:space="preserve">
-    <value>E-Post</value>
+    <value>Email</value>
   </data>
   <data name="Kontakt" xml:space="preserve">
-    <value>Kontakt</value>
+    <value>Contact</value>
   </data>
   <data name="Lagerhantering" xml:space="preserve">
-    <value>Lager hantering;</value>
+    <value>Inventory Management;</value>
   </data>
   <data name="Loggain" xml:space="preserve">
-    <value>Logga in</value>
+    <value>Login</value>
   </data>
   <data name="Logistikhantering" xml:space="preserve">
-    <value>Logistik Hantering;</value>
+    <value>Logistics Management;</value>
   </data>
   <data name="Namn" xml:space="preserve">
-    <value>Namn</value>
+    <value>Name</value>
   </data>
   <data name="Omoss" xml:space="preserve">
-    <value>Om oss</value>
+    <value>About</value>
   </data>
   <data name="Omdesignavtjänster" xml:space="preserve">
-    <value>Omdesign av tjänster;</value>
+    <value>Service Redesign;</value>
   </data>
   <data name="Prestandautvärdering" xml:space="preserve">
-    <value>Prestanda utvärdering;</value>
+    <value>Performance Evaluation;</value>
   </data>
   <data name="Harduredanettkonto" xml:space="preserve">
     <value>Already have an account?</value>
   </data>
   <data name="SkräddarsyddaIT_lösningar" xml:space="preserve">
-    <value>Skräddarsydda IT-lösningar;</value>
+    <value>Customized IT Solutions;</value>
   </data>
   <data name="Standarderbjudandepaket" xml:space="preserve">
-    <value>Standard erbjudande paket;</value>
+    <value>Standard Offer Package;</value>
   </data>
   <data name="Strategiimplementering" xml:space="preserve">
-    <value>Strategi implementering;</value>
+    <value>Strategy Implementation;</value>
   </data>
   <data name="Tjänstehantering" xml:space="preserve">
-    <value>Tjänste hantering;</value>
+    <value>Service Management;</value>
   </data>
   <data name="Tjänster" xml:space="preserve">
-    <value>Tjänster</value>
+    <value>Solution</value>
   </data>
   <data name="Vadärdetvierbjuder" xml:space="preserve">
-    <value>Vad är det vi erbjuder?</value>
+    <value>What Do We Offer?</value>
   </data>
   <data name="OmOss_text1" xml:space="preserve">
-    <value>Vi har ett uppdrag att leverera oöverträffad expertis för att optimera våra kunders försörjningskedje operationer, vilket främjar deras tillväxt och framgång på global nivå.</value>
+    <value>We are committed to delivering unmatched expertise to optimize our clients' supply chain operations, fostering their growth and success on a global scale.</value>
   </data>
   <data name="OmOss_text2" xml:space="preserve">
-    <value>Våra affärsmål och vår strategi innebär att vi arbetar genom en väl definierad metod, vilket gör det möjligt för oss att bana väg för våra kunders framgång samtidigt som vi maximerar effekten av våra tjänster.</value>
+    <value>Our business goals and strategy are built around a well-defined methodology, enabling us to pave the way for our clients' success while maximizing the impact of our services.</value>
   </data>
   <data name="OmOss_text3" xml:space="preserve">
-    <value>Våra produkter omfattar ett utbud av konsulttjänster för optimering av försörjningskedjan, vilka används för att säkerställa att utbudets fungerar smidigt och resulterar i lägre kostnader samt en snabbare produktions- och leveranscykel.</value>
+    <value>Our offerings include a range of consulting services for supply chain optimization, aimed at ensuring smooth supply processes, reduced costs, and a faster production and delivery cycle.
+</value>
   </data>
   <data name="Meddelande" xml:space="preserve">
-    <value>Meddelande</value>
+    <value>Message</value>
   </data>
   <data name="Harduingetkonto" xml:space="preserve">
-    <value>Har du inget konto?</value>
+    <value>Don't have an account?</value>
   </data>
   <data name="Registreradig" xml:space="preserve">
-    <value>Registrera dig</value>
+    <value>SignUp</value>
   </data>
   <data name="Lösenord" xml:space="preserve">
-    <value>Lösenord</value>
+    <value>Password</value>
   </data>
   <data name="Förnamn" xml:space="preserve">
-    <value>Förnamn</value>
+    <value>First name</value>
   </data>
   <data name="Lastname" xml:space="preserve">
-    <value>Last name</value>
+    <value>Efternamn</value>
   </data>
   <data name="Skapalösenord" xml:space="preserve">
-    <value>Skapa lösenord</value>
+    <value>Create Password</value>
   </data>
   <data name="Bekräftalösenord" xml:space="preserve">
-    <value>Bekräfta lösenord</value>
+    <value>Confirm Password</value>
   </data>
   <data name="Loggaut" xml:space="preserve">
-    <value>Logga ut</value>
+    <value>Logout</value>
   </data>
   <data name="Faktura" xml:space="preserve">
-    <value>Faktura</value>
+    <value>Invoice</value>
   </data>
   <data name="Skapafaktura" xml:space="preserve">
-    <value>Skapa faktura</value>
+    <value>Create an invoice</value>
   </data>
   <data name="SkapaEjMomsFaktura" xml:space="preserve">
-    <value>Skapa EjMoms Faktura</value>
+    <value>Create NoTax Invoice</value>
   </data>
   <data name="Mottagare" xml:space="preserve">
-    <value>Mottagare</value>
+    <value>Recepient</value>
   </data>
   <data name="Order" xml:space="preserve">
     <value>Order</value>
   </data>
   <data name="Kurirer" xml:space="preserve">
-    <value>Kurirer</value>
+    <value>Couriers</value>
   </data>
   <data name="Forfonflotta" xml:space="preserve">
-    <value>Forfonsflotta</value>
+    <value>Truck fleet</value>
   </data>
   <data name="Lager" xml:space="preserve">
-    <value>Lager</value>
+    <value>Warehouse</value>
   </data>
   <data name="Mottagaretabell" xml:space="preserve">
-    <value>Mottagare tabell</value>
+    <value>Recipient table</value>
   </data>
   <data name="Postnummer" xml:space="preserve">
-    <value>Postnummer</value>
+    <value>Postal code</value>
   </data>
   <data name="Leveransadress" xml:space="preserve">
-    <value>Leverans adress</value>
+    <value>Delivery address</value>
   </data>
   <data name="Telefon" xml:space="preserve">
-    <value>Telefon</value>
+    <value>Telephone</value>
   </data>
   <data name="Läggtillmottagare" xml:space="preserve">
-    <value>Lägg till mottagare</value>
+    <value>Add recipient</value>
   </data>
   <data name="Spara" xml:space="preserve">
-    <value>Spara</value>
+    <value>Save</value>
   </data>
   <data name="Avboka" xml:space="preserve">
-    <value>Avboka</value>
+    <value>Cancel</value>
   </data>
   <data name="Ordertabell" xml:space="preserve">
-    <value>Order tabell</value>
+    <value>Order table</value>
   </data>
   <data name="Beställningsdatumfrån" xml:space="preserve">
-    <value>Beställningsdatum från:</value>
+    <value>Order date from:</value>
   </data>
   <data name="Beställningsdatumtill" xml:space="preserve">
-    <value>Beställningsdatum till:</value>
+    <value>Order date to:</value>
   </data>
   <data name="Filtrera" xml:space="preserve">
-    <value>Filtrera</value>
+    <value>Filter</value>
   </data>
   <data name="Beställningsdatum" xml:space="preserve">
-    <value>Beställnings datum</value>
+    <value>Order date</value>
   </data>
   <data name="Leveransdatum" xml:space="preserve">
-    <value>Leverans datum</value>
+    <value>Delivery date</value>
   </data>
   <data name="Pris" xml:space="preserve">
-    <value>Pris</value>
+    <value>Price</value>
   </data>
   <data name="Kurir" xml:space="preserve">
-    <value>Kurir</value>
+    <value>Courier</value>
   </data>
   <data name="Transport" xml:space="preserve">
-    <value>Transport</value>
+    <value>RegNo</value>
   </data>
   <data name="Läggtillorder" xml:space="preserve">
-    <value>Lägg till order</value>
+    <value>Add order</value>
   </data>
   <data name="Avsändare" xml:space="preserve">
-    <value>Avsändare</value>
+    <value>Sender</value>
   </data>
   <data name="Väljmottagare(krävs)" xml:space="preserve">
-    <value>Välj mottagare (krävs)</value>
+    <value>Select recipient (required)</value>
   </data>
   <data name="Nej" xml:space="preserve">
-    <value>Nej</value>
+    <value>No</value>
   </data>
   <data name="Kurirtabell" xml:space="preserve">
-    <value>Kurir tabell</value>
+    <value>Courier table</value>
   </data>
   <data name="Sökpåkurirnamn" xml:space="preserve">
-    <value>Sök på kurirnamn</value>
+    <value>Search by courier name</value>
   </data>
   <data name="Sök efter" xml:space="preserve">
-    <value>Sök efter</value>
+    <value>Search</value>
   </data>
   <data name="Personnummer" xml:space="preserve">
-    <value>Personnummer</value>
+    <value>National ID number</value>
   </data>
   <data name="Anställningsdatum" xml:space="preserve">
-    <value>Anställnings datum</value>
+    <value>Employment Date</value>
   </data>
   <data name="Arbetsdagstart" xml:space="preserve">
-    <value>Arbetsdag start</value>
+    <value>Start of Workday</value>
   </data>
   <data name="Arbetsdagslut" xml:space="preserve">
-    <value>Arbetsdag slut</value>
+    <value>End of Workday</value>
   </data>
   <data name="Ort" xml:space="preserve">
-    <value>Ort</value>
+    <value>Location</value>
   </data>
   <data name="Läggtillkurir" xml:space="preserve">
-    <value>Lägg till kurir</value>
+    <value>Add courier</value>
   </data>
   <data name="Transporttabell" xml:space="preserve">
-    <value>Transport tabell</value>
+    <value>Transport table</value>
   </data>
   <data name="Registreringsnummer" xml:space="preserve">
-    <value>Registreringsnummer</value>
+    <value>RegNum</value>
   </data>
   <data name="Bilmärke" xml:space="preserve">
-    <value>Bilmärke</value>
+    <value>Car brand</value>
   </data>
   <data name="Modell" xml:space="preserve">
-    <value>Modell</value>
+    <value>Model</value>
   </data>
   <data name="Registreringsdatum" xml:space="preserve">
-    <value>Registreringsdatum</value>
+    <value>Registration date</value>
   </data>
   <data name="Färg" xml:space="preserve">
-    <value>Färg</value>
+    <value>Color</value>
   </data>
   <data name="Lastförmåga" xml:space="preserve">
-    <value>Lastförmåga</value>
+    <value>Load capacity</value>
   </data>
   <data name="Läggtillenbil" xml:space="preserve">
-    <value>Lägg till en bil</value>
+    <value>Add a vehicle</value>
   </data>
   <data name="Ändrabil" xml:space="preserve">
-    <value>Ändra bil</value>
+    <value>Change vehicle</value>
   </data>
   <data name="Ändra kurir" xml:space="preserve">
-    <value>Ändra kurir</value>
+    <value>Change courier</value>
   </data>
   <data name="Ändra order" xml:space="preserve">
-    <value>Ändra order</value>
+    <value>Change order</value>
   </data>
   <data name="Ändra mottagare" xml:space="preserve">
-    <value>Ändra mottagare</value>
+    <value>Change recipient</value>
   </data>
   <data name="Lagertabell" xml:space="preserve">
-    <value>Lager tabell</value>
+    <value>Warehouse table</value>
   </data>
   <data name="Lagernamn" xml:space="preserve">
-    <value>Lagernamn</value>
+    <value>Warehouse name</value>
   </data>
   <data name="Adress" xml:space="preserve">
-    <value>Adress</value>
+    <value>Address</value>
   </data>
   <data name="Kapacitet" xml:space="preserve">
-    <value>Kapacitet</value>
+    <value>Capacity</value>
   </data>
   <data name="Läggtilllager" xml:space="preserve">
-    <value>Lägg till lager</value>
+    <value>Add warehouse</value>
   </data>
   <data name="Ändralager" xml:space="preserve">
-    <value>Ändra lager</value>
+    <value>Change warehouse</value>
   </data>
   <data name="Fakturanummer" xml:space="preserve">
-    <value>Fakturanummer</value>
+    <value>Invoice number</value>
   </data>
   <data name="Utfärdandedatum" xml:space="preserve">
-    <value>Utfärdandedatum</value>
+    <value>Issue date</value>
   </data>
   <data name="Företag" xml:space="preserve">
-    <value>Företag</value>
+    <value>Company</value>
   </data>
   <data name="Stad" xml:space="preserve">
-    <value>Stad</value>
+    <value>City</value>
   </data>
   <data name="Land" xml:space="preserve">
-    <value>Land</value>
+    <value>Country</value>
   </data>
   <data name="Vatnummer" xml:space="preserve">
-    <value>Vat nummer</value>
+    <value>VAT number</value>
   </data>
   <data name="Produkt" xml:space="preserve">
-    <value>Produkt</value>
+    <value>Product</value>
   </data>
   <data name="Antal" xml:space="preserve">
-    <value>Antal</value>
+    <value>Quantity</value>
   </data>
   <data name="Läggtillprodukt" xml:space="preserve">
-    <value>Lägg till produkt</value>
+    <value>Add product</value>
   </data>
   <data name="Terms(valfritt)" xml:space="preserve">
-    <value>Terms (valfritt)</value>
+    <value>Terms (optional)</value>
   </data>
   <data name="Genereraochskicka" xml:space="preserve">
-    <value>Generera och skicka</value>
+    <value>Generate and Submit</value>
   </data>
 </root>
