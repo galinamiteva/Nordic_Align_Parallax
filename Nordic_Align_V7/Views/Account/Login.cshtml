@@ -17,26 +17,26 @@
         <form method="post" class="signin" id="signinForm" asp-controller="Account" asp-action="Login" onclick="return validateForm(event);" novalidate>
             
             
-            <h1>Login</h1>
+            <h1>Logga in</h1>
 
             <div class="inputBox">
-                <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email" class="form-control" placeholder="Email">
+                <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email" class="form-control" placeholder="E-Post">
                 <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
 
             </div>
 
             <div class="inputBox">
-                <input asp-for="Password" type="password" data-val="true" id="Password" aria-label="Password" class="form-control" placeholder="Password" />
+                <input asp-for="Password" type="password" data-val="true" id="Password" aria-label="Password" class="form-control" placeholder="Lösenord" />
                 <span style="color:red;" asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
             </div>
 
             <div class="inputBox group">
                 <p >Har du inget konto?</p>
-                <a asp-controller="Account" asp-action="Register">SignUp</a>
+                <a asp-controller="Account" asp-action="Register">Registrera dig</a>
             </div>
 
             <div class="inputBox submitBtn">
-                <input type="submit" value="Sign In">
+                <input type="submit" value="Logga in">
             </div>
         </form>
 

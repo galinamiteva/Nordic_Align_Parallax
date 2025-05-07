@@ -30,7 +30,7 @@
                                 <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")"asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="home">Hem</a>
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">About</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">Om oss</a>
 
                             </li>
                             <li class="menu__list-item">
@@ -88,8 +88,8 @@
                     }
                     else
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">Register</a></li>
-                        <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">Registera dig</a></li>
+                        <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">Logga in</a></li>
                     }
                 </ul>
             </div>
