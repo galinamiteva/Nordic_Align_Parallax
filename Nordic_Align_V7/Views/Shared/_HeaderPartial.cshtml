@@ -73,7 +73,7 @@
                                         <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Skapa Faktura</a>
                                     </li>
                                     <li>
-                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">Skapa EjMoms Faktura</a>
+                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">Faktura (EjMoms)</a>
                                     </li>
                                 </ul>
                             </li>
@@ -84,12 +84,12 @@
                 <ul class="menu__list" id="account">
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logga ut</a></li>
+                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logout </a></li>
                     }
                     else
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">Registera dig</a></li>
-                        <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">Logga in</a></li>
+                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">Registera</a></li>
+                        <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">Login</a></li>
                     }
                 </ul>
             </div>

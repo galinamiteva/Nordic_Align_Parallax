@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CXtransformationsstrategi;" xml:space="preserve">
+  <data name="CXtransformationsstrategi" xml:space="preserve">
     <value>CX transformations strategi;</value>
   </data>
   <data name="DataAI_lösningar;" xml:space="preserve">
@@ -378,10 +378,10 @@
   <data name="Ändra kurir" xml:space="preserve">
     <value>Ändra kurir</value>
   </data>
-  <data name="Ändra order" xml:space="preserve">
+  <data name="Ändraorder" xml:space="preserve">
     <value>Ändra order</value>
   </data>
-  <data name="Ändra mottagare" xml:space="preserve">
+  <data name="Ändramottagare" xml:space="preserve">
     <value>Ändra mottagare</value>
   </data>
   <data name="Lagertabell" xml:space="preserve">
@@ -434,5 +434,110 @@
   </data>
   <data name="Genereraochskicka" xml:space="preserve">
     <value>Generera och skicka</value>
+  </data>
+  <data name="Registrera" xml:space="preserve">
+    <value>Registrera</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Allafältärobligatoriska" xml:space="preserve">
+    <value>Alla fält är obligatoriska</value>
+  </data>
+  <data name="Angeengiltige_postadress" xml:space="preserve">
+    <value>Ange en giltig e-postadress</value>
+  </data>
+  <data name="Felvidsändning_Försökigen" xml:space="preserve">
+    <value>Fel vid sändning. Försök igen.</value>
+  </data>
+  <data name="Fältetmåsteinnehållaminsttvåord" xml:space="preserve">
+    <value>Fältet måste innehålla minst två ord</value>
+  </data>
+  <data name="Fältetmåsteinnehålla12siffror" xml:space="preserve">
+    <value>Fältet måste innehålla 12 siffror</value>
+  </data>
+  <data name="Vänligenangeettgiltigtdatum" xml:space="preserve">
+    <value>Vänligen ange ett giltigt datum</value>
+  </data>
+  <data name="Anställningsdatumetkanintevaraföre1juli2024" xml:space="preserve">
+    <value>Anställningsdatumet kan inte vara före 1 juli 2024.</value>
+  </data>
+  <data name="Fältetmåsteinnehållaminst7ochmax13tecken" xml:space="preserve">
+    <value>Fältet måste innehålla minst 7 och max 13 tecken</value>
+  </data>
+  <data name="Fältetmåsteinnehållaminsttvåtecken" xml:space="preserve">
+    <value>Fältet måste innehålla minst två tecken</value>
+  </data>
+  <data name="Sluttidenmåstevarasenareänstarttiden" xml:space="preserve">
+    <value>Sluttiden måste vara senare än starttiden</value>
+  </data>
+  <data name="Vänligenangestarttid" xml:space="preserve">
+    <value>Vänligen ange starttid</value>
+  </data>
+  <data name="Vänligenangesluttid" xml:space="preserve">
+    <value>Vänligen ange sluttid</value>
+  </data>
+  <data name="Endastpositivttal" xml:space="preserve">
+    <value>Endast positivt tal</value>
+  </data>
+  <data name="Dettafältärobligatoriskt" xml:space="preserve">
+    <value>Detta fält är obligatoriskt</value>
+  </data>
+  <data name="Fakturanharskickatsframgångsrikt" xml:space="preserve">
+    <value>Fakturan har skickats framgångsrikt!</value>
+  </data>
+  <data name="Fel_Fakturan kunde inte skickas" xml:space="preserve">
+    <value>Fel: Fakturan kunde inte skickas</value>
+  </data>
+  <data name="Fel_Ettteknisktfeluppstod" xml:space="preserve">
+    <value>Fel: Ett tekniskt fel uppstod</value>
+  </data>
+  <data name="Mottagarenmåsteinnehållaminsttvåord" xml:space="preserve">
+    <value>Mottagaren måste innehålla minst två ord</value>
+  </data>
+  <data name="Leveransdatummåstevarasenareänidag" xml:space="preserve">
+    <value>Leveransdatum måste vara senare än idag</value>
+  </data>
+  <data name="Dumåsteväljaenmottagare" xml:space="preserve">
+    <value>Du måste välja en mottagare</value>
+  </data>
+  <data name="Fältetmåstevara5siffrorlångt" xml:space="preserve">
+    <value>Fältet  måste vara 5 siffror långt</value>
+  </data>
+  <data name="Fältetmåsteinnehållaminst6tecken" xml:space="preserve">
+    <value>Fältet måste innehålla minst 6 tecken</value>
+  </data>
+  <data name="Datumetmåstevaraefter2000" xml:space="preserve">
+    <value>Datumet måste vara efter 01.01.2000</value>
+  </data>
+  <data name="Fältetmåstevarastörreän0" xml:space="preserve">
+    <value>Fältet måste vara större än 0</value>
+  </data>
+  <data name="Fältetmåsteinnehållaminst3tecken" xml:space="preserve">
+    <value>Fältet måste innehålla minst 3 tecken</value>
+  </data>
+  <data name="Tackfördittmeddelande" xml:space="preserve">
+    <value>Tack för ditt meddelande! Vi kommer att svara så snart som möjligt</value>
+  </data>
+  <data name="Operationäromöjlig_Kuriren" xml:space="preserve">
+    <value>Operation är omöjlig. Kuriren har aktiva beställningar.</value>
+  </data>
+  <data name="E_postfakturaharskickats" xml:space="preserve">
+    <value>E-postfaktura har skickats.</value>
+  </data>
+  <data name="Fel_Detgickinteattskickae_post" xml:space="preserve">
+    <value>Fel: Det gick inte att skicka e-post.</value>
+  </data>
+  <data name="Detfinnsingabeställningarfördevaldadatumen" xml:space="preserve">
+    <value>Det finns inga beställningar för de valda datumen.</value>
+  </data>
+  <data name="Operationäromöjlig_Mottagarenharaktivabeställningar" xml:space="preserve">
+    <value>Operation är omöjlig. Mottagaren har aktiva beställningar.</value>
+  </data>
+  <data name="Operationäromöjlig_Fordonenärkoppladtillaktivabeställningar" xml:space="preserve">
+    <value>Operation är omöjlig. Fordonen är kopplad till aktiva beställningar.</value>
+  </data>
+  <data name="Operationäromöjlig_Lagretharaktivabeställningar" xml:space="preserve">
+    <value>Operation är omöjlig. Lagret har aktiva beställningar.</value>
   </data>
 </root>

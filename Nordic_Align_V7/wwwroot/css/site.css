@@ -201,7 +201,7 @@ body .select2-results__option[aria-selected] {
 @media (max-width: 768px) {
   .burger {
     display: block;
-    width: 30px;
+    width: 40px;
     height: 20px;
     position: relative;
     transition: all 0.3s;
@@ -263,7 +263,7 @@ body .select2-results__option[aria-selected] {
     padding-bottom: 20px;
     transition: all 0.5s;
     background-color: rgba(102, 101, 101, 0.5);
-    width: 200px;
+    width: 185px;
     border-radius: 0 20px 20px 20px;
     backdrop-filter: blur(10px);
     border-right: 2px solid rgba(255, 255, 255, 0.3);

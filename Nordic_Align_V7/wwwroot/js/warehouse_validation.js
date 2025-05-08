@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         let isValid = true;
 
-        if (!validateField(nameInput, 3, "Fältet måste innehålla mer än 2 tecken.")) isValid = false;
-        if (!validateField(addressInput, 3, "Fältet måste innehålla minst 3 tecken.")) isValid = false;
+        if (!validateField(nameInput, 3, "Fältet måste innehålla minst två tecken")) isValid = false;
+        if (!validateField(addressInput, 3, "Fältet måste innehålla minst 3 tecken")) isValid = false;
         if (!validateField(phoneInput, 7, "Fältet måste innehålla mellan 7 och 13 tecken.")) isValid = false;
         if (!validateNumberField(capacityInput, 1, "Fältet måste vara större än 0.")) isValid = false;
 

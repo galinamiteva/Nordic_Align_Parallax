@@ -6,7 +6,6 @@ namespace Nordic_Align_V7.Models;
 public class TranportModel
 {
     public int Id { get; set; }
-    //[DisplayName("Registreringsnummer")]
     [DisplayName("Registreringsnummer")]
     [MaxLength(30)]
     [Required]
