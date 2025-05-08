@@ -202,7 +202,7 @@ public class InvoiceController : Controller
                                 rightCol.Item().PaddingBottom(7).Text(issueDate.ToString("MMM dd, yyyy")).AlignEnd();
                                 rightCol.Item().PaddingBottom(7).Text("30 days").AlignEnd();
                                 rightCol.Item().PaddingBottom(12).Text(dueDate.ToString("MMM dd, yyyy")).AlignEnd();
-                                rightCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text($"{total:C}").Bold().AlignEnd();
+                                rightCol.Item().Background(Colors.Grey.Lighten4).PaddingVertical(2).PaddingBottom(7).Text($"{total:N2} SEK").Bold().AlignEnd();
 
                             });
                         });
@@ -216,16 +216,16 @@ public class InvoiceController : Controller
 
                     column.Item().PaddingTop(30).Element(container => ComposeTable(container, itemNames, prices, quantities));
                     column.Spacing(5);  //  vertical spacing
-                    column.Item().PaddingTop(7).AlignRight().Text($"Subtotal: {subtotal:C}").SemiBold();
-                    column.Item().PaddingTop(7).AlignRight().Text($"Tax (25%): {tax:C}");
-                    column.Item().PaddingTop(7).AlignRight().Text($"Total: {total:C}").SemiBold();
+                    column.Item().PaddingTop(7).AlignRight().Text($"Subtotal: {subtotal:N2} SEK").SemiBold();
+                    column.Item().PaddingTop(7).AlignRight().Text($"Tax (25%):{tax:N2} SEK");
+                    column.Item().PaddingTop(7).AlignRight().Text($"Total: {total:N2} SEK").SemiBold();
 
 
 
                 });
 
                 // Add footer at the end of the page
-                page.Footer().PaddingBottom(90).Column(column =>
+                page.Footer().PaddingBottom(80).Column(column =>
                 {
                     column.Item().PaddingBottom(7).Text("Notes:").FontColor(Colors.Grey.Lighten1);
                     column.Item().Text("Nordic Align Supply Chain Consulting");
@@ -274,10 +274,10 @@ public class InvoiceController : Controller
                 decimal total = prices[i] * quantities[i];
 
                 table.Cell().PaddingBottom(7).Text((i + 1).ToString());
-                table.Cell().PaddingBottom(7).Text(itemNames[i]);
-                table.Cell().PaddingBottom(7).AlignRight().Text($"{prices[i]:C}");
+                table.Cell().PaddingBottom(7).Text(itemNames[i]);               
                 table.Cell().PaddingBottom(7).AlignRight().Text(quantities[i].ToString());
-                table.Cell().PaddingBottom(7).AlignRight().Text($"{total:C}").ParagraphSpacing(5);
+                table.Cell().PaddingBottom(7).AlignRight().Text($"{prices[i]:N2} SEK");
+                table.Cell().PaddingBottom(7).AlignRight().Text($"{total:N2} SEK").ParagraphSpacing(5);
 
             }
         });
