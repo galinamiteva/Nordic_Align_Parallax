@@ -116,7 +116,7 @@ public class InvoiceController : Controller
             var pdfBytes = GenerateInvoicePdf(invoiceNumber, issueDate, dueDate, companyName, vatNumber!, street, city, country, postalCode, state!, email, phone!, comment!, itemNames, prices, quantities);
             bool result = SendEmailWithAttachment(email, "Invoice PDF", "Please find your invoice attached.", pdfBytes);
 
-
+            
             if (result)
             {
                 ViewBag.RegisterFail = "Invoice email has been sent successfully.";
