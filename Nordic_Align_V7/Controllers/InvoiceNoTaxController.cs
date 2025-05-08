@@ -110,11 +110,11 @@ public class InvoiceNoTaxController : Controller
 
             if (result)
             {
-                ViewBag.RegisterFail = "E-postfaktura har skickats.";
+                ViewBag.RegisterFail = "Invoice email has been sent successfully.";
             }
             else
             {
-                ViewBag.RegisterFail = "Fel: Det gick inte att skicka e-post.";
+                ViewBag.RegisterFail = "Error: Failed to send email.";
             }
 
             ModelState.Clear();

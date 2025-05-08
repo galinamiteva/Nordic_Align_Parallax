@@ -6,7 +6,7 @@ namespace Nordic_Align_V7.Models;
 public class TranportModel
 {
     public int Id { get; set; }
-    [DisplayName("Registreringsnummer")]
+    [DisplayName("RegNo")]
     [MaxLength(30)]
     [Required]
     public string TransportNumber { get; set; } = null!;
@@ -18,7 +18,7 @@ public class TranportModel
     [MaxLength(30)]
     [Required]
     public string Model { get; set; } = null!;
-    [DisplayName("Registreringsdatum")]
+    [DisplayName("RegDatum")]
     [Required]
     public DateTime RegistrationDate { get; set; }
     [DisplayName("Färg")]
