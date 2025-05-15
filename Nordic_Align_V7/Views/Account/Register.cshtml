@@ -15,41 +15,41 @@
        
 
         <form method="post" class="signup" id="signupForm" asp-controller="Account" asp-action="Register" onsubmit="return validateForm(event);" novalidate>
-            <h1>Registration</h1>
+            <h1>@Nordic_Align_V7.Resources.Resource.Registrering</h1>
             
             <div class="inputBox">
-                <input asp-for="FirstName" type="text" id="FirstName" data-val="true" aria-label="First name" class="form-control" placeholder="Förnamn">
+                <input asp-for="FirstName" type="text" id="FirstName" data-val="true" aria-label="First name" class="form-control" placeholder=@Nordic_Align_V7.Resources.Resource.Förnamn>
                 <span style="color:red;"  asp-validation-for="FirstName" data-valmsg-for="FirstName" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="LastName" type="text" id="LastName" data-val="true"  aria-label="Last name" class="form-control" placeholder="Efternamn">
+                <input asp-for="LastName" type="text" id="LastName" data-val="true" aria-label="Last name" class="form-control" placeholder=@Nordic_Align_V7.Resources.Resource.Efternamn>
                 <span style="color:red;"  asp-validation-for="LastName" data-valmsg-for="LastName" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email"  class="form-control" placeholder="E-Post">
+                <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email" class="form-control" placeholder=@Nordic_Align_V7.Resources.Resource.E_Post>
                 <span style="color:red;"  asp-validation-for="Email" data-valmsg-for="Email" class="text-danger"></span>
             </div>
 
             <div class="inputBox">
-                <input asp-for="Password" type="password" data-val="true" id="Password" aria-label="Password" class="form-control" placeholder="Skapa lösenord">
+                <input asp-for="Password" type="password" data-val="true" id="Password" aria-label="Password" class="form-control" placeholder=@Nordic_Align_V7.Resources.Resource.Skapalösenord>
                 <span style="color:red;"  asp-validation-for="Password" data-valmsg-for="Password" class="text-danger"></span>
             </div>
             <div class="inputBox">
-                <input asp-for="ConfirmPassword" type="password" data-val="true" aria-label="Confirm password" id="ConfirmPassword" class="form-control" placeholder="Bekräfta lösenord">
+                <input asp-for="ConfirmPassword" type="password" data-val="true" aria-label="Confirm password" id="ConfirmPassword" class="form-control" placeholder=@Nordic_Align_V7.Resources.Resource.Bekräftalösenord>
                 <span style="color:red;"  asp-validation-for="ConfirmPassword" data-valmsg-for="ConfirmPassword" class="text-danger"></span>
             </div>
 
             <div class="inputBox group">
-                <p>Har du redan ett konto?</p>
+                <p>@Nordic_Align_V7.Resources.Resource.Harduredanettkonto</p>
                 
-                <a asp-controller="Account" asp-action="Login" id="login">Logga in</a>
+                <a asp-controller="Account" asp-action="Login" id="login">@Nordic_Align_V7.Resources.Resource.Loggain</a>
 
             </div>
 
             <div class="inputBox">
-                <input type="submit" value="Registera dig ">
+                <input type="submit" value="@Nordic_Align_V7.Resources.Resource.Registreradig">
 
                 
             </div>         

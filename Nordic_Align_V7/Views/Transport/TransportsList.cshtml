@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Nordic_Align_V7.Models.TranportModel>
 
 @{
-    ViewData["Title"] = "Fordonsflotta";
+    ViewData["Title"] = Nordic_Align_V7.Resources.Resource.Forfonflotta;
 }
 
 
@@ -37,7 +37,7 @@
 
 
 
-                <h1>Transport tabell</h1>
+                <h1>@Nordic_Align_V7.Resources.Resource.Transporttabell</h1>
 
 
                 <table class="table">
@@ -92,7 +92,7 @@
                         </tr>
                     }
                 </table>
-                <a asp-controller="Transport" target="_self" asp-action="Create" class="button-secondary">Lägg till en bil</a>
+                <a asp-controller="Transport" target="_self" asp-action="Create" class="button-secondary">@Nordic_Align_V7.Resources.Resource.Läggtillenfordon</a>
 
             </div>
         </div>

@@ -6,7 +6,7 @@
 }
 
 @{
-    ViewData["Title"] = "Mottagare";
+    ViewData["Title"] = Nordic_Align_V7.Resources.Resource.Mottagare;
 }
 
 <section class="mottagare-table">
@@ -40,7 +40,7 @@
                 }
 
 
-                <h1>Mottagare tabell</h1>
+                <h1>@Nordic_Align_V7.Resources.Resource.Mottagaretabell</h1>
 
                 <table class="table">
                     <tr>
@@ -79,20 +79,20 @@
                                 @Html.DisplayFor(modelItem => item.Phone)
                             </th>
 
-                            @if (role == "Admin")
-                            {
-                                <th scope="col">
-                                    <a class="icon" aria-label="Edit" href="/Recepient/Edit?id=@item.Id">&#9998;</a>
-                                </th>
-                                <th scope="col">
-                                    <a class="icon" aria-label="Delete" href="/Recepient/Delete?id=@item.Id">&#128465;</a>
-                                </th>
-                            }
+                            
+                            
+                            <th scope="col">
+                                <a class="icon" aria-label="Edit" href="/Recepient/Edit?id=@item.Id">&#9998;</a>
+                            </th>
+                            <th scope="col">
+                                <a class="icon" aria-label="Delete" href="/Recepient/Delete?id=@item.Id">&#128465;</a>
+                            </th>
+                            
                         </tr>
 
                     }
                 </table>
-                <a asp-controller="Recepient" target="_self" asp-action="Create" class="button-secondary">Lägg till mottagare</a>
+                <a asp-controller="Recepient" target="_self" asp-action="Create" class="button-secondary">@Nordic_Align_V7.Resources.Resource.Läggtillmottagare</a>
 
             </div>
             

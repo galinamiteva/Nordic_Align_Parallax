@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using Nordic_Align_V7.Models;
 using Nordic_Align_V7.Services;
@@ -50,6 +51,26 @@ namespace Nordic_Align_V7.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+
+        public IActionResult ChangeLanguage(string lang)
+        {
+            if (!string.IsNullOrEmpty(lang))
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                lang = "en";
+            }
+            Response.Cookies.Append("Language", lang);
+            return Redirect(Request.GetTypedHeaders().Referer!.ToString());
         }
     }
 }

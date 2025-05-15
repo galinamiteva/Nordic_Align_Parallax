@@ -57,7 +57,7 @@ public class WarehouseController : Controller
 
         if (warehouse.Orders != null && warehouse.Orders.Any())
         {
-            TempData["ErrorMessage"] = "Operation är omöjlig. Lagret har aktiva beställningar.";
+            TempData["ErrorMessage"] = @Nordic_Align_V7.Resources.Resource.Operationäromöjlig_Lagretharaktivabeställningar;
             return RedirectToAction("Index");
         }
 

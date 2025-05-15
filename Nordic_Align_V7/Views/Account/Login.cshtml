@@ -17,7 +17,7 @@
         <form method="post" class="signin" id="signinForm" asp-controller="Account" asp-action="Login" onclick="return validateForm(event);" novalidate>
             
             
-            <h1>Login</h1>
+            <h1>@Nordic_Align_V7.Resources.Resource.Loggain</h1>
 
             <div class="inputBox">
                 <input asp-for="Email" type="email" id="Email" data-val="true" aria-label="Email" class="form-control" placeholder="E-Post">
@@ -31,12 +31,12 @@
             </div>
 
             <div class="inputBox group">
-                <p >Har du inget konto?</p>
-                <a asp-controller="Account" asp-action="Register">Registrera dig</a>
+                <p>@Nordic_Align_V7.Resources.Resource.Harduingetkonto</p>
+                <a asp-controller="Account" asp-action="Register">@Nordic_Align_V7.Resources.Resource.Registreradig</a>
             </div>
 
             <div class="inputBox submitBtn">
-                <input type="submit" value="Logga in">
+                <input type="submit" value="@Nordic_Align_V7.Resources.Resource.Loggain">
             </div>
         </form>
 

@@ -118,40 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CXtransformationsstrategi" xml:space="preserve">
-    <value>CX transformations strategi;</value>
+    <value>CX transformations strategi</value>
   </data>
-  <data name="DataAI_lösningar;" xml:space="preserve">
-    <value>Data AI-lösningar;</value>
+  <data name="DataAI_lösningar" xml:space="preserve">
+    <value>Data AI-lösningar</value>
   </data>
-  <data name="Driftshantering;" xml:space="preserve">
-    <value>Drifts hantering;</value>
+  <data name="Driftshantering" xml:space="preserve">
+    <value>Drifts hantering</value>
   </data>
-  <data name="Driftsanalys;" xml:space="preserve">
-    <value>Driftsanalys;</value>
+  <data name="Driftsanalys" xml:space="preserve">
+    <value>Driftsanalys</value>
   </data>
-  <data name="Efterfrågeprognos;" xml:space="preserve">
-    <value>Efterfråge prognos;</value>
+  <data name="Efterfrågeprognos" xml:space="preserve">
+    <value>Efterfråge prognos</value>
   </data>
   <data name="EnterprisePerformanceManagement(EPM)" xml:space="preserve">
-    <value>Enterprise Performance Management (EPM);</value>
+    <value>Enterprise Performance Management (EPM)</value>
   </data>
   <data name="Tjänster_text" xml:space="preserve">
     <value>Ett baspaket erbjuds tillsammans med tilläggstjänster såsom framtida färdplanering, IT-lösningar, optimering, analys och andra mervärdestjänster. Vi erbjuder dessutom följande tjänster till fast pris inom paketlösningar:</value>
   </data>
-  <data name="Framtidafärdplanering;" xml:space="preserve">
-    <value>Framtida färdplanering;</value>
+  <data name="Framtidafärdplanering" xml:space="preserve">
+    <value>Framtida färdplanering</value>
   </data>
   <data name="FullständigterbjudandepaketDeluxe" xml:space="preserve">
-    <value>Fullständigt erbjudande paket Deluxe;</value>
+    <value>Fullständigt erbjudande paket Deluxe</value>
   </data>
-  <data name="Fullständigt paket;" xml:space="preserve">
-    <value>Fullständigt paket;</value>
+  <data name="Fullständigt paket" xml:space="preserve">
+    <value>Fullständigt paket</value>
   </data>
   <data name="Hem" xml:space="preserve">
-    <value>Home</value>
+    <value>Hem</value>
   </data>
   <data name="Inköpslösningar" xml:space="preserve">
-    <value>Inköps lösningar;</value>
+    <value>Inköps lösningar</value>
   </data>
   <data name="E_Post" xml:space="preserve">
     <value>E-Post</value>
@@ -160,13 +160,13 @@
     <value>Kontakt</value>
   </data>
   <data name="Lagerhantering" xml:space="preserve">
-    <value>Lager hantering;</value>
+    <value>Lager hantering</value>
   </data>
   <data name="Loggain" xml:space="preserve">
     <value>Logga in</value>
   </data>
   <data name="Logistikhantering" xml:space="preserve">
-    <value>Logistik Hantering;</value>
+    <value>Logistik Hantering</value>
   </data>
   <data name="Namn" xml:space="preserve">
     <value>Namn</value>
@@ -175,25 +175,25 @@
     <value>Om oss</value>
   </data>
   <data name="Omdesignavtjänster" xml:space="preserve">
-    <value>Omdesign av tjänster;</value>
+    <value>Omdesign av tjänster</value>
   </data>
   <data name="Prestandautvärdering" xml:space="preserve">
-    <value>Prestanda utvärdering;</value>
+    <value>Prestanda utvärdering</value>
   </data>
   <data name="Harduredanettkonto" xml:space="preserve">
-    <value>Already have an account?</value>
+    <value>Har du redan ett konto?</value>
   </data>
   <data name="SkräddarsyddaIT_lösningar" xml:space="preserve">
-    <value>Skräddarsydda IT-lösningar;</value>
+    <value>Skräddarsydda IT-lösningar</value>
   </data>
   <data name="Standarderbjudandepaket" xml:space="preserve">
-    <value>Standard erbjudande paket;</value>
+    <value>Standard erbjudande paket</value>
   </data>
   <data name="Strategiimplementering" xml:space="preserve">
-    <value>Strategi implementering;</value>
+    <value>Strategi implementering</value>
   </data>
   <data name="Tjänstehantering" xml:space="preserve">
-    <value>Tjänste hantering;</value>
+    <value>Tjänste hantering</value>
   </data>
   <data name="Tjänster" xml:space="preserve">
     <value>Tjänster</value>
@@ -216,8 +216,8 @@
   <data name="Harduingetkonto" xml:space="preserve">
     <value>Har du inget konto?</value>
   </data>
-  <data name="Registreradig" xml:space="preserve">
-    <value>Registrera dig</value>
+  <data name="Skapakonto" xml:space="preserve">
+    <value>Skapa konto</value>
   </data>
   <data name="Lösenord" xml:space="preserve">
     <value>Lösenord</value>
@@ -235,7 +235,7 @@
     <value>Bekräfta lösenord</value>
   </data>
   <data name="Loggaut" xml:space="preserve">
-    <value>Logga ut</value>
+    <value>LoggaUt</value>
   </data>
   <data name="Faktura" xml:space="preserve">
     <value>Faktura</value>
@@ -243,8 +243,8 @@
   <data name="Skapafaktura" xml:space="preserve">
     <value>Skapa faktura</value>
   </data>
-  <data name="SkapaEjMomsFaktura" xml:space="preserve">
-    <value>Skapa EjMoms Faktura</value>
+  <data name="FakturaEjMoms" xml:space="preserve">
+    <value>Faktura (EjMoms)</value>
   </data>
   <data name="Mottagare" xml:space="preserve">
     <value>Mottagare</value>
@@ -327,7 +327,7 @@
   <data name="Sökpåkurirnamn" xml:space="preserve">
     <value>Sök på kurirnamn</value>
   </data>
-  <data name="Sök efter" xml:space="preserve">
+  <data name="Sökefter" xml:space="preserve">
     <value>Sök efter</value>
   </data>
   <data name="Personnummer" xml:space="preserve">
@@ -369,13 +369,13 @@
   <data name="Lastförmåga" xml:space="preserve">
     <value>Lastförmåga</value>
   </data>
-  <data name="Läggtillenbil" xml:space="preserve">
-    <value>Lägg till en bil</value>
+  <data name="Läggtillenfordon" xml:space="preserve">
+    <value>Lägg till en fordon</value>
   </data>
   <data name="Ändrabil" xml:space="preserve">
     <value>Ändra bil</value>
   </data>
-  <data name="Ändra kurir" xml:space="preserve">
+  <data name="Ändrakurir" xml:space="preserve">
     <value>Ändra kurir</value>
   </data>
   <data name="Ändraorder" xml:space="preserve">
@@ -429,14 +429,11 @@
   <data name="Läggtillprodukt" xml:space="preserve">
     <value>Lägg till produkt</value>
   </data>
-  <data name="Terms(valfritt)" xml:space="preserve">
-    <value>Terms (valfritt)</value>
+  <data name="Vilkor_valfritt" xml:space="preserve">
+    <value>Vilkor (valfritt)</value>
   </data>
   <data name="Genereraochskicka" xml:space="preserve">
     <value>Generera och skicka</value>
-  </data>
-  <data name="Registrera" xml:space="preserve">
-    <value>Registrera</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
@@ -539,5 +536,160 @@
   </data>
   <data name="Operationäromöjlig_Lagretharaktivabeställningar" xml:space="preserve">
     <value>Operation är omöjlig. Lagret har aktiva beställningar.</value>
+  </data>
+  <data name="Hemsida" xml:space="preserve">
+    <value>Hemsida</value>
+  </data>
+  <data name="Tjänster_text1" xml:space="preserve">
+    <value>Ett baspaket erbjuds tillsammans med tilläggstjänster såsom framtida färdplanering, IT-lösningar, optimering, analys och andra mervärdestjänster. Vi erbjuder dessutom följande tjänster till fast pris inom paketlösningar:
+
+</value>
+  </data>
+  <data name="Efternamn" xml:space="preserve">
+    <value>Efternamn</value>
+  </data>
+  <data name="Registrering" xml:space="preserve">
+    <value>Registrering</value>
+  </data>
+  <data name="Integritetspolicy" xml:space="preserve">
+    <value>Integritetspolicy</value>
+  </data>
+  <data name="Registreradig" xml:space="preserve">
+    <value>Registrera dig</value>
+  </data>
+  <data name="Registrering_Skapa" xml:space="preserve">
+    <value>Registrering</value>
+  </data>
+  <data name="LoggaIn_all" xml:space="preserve">
+    <value>LoggaIn</value>
+  </data>
+  <data name="Introduktion" xml:space="preserve">
+    <value>1. Introduktion</value>
+  </data>
+  <data name="Vivärnaromdin" xml:space="preserve">
+    <value>Vi värnar om din integritet och skyddar dina personuppgifter. Denna integritetspolicy förklarar hur vi samlar in, använder och skyddar din information när du använder vår webbplats.</value>
+  </data>
+  <data name="Insamlingavpersonuppgifter" xml:space="preserve">
+    <value>2. Insamling av personuppgifter</value>
+  </data>
+  <data name="Vikansamlain" xml:space="preserve">
+    <value>Vi kan samla in följande information:</value>
+  </data>
+  <data name="Namnochkontaktuppgifter" xml:space="preserve">
+    <value>Namn och kontaktuppgifter</value>
+  </data>
+  <data name="Epostadress" xml:space="preserve">
+    <value>E-postadress</value>
+  </data>
+  <data name="IPadressoch" xml:space="preserve">
+    <value>IP-adress och webbläsarinformation</value>
+  </data>
+  <data name="Annaninformation" xml:space="preserve">
+    <value>Annan information som du frivilligt tillhandahåller via våra formulär</value>
+  </data>
+  <data name="Hurvianvänder" xml:space="preserve">
+    <value>3. Hur vi använder dina uppgifter</value>
+  </data>
+  <data name="Vianvänderdin" xml:space="preserve">
+    <value>Vi använder din information för att:</value>
+  </data>
+  <data name="Förbättravårwebbplats" xml:space="preserve">
+    <value>Förbättra vår webbplats och tjänster</value>
+  </data>
+  <data name="Kontaktadigvid" xml:space="preserve">
+    <value>Kontakta dig vid behov</value>
+  </data>
+  <data name="Analyseraanvändarbeteenden" xml:space="preserve">
+    <value>Analysera användarbeteenden för att optimera upplevelsen</value>
+  </data>
+  <data name="Delningavinformation" xml:space="preserve">
+    <value>4. Delning av information</value>
+  </data>
+  <data name="Videlarintedina" xml:space="preserve">
+    <value>Vi delar inte dina personuppgifter med tredje part, förutom om det krävs enligt lag eller för att leverera våra tjänster.</value>
+  </data>
+  <data name="Dinarättigheter" xml:space="preserve">
+    <value>5. Dina rättigheter</value>
+  </data>
+  <data name="Duharrätt" xml:space="preserve">
+    <value>Du har rätt att:</value>
+  </data>
+  <data name="Begärainformationom" xml:space="preserve">
+    <value>Begära information om vilka personuppgifter vi har om dig</value>
+  </data>
+  <data name="Begärarättelse " xml:space="preserve">
+    <value>Begära rättelse eller radering av dina uppgifter</value>
+  </data>
+  <data name="Invändamotvår" xml:space="preserve">
+    <value>Invända mot vår behandling av dina personuppgifter</value>
+  </data>
+  <data name="Cookies" xml:space="preserve">
+    <value>6. Cookies</value>
+  </data>
+  <data name="Vianvändercookiesför" xml:space="preserve">
+    <value>Vi använder cookies för att förbättra din användarupplevelse. Du kan när som helst ändra dina cookie-inställningar i din webbläsare.</value>
+  </data>
+  <data name="Kontakt_sjö" xml:space="preserve">
+    <value>7. Kontakt</value>
+  </data>
+  <data name="Omduharfrågoromdenna" xml:space="preserve">
+    <value>Om du har frågor om denna integritetspolicy, vänligen kontakta oss på:</value>
+  </data>
+  <data name="Hoppsan" xml:space="preserve">
+    <value>Hoppsan!</value>
+  </data>
+  <data name="Sidanduletarefter" xml:space="preserve">
+    <value>Sidan du letar efter är inte tillgänglig.</value>
+  </data>
+  <data name="Gåtillstartsidan" xml:space="preserve">
+    <value>Gå till startsidan</value>
+  </data>
+  <data name="Fel" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="Förfallodatum" xml:space="preserve">
+    <value>Förfallodatum</value>
+  </data>
+  <data name="SkapafakturaEj Moms" xml:space="preserve">
+    <value>Skapa faktura(Ej Moms)</value>
+  </data>
+  <data name="Villkor" xml:space="preserve">
+    <value>Villkor</value>
+  </data>
+  <data name="Mottagare_obligatoriskt" xml:space="preserve">
+    <value>Mottagare(obligatoriskt)</value>
+  </data>
+  <data name="Läggtillpris" xml:space="preserve">
+    <value>Lägg till pris</value>
+  </data>
+  <data name="EjInfo" xml:space="preserve">
+    <value> Ej Info</value>
+  </data>
+  <data name="RegNo" xml:space="preserve">
+    <value>RegNo</value>
+  </data>
+  <data name="RegDatum" xml:space="preserve">
+    <value>RegDatum</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Fältet är obligatorisk</value>
+  </data>
+  <data name="EmailInvalid" xml:space="preserve">
+    <value>Mejlet är ogiltig</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Fältet är obligatorisk</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Ange ett förnamn.</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Ange ett efternamn.</value>
+  </data>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Bekräfta lösenordet.</value>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Lösenorden matchar inte.</value>
   </data>
 </root>

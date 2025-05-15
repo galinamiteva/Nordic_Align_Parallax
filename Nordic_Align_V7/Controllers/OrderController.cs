@@ -208,7 +208,7 @@ public class OrderController : Controller
 
         if (orderList.Count == 0)
         {
-            TempData["Message"] = "Det finns inga beställningar för de valda datumen.";
+            TempData["Message"] = @Nordic_Align_V7.Resources.Resource.Detfinnsingabeställningarfördevaldadatumen;
         }
 
         return View("OrdersList", orderList);

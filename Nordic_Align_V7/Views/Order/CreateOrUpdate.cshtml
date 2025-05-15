@@ -3,7 +3,7 @@
 
 @{
     // Ställ in titeln beroende på om modellen är tom eller inte
-    ViewData["Title"] = Model != null && Model.Id != 0 ? "Ändra order" : "Lägg till order";
+    ViewData["Title"] = Model != null && Model.Id != 0 ? @Nordic_Align_V7.Resources.Resource.Ändraorder : @Nordic_Align_V7.Resources.Resource.Läggtillorder;
 
     var user = await UserManager.GetUserAsync(User);
     var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
@@ -36,7 +36,7 @@
                         <input type="hidden" asp-for="Id" />
 
                         <div class="inputBox">
-                            <label asp-for="Sender" class="label">Avsändare</label>
+                            <label asp-for="Sender" class="label">@Nordic_Align_V7.Resources.Resource.Avsändare</label>
                             <div class="inputBox-content">
                                 <input asp-for="Sender" class="form-control" aria-label="sender"  disabled />
                                 <input type="hidden" asp-for="Sender" />
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="inputBox">
-                            <label asp-for="DeliveryDate" class="label"></label>
+                        <label asp-for="DeliveryDate" class="label">@Nordic_Align_V7.Resources.Resource.Leveransdatum</label>
                             <div class="inputBox-content">
                             <input asp-for="DeliveryDate" class="form-control" aria-label="delivery date" />
                                 <span style="color:red;" asp-validation-for="DeliveryDate" data-valmsg-for="DeliveryDate" class="text-danger" aria-live="polite"></span>
@@ -55,7 +55,7 @@
 
 
                         <div class="inputBox">
-                            <label class="label">Mottagare(obligatoriskt)</label>
+                        <label class="label">@Nordic_Align_V7.Resources.Resource.Mottagare_obligatoriskt</label>
                             <div class="inputBox-content select-content">
                                 <select asp-for="RecepientId" class="custom-select-dropdown" name="RecepientId" id="RecepientId">
                                     <option value="">Välj mottagare (krävs)</option>
@@ -73,7 +73,7 @@
                         @if (role == "Admin")
                         {
                             <div class="inputBox">
-                                <label asp-for="Price" class="label"></label>
+                            <label asp-for="Price" class="label">@Nordic_Align_V7.Resources.Resource.Pris</label>
                                 <div class="inputBox-content">
                                 <input asp-for="Price" type="text" class="form-control" aria-label="price" />
                                     <span style="color:red;" asp-validation-for="Price" data-valmsg-for="Price" class="text-danger" aria-live="polite"></span>
@@ -86,7 +86,7 @@
                         
 
                             <div class="inputBox">
-                                <label class="label">Kurir</label>
+                            <label class="label">@Nordic_Align_V7.Resources.Resource.Kurir</label>
                                 <div class="inputBox-content select-content">
                                 <select name="CourierId" class="custom-select-dropdown">
                                         <option value="null">Nej</option>
@@ -109,7 +109,7 @@
 
 
                             <div class="inputBox">
-                                <label class="label">Transport</label>
+                            <label class="label">@Nordic_Align_V7.Resources.Resource.Transport</label>
                             <div class="inputBox-content select-content">
                                 <select name="TransportId" class="custom-select-dropdown">
                                         <option value="null">Nej</option>
@@ -132,7 +132,7 @@
 
 
                             <div class="inputBox">
-                            <label class="label">Lager</label>
+                            <label class="label">@Nordic_Align_V7.Resources.Resource.Lager</label>
                             <div class="inputBox-content select-content">
                                 <select name="warehouses[]" class="custom-select-dropdown">
                                     <option value="null">Nej</option>
@@ -155,10 +155,10 @@
                         }
                         <div class="inputBox inputButton-group">
                             <div class="inputBox-btn">
-                            <button type="submit" class="button-primary btn-submit" aria-label="Save">Spara</button>
+                            <button type="submit" class="button-primary btn-submit" aria-label="Save">@Nordic_Align_V7.Resources.Resource.Spara</button>
                                 <a asp-action="Index"
                                    asp-controller="@(role == "Admin" ? "Order" : "Home")"
-                                   class="button-secondary btn-submit">Avboka</a>
+                               class="button-secondary btn-submit">@Nordic_Align_V7.Resources.Resource.Avboka</a>
                             </div>
                         </div>
                     </form>

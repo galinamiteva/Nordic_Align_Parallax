@@ -18,7 +18,7 @@
 
         .logo {
 
-            img {
+            .minilogo {
                 display: block;
                 height: 45px;
                 border-radius: 5px;
@@ -26,6 +26,23 @@
                 border-right: 2px solid rgba(255, 255, 255, .3);
                 border-bottom: 2px solid rgba(255, 255, 255, .3)
             }
+        }
+
+        .btn-light {
+            width: 24px !important;
+            height: 24px !important;
+            padding: 0 !important;
+            border-radius: 50% !important;
+            background-color: transparent !important;
+            border-color: transparent !important;
+            color: inherit !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            left: 17px;
+            top: -9px;
         }
     }
 

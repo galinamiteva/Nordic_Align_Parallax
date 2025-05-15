@@ -1,31 +1,37 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Nordic_Align_V7.Resources;
 
 namespace Nordic_Align_V7.Models;
 
 public class TranportModel
 {
     public int Id { get; set; }
-    [DisplayName("RegNo")]
+    [Display(Name = "RegNo", ResourceType = typeof(Resource))]
+
     [MaxLength(30)]
     [Required]
     public string TransportNumber { get; set; } = null!;
-    [DisplayName("Bilmärke")]
+    [Display(Name = "Bilmärke", ResourceType = typeof(Resource))]
+
     [MaxLength(30)]
     [Required]
     public string Brand { get; set; } = null!;
-    [DisplayName("Modell")]
+    [Display(Name = "Modell", ResourceType = typeof(Resource))]
+
     [MaxLength(30)]
     [Required]
     public string Model { get; set; } = null!;
-    [DisplayName("RegDatum")]
+    
+    [Display(Name = "RegDatum", ResourceType = typeof(Resource))]
+
     [Required]
     public DateTime RegistrationDate { get; set; }
-    [DisplayName("Färg")]
+    [Display(Name = "Färg", ResourceType = typeof(Resource))]
     [MaxLength(30)]
     [Required]
     public string Color { get; set; } = null!;
-    [DisplayName("Lastförmåga")]
+    [Display(Name = "Lastförmåga", ResourceType = typeof(Resource))]
     [Required]
     public int Capacity { get; set; }
     public virtual List<OrderModel> Orders { get; set; } = null!;

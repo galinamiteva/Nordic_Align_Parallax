@@ -1,7 +1,7 @@
 ﻿@using Nordic_Align_V7.ViewModels
 @model InvoiceViewModel
 @{
-    ViewData["Title"] = "Invoice";
+    ViewData["Title"] = @Nordic_Align_V7.Resources.Resource.Faktura;
 }
 
 
@@ -25,14 +25,14 @@
 
                 </div>
 
-                <h1>Skapa faktura</h1>
+                <h1>@Nordic_Align_V7.Resources.Resource.Skapafaktura</h1>
 
                 <form method="post" asp-controller="Invoice" asp-action="CreateInvoice" novalidate>
 
                     <div class="box">
 
                         <div class="inputBox">
-                            <label for="InvoiceNumber">Fakturanummer:</label>
+                            <label for="InvoiceNumber">@Nordic_Align_V7.Resources.Resource.Fakturanummer:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="InvoiceNumber" name="InvoiceNumber" aria-label="InvoiceNumber" required>
                                 <span style="color:red;" asp-validation-for="InvoiceNumber" data-valmsg-for="InvoiceNumber" class="text-danger" aria-live="polite"></span>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="inputBox">
-                            <label for="IssueDate">Utfärdandedatum</label>
+                            <label for="IssueDate">@Nordic_Align_V7.Resources.Resource.Utfärdandedatum:</label>
                             <div class="inputBox-content">
                                 <input type="date" id="IssueDate" name="IssueDate" aria-label="IssueDate" required onchange="calculateDueDate()">
                                 <span style="color:red;" asp-validation-for="IssueDate" data-valmsg-for="IssueDate" class="text-danger" aria-live="polite"></span>
@@ -50,14 +50,14 @@
                         </div>
 
                         <div class="inputBox" style="display: none;">
-                            <label for="DueDate">Förfallodatum:</label>
+                            <label for="DueDate">@Nordic_Align_V7.Resources.Resource.Förfallodatum:</label>
                             <div class="inputBox-content">
                                 <input type="date" id="DueDate" aria-label="DueDate" name="DueDate" readonly>
                             </div>
                         </div>
 
                         <div class="inputBox">
-                            <label for="CompanyName">Företag:</label>
+                            <label for="CompanyName">@Nordic_Align_V7.Resources.Resource.Företag:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="CompanyName" aria-label="CompanyName" name="CompanyName" required>
                                 <span style="color:red;" asp-validation-for="CompanyName" data-valmsg-for="CompanyName" class="text-danger" aria-live="polite"></span>
@@ -71,7 +71,7 @@
 
 
                         <div class="inputBox">
-                            <label for="Street">Adress:</label>
+                            <label for="Street">@Nordic_Align_V7.Resources.Resource.Adress:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="Street" name="Street" aria-label="Street" required>
                                 <span style="color:red;" asp-validation-for="Street" data-valmsg-for="Street" class="text-danger" aria-live="polite"></span>
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="inputBox">
-                            <label for="City">Stad:</label>
+                            <label for="City">@Nordic_Align_V7.Resources.Resource.Stad:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="City" name="City" aria-label="City" required>
                                 <span style="color:red;" asp-validation-for="City" data-valmsg-for="City" class="text-danger" aria-live="polite"></span>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="inputBox">
-                            <label for="PostalCode">Postnummer:</label>
+                            <label for="PostalCode">@Nordic_Align_V7.Resources.Resource.Postnummer:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="PostalCode" name="PostalCode" aria-label="Postal Code" required>
                                 <span style="color:red;" asp-validation-for="PostalCode" data-valmsg-for="PostalCode" class="text-danger" aria-live="polite"></span>
@@ -101,7 +101,7 @@
                     <div class="box">
 
                         <div class="inputBox">
-                            <label for="Country">Land:</label>
+                            <label for="Country">@Nordic_Align_V7.Resources.Resource.Land:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="Country" name="Country" aria-label="Country"  required>
                                 <span style="color:red;" asp-validation-for="Country" data-valmsg-for="Country" class="text-danger" aria-live="polite"></span>
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="inputBox">
-                            <label for="Email">E-post:</label>
+                            <label for="Email">@Nordic_Align_V7.Resources.Resource.E_Post:</label>
                             <div class="inputBox-content">
                                 <input type="email" id="Email" name="Email" aria-label="Email" required>
                                 <span style="color:red;" asp-validation-for="Email" data-valmsg-for="Email" class="text-danger" aria-live="polite"></span>
@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="inputBox">
-                            <label for="VatNumber">Vat nummer:</label>
+                            <label for="VatNumber">@Nordic_Align_V7.Resources.Resource.Vatnummer:</label>
                             <div class="inputBox-content">
                                 <input type="text" id="VatNumber" name="VatNumber"  aria-label="Vat number" required>
                                 <span style="color:red;" asp-validation-for="VatNumber" data-valmsg-for="VatNumber" class="text-danger" aria-live="polite"></span>
@@ -139,7 +139,7 @@
                                 <div class="box">
 
                                     <div class="inputBox">
-                                        <label for="Items[@i].Item">Produkt:</label>
+                                        <label for="Items[@i].Item">@Nordic_Align_V7.Resources.Resource.Produkt:</label>
                                         <div class="inputBox-content">
                                             <input type="text" id="Items[@i].Item" name="itemNames[]" aria-label="Product name"  required>
                                             <span style="color:red;" asp-validation-for="Items[i].Item" data-valmsg-for="Items[i].Item" class="text-danger" aria-live="polite"></span>
@@ -148,7 +148,7 @@
                                     </div>
 
                                     <div class="inputBox">
-                                        <label for="Items[@i].Quantity">Antal:</label>
+                                        <label for="Items[@i].Quantity">@Nordic_Align_V7.Resources.Resource.Antal:</label>
                                         <div class="inputBox-content">
                                             <input type="number" id="Items[@i].Quantity" name="quantities[]" aria-label="Quantity" min="1" required oninput="validity.valid||(value='');" aria-live="polite">
 
@@ -160,7 +160,7 @@
 
 
                                     <div class="inputBox">
-                                        <label for="Items[@i].Price">Pris:</label>
+                                        <label for="Items[@i].Price">@Nordic_Align_V7.Resources.Resource.Pris:</label>
                                         <div class="inputBox-content">
                                             <input type="number" id="Items[@i].Price" name="prices[]" aria-label="Price" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
 
@@ -174,20 +174,20 @@
                         </div>
 
                     </div>
-                    <button class="button-primary" type="button" aria-label="Add product"  onclick="addItem()">Lägg till produkt</button>
+                    <button class="button-primary" type="button" aria-label="Add product" onclick="addItem()">@Nordic_Align_V7.Resources.Resource.Läggtillprodukt</button>
 
 
                     @*     Add komment om vi vill*@   
 
 
                     <div class="inputBox">
-                        <label for="Comment">Terms (valfritt)</label>
+                        <label for="Comment">@Nordic_Align_V7.Resources.Resource.Vilkor_valfritt</label>
                         <div class="inputBox-content">
                             <textarea id="Comment" name="Comment" rows="1" cols="50"></textarea>
                         </div>
                     </div>
 
-                    <button class="button-secondary" aria-label="Generera and send"  type="submit">Generera och skicka</button>
+                    <button class="button-secondary" aria-label="Generera and send" type="submit">@Nordic_Align_V7.Resources.Resource.Genereraochskicka</button>
                 </form>
 
 
@@ -211,7 +211,7 @@
             div.innerHTML = `
                 <div class="box">
                     <div class="inputBox">
-                        <label for="Item">Produkt:</label>
+                        <label for="Item">@Nordic_Align_V7.Resources.Resource.Produkt:</label>
                         <div class="inputBox-content">
                             <input type="text" id="Item" name="itemNames[]" required>
                             <span style="color:red;" data-valmsg-for="itemNames[]" class="text-danger"></span>
@@ -219,7 +219,7 @@
                     </div>
 
                     <div class="inputBox">
-                        <label for="Antal">Antal:</label>
+                        <label for="Antal">@Nordic_Align_V7.Resources.Resource.Antal:</label>
                         <div class="inputBox-content">
                                 <input type="number" name="quantities[]" id="Antal" min="1" required oninput="validity.valid||(value='');">
                             <span style="color:red;" data-valmsg-for="quantities[]" class="text-danger"></span>
@@ -227,7 +227,7 @@
                     </div>
 
                     <div class="inputBox">
-                        <label for="Price">Pris:</label>
+                        <label for="Price">@Nordic_Align_V7.Resources.Resource.Pris:</label>
                         <div class="inputBox-content">
                                 <input type="number" step="0.01" id="Price" name="prices[]" min="0.01" step="0.01" required oninput="validity.valid||(value='');">
                             <span style="color:red;" data-valmsg-for="prices[]" class="text-danger"></span>

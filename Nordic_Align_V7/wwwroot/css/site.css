@@ -107,13 +107,29 @@ body .select2-results__option[aria-selected] {
   padding: 20px 0 20px 10px;
   color: #FFF;
 }
-.header__inner .logo img {
+.header__inner .logo .minilogo {
   display: block;
   height: 45px;
   border-radius: 5px;
   backdrop-filter: blur(10px);
   border-right: 2px solid rgba(255, 255, 255, 0.3);
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+.header__inner .btn-light {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: inherit !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  left: 17px;
+  top: -9px;
 }
 .header .menu {
   flex-grow: 1;
@@ -3264,7 +3280,7 @@ div#error-message.alert {
     margin: 10px 0;
   }
   .contact .contact__form-textarea {
-    width: 100%;
+    width: 92%;
   }
 }
 

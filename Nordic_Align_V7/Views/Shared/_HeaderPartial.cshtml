@@ -5,6 +5,11 @@
 
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
     var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+    var lang = Context.Request.Cookies["Language"] ?? "SE";
+    var flagSrc = lang.ToUpper() == "SE"
+        ? "https://nordicimagestorage.blob.core.windows.net/files/Swedish_flagg.png"
+        : "https://nordicimagestorage.blob.core.windows.net/files/USA_Flagg.png";
+    var nextLang = lang.ToUpper() == "SE" ? "EN" : "SE";
 }
 
 @if (currentController != "Account")
@@ -19,26 +24,30 @@
                 </button>
 
                 <a class="logo" asp-controller="Home" asp-action="Index">
-                    <img src="https://nordicimagestorage.blob.core.windows.net/files/miniLogo.png" alt="Logo mini">
+                    <img class="minilogo" src="https://nordicimagestorage.blob.core.windows.net/files/miniLogo.png" alt="Logo mini">
                 </a>
+
+                <button id="languageToggle" class="btn btn-light rounded-circle border" style="width: 50px; height: 50px;" data-next-lang="@nextLang">
+                    <img id="flagIcon" src="@flagSrc" alt="Flag" style="width: 24px; height: 24px;">
+                </button>
 
                 <nav class="menu" data-role="@(role == "User" ? "User" : role == "Admin" ? "Admin" : "None")">
                     <ul class="menu__list">
                         @if (role != "Admin")
                         {
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")"asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="home">Hem</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="home">@Nordic_Align_V7.Resources.Resource.Hem</a>
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">Om oss</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="about">@Nordic_Align_V7.Resources.Resource.Omoss</a>
 
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="why_us">Tjänster</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="why_us">@Nordic_Align_V7.Resources.Resource.Tjänster</a>
 
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="contact">Kontakt</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" onclick="toggle()" asp-controller="Home" asp-action="Index" asp-fragment="contact">@Nordic_Align_V7.Resources.Resource.Kontakt</a>
 
                             </li>
                         }
@@ -46,34 +55,34 @@
                         @if (role == "User" || role == "Admin")
                         {
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Recepient" asp-action="Index">Mottagare</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Recepient" asp-action="Index">@Nordic_Align_V7.Resources.Resource.Mottagare</a>
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Order" asp-action="Index">Order</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Order" asp-action="Index">@Nordic_Align_V7.Resources.Resource.Order</a>
                             </li>
                         }
 
                         @if (role == "Admin")
                         {
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Courier" asp-action="Index">Kurirer</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Courier" asp-action="Index">@Nordic_Align_V7.Resources.Resource.Kurirer</a>
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Transport" asp-action="Index">Fordonflotta</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Transport" asp-action="Index">@Nordic_Align_V7.Resources.Resource.Forfonflotta</a>   
                             </li>
                             <li class="menu__list-item">
-                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Warehouse" asp-action="Index">Lager</a>
+                                <a class="menu__list-link @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Warehouse" asp-action="Index">@Nordic_Align_V7.Resources.Resource.Lager</a>
                             </li>
                             <li class="menu__list-item" >
                                 <a class="menu__list-link dropdown-toggle @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Faktura
+                                    @Nordic_Align_V7.Resources.Resource.Faktura
                                 </a>
                                 <ul class="dropdown-menu custom-dropdown @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")"  aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Skapa Faktura</a>
+                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">@Nordic_Align_V7.Resources.Resource.Skapafaktura</a>
                                     </li>
                                     <li>
-                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">Faktura (EjMoms)</a>
+                                        <a class="menu__list-link dropdown-item @((currentController != "Home" || currentAction == "Error404") ? "menu__list-black" : "")" asp-area="" asp-controller="InvoiceNoTax" asp-action="CreateInvoiceInternational">@Nordic_Align_V7.Resources.Resource.FakturaEjMoms</a>
                                     </li>
                                 </ul>
                             </li>
@@ -84,12 +93,12 @@
                 <ul class="menu__list" id="account">
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">Logout </a></li>
+                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Logout">@Nordic_Align_V7.Resources.Resource.Loggaut </a></li>
                     }
                     else
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">Registera</a></li>
-                        <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">@Nordic_Align_V7.Resources.Resource.Registrering_Skapa</a></li>
+                        <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">@Nordic_Align_V7.Resources.Resource.LoggaIn_all</a></li>
                     }
                 </ul>
             </div>
@@ -106,4 +115,30 @@
         var header = document.querySelector("header");
         header.classList.toggle("active");
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("languageToggle");
+        const flagIcon = document.getElementById("flagIcon");
+
+        button.addEventListener("click", function () {
+            const nextLang = button.getAttribute("data-next-lang");
+
+            fetch(`/Home/ChangeLanguage?lang=${nextLang}`)
+                .then(response => {
+                    if (response.ok) {
+                        location.reload(); 
+                    }
+                });
+        });
+    });
+
 </script>
+
+
+
+
+
+
+
+
+

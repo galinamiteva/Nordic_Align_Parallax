@@ -69,7 +69,7 @@ public class CourierController : Controller
 
         if (courier.Orders != null && courier.Orders.Any())
         {
-            TempData["ErrorMessage"] = "Operation är omöjlig. Kuriren har aktiva beställningar.";
+            TempData["ErrorMessage"] = @Nordic_Align_V7.Resources.Resource.Operationäromöjlig_Kuriren;
             return RedirectToAction("Index");
         }
 

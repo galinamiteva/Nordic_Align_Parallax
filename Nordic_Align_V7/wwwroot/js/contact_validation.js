@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(function () {
             messageElement.style.display = "none";
-        }, 2000);
+        }, 3000);
     }
 
 

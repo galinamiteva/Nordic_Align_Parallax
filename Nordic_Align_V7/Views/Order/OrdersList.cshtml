@@ -23,19 +23,19 @@
 
         <div class="container">
             <div class="form">
-                <h1>Order tabell</h1>
+                <h1>@Nordic_Align_V7.Resources.Resource.Ordertabell</h1>
 
                 <form method="get" asp-controller="Order" asp-action="OrdersByDate">
 
                     <div class="inputBox startDate">
-                        <label for="startDate" class="form-label">Beställningsdatum från:</label>
+                        <label for="startDate" class="form-label">@Nordic_Align_V7.Resources.Resource.Beställningsdatumfrån</label>
                         <input type="date" id="startDate" name="startDate" class="form-control" />
                     </div>
                     <div class="inputBox">
-                        <label for="endDate" class="form-label">Beställningsdatum till:</label>
+                        <label for="endDate" class="form-label">@Nordic_Align_V7.Resources.Resource.Beställningsdatumtill</label>
                         <input type="date" id="endDate" name="endDate" class="form-control" />
                     </div>
-                    <button type="submit" class="button-primary">Filtrera</button>
+                    <button type="submit" class="button-primary">@Nordic_Align_V7.Resources.Resource.Filtrera</button>
                 </form>
 
                 <table class="table">
@@ -54,7 +54,7 @@
 
 
                         <th>
-                            Mottagare
+                            @Nordic_Align_V7.Resources.Resource.Mottagare
                         </th>
 
 
@@ -64,13 +64,13 @@
                                 @Html.DisplayNameFor(model => model.Price)
                             </th>
                             <th scope="col">
-                                Kurir
+                                @Nordic_Align_V7.Resources.Resource.Kurir
                             </th>
                             <th scope="col">
-                                Transport
+                                @Nordic_Align_V7.Resources.Resource.Transport
                             </th>
                             <th scope="col">
-                                Lager
+                                @Nordic_Align_V7.Resources.Resource.Lager
                             </th>
                         }
 
@@ -107,17 +107,17 @@
                             {
 
                                 <th scope="col">
-                                    @(item.Price != 100 ? item.Price.ToString() : "Add Price ")
+                                    @(item.Price != 100 ? item.Price.ToString() : @Nordic_Align_V7.Resources.Resource.Läggtillpris )
                                 </th>
 
                                 <th scope="col">
-                                    @(item.Courier != null ? item.Courier.FullName : " Ej Info ")
+                                    @(item.Courier != null ? item.Courier.FullName : @Nordic_Align_V7.Resources.Resource.EjInfo)
                                 </th>
                                 <th scope="col">
-                                    @(item.Transport != null ? item.Transport.TransportNumber : " Ej Info")
+                                    @(item.Transport != null ? item.Transport.TransportNumber : @Nordic_Align_V7.Resources.Resource.EjInfo)
                                 </th>
                                 <th scope="col">
-                                    @(item.Warehouses.Count() != 0 ? string.Join(", ", item.Warehouses.Select(x => x.Name)) : "Ej Info")
+                                    @(item.Warehouses.Count() != 0 ? string.Join(", ", item.Warehouses.Select(x => x.Name)) : @Nordic_Align_V7.Resources.Resource.EjInfo)
                                 </th>
 
 
@@ -135,7 +135,7 @@
                         </tr>
                     }
                 </table>
-                <a asp-controller="Order" target="_self" asp-action="Create" class="button-secondary">Lägg till order</a>
+                <a asp-controller="Order" target="_self" asp-action="Create" class="button-secondary">@Nordic_Align_V7.Resources.Resource.Läggtillorder</a>
 
 
             </div>

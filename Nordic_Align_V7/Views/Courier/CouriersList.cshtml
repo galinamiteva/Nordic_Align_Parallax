@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Nordic_Align_V7.Models.CourierModel>
 
 @{
-    ViewData["Title"] = "Kurirer";
+    ViewData["Title"] = Nordic_Align_V7.Resources.Resource.Kurirer;
 }
 
 
@@ -38,11 +38,11 @@
                     </script>
                 }
 
-                <h1>Kurir tabell</h1>
+                <h1>@Nordic_Align_V7.Resources.Resource.Kurirtabell</h1>
                 <form asp-action="Search">
                     <div class="inputBox">
-                        <input type="text" name="searchString" class="form-control" aria-label="Search by courier name.. " placeholder="Sök på kurirnamn..." />
-                        <button type="submit" class="button-primary" aria-label="Search">Sök efter</button>
+                        <input type="text" name="searchString" class="form-control" aria-label="Search by courier name.. " placeholder="@Nordic_Align_V7.Resources.Resource.Sökpåkurirnamn..." />
+                        <button type="submit" class="button-primary" aria-label="Search">@Nordic_Align_V7.Resources.Resource.Sökefter</button>
                     </div>
                 </form>
                 <table class="table">
@@ -79,7 +79,7 @@
                         </tr>
                     }
                 </table>
-                <a  asp-controller="Courier" target="_self" asp-action="Create"  class="button-secondary">Lägg till kurir</a>
+                <a asp-controller="Courier" target="_self" asp-action="Create" class="button-secondary">@Nordic_Align_V7.Resources.Resource.Läggtillkurir</a>
 
 
             </div>         

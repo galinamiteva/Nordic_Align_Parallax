@@ -59,7 +59,7 @@ public class RecepientController : Controller
 
         if (recepient.Orders != null && recepient.Orders.Any())
         {
-            TempData["ErrorMessage"] = "Operation är omöjlig. Mottagaren har aktiva beställningar.";
+            TempData["ErrorMessage"] = @Nordic_Align_V7.Resources.Resource.Operationäromöjlig_Mottagarenharaktivabeställningar;
             return RedirectToAction("Index");
         }
 
