@@ -153,6 +153,9 @@ body .select2-results__option[aria-selected] {
 .header .menu__list-item {
   list-style: none;
 }
+.header .menu__list-register {
+  display: none;
+}
 .header .menu__list .custom-dropdown {
   background-color: transparent !important;
   border: none !important;

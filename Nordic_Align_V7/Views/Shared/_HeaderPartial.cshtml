@@ -25,6 +25,7 @@
 
                 <a class="logo" asp-controller="Home" asp-action="Index">
                     <img class="minilogo" src="https://nordicimagestorage.blob.core.windows.net/files/miniLogo.png" alt="Logo mini">
+
                 </a>
 
                 <button id="languageToggle" class="btn btn-light rounded-circle border" style="width: 50px; height: 50px;" data-next-lang="@nextLang">
@@ -97,7 +98,7 @@
                     }
                     else
                     {
-                        <li class="menu__list-item"><a class="header__btn" asp-controller="Account" asp-action="Register">@Nordic_Align_V7.Resources.Resource.Registrering_Skapa</a></li>
+                        <li class="menu__list-item menu__list-register"><a class="header__btn" asp-controller="Account" asp-action="Register">@Nordic_Align_V7.Resources.Resource.Registrering_Skapa</a></li>
                         <li class="menu__list-item"><a class="header__btn header__btn__login" asp-controller="Account" asp-action="Login">@Nordic_Align_V7.Resources.Resource.LoggaIn_all</a></li>
                     }
                 </ul>
